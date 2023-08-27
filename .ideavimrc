@@ -39,10 +39,15 @@ noremap gl $
 noremap gh ^
 noremap gm %
 
-" Split lines
-let @c = "hf,a<CR><Esc>"
+" Split at start of parenthesis
 nnoremap <Leader>sb hf(a<CR><Esc>
-nnoremap <Leader>s, @c
+
+" Split at next comma
+let @s = "hf,a<CR><Esc>"
+nnoremap <Leader>s, @s
+
+" Split ternary
+nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
 " Editor shortcuts
 map <C-p> <Action>(GotoFile)
