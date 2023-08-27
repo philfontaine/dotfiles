@@ -27,6 +27,8 @@ nnoremap s \"_s
 nnoremap c \"_c
 vnoremap p \"_dP
 vnoremap c \"_c
+vnoremap < <gv
+vnoremap > >gv
 
 " Better shortcuts
 noremap <C-j> <C-e>
