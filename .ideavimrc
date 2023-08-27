@@ -51,13 +51,11 @@ nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
 " Editor shortcuts
 map <C-p> <Action>(GotoFile)
-map gh <Action>(QuickJavaDoc)
+map gr <Action>(FindUsages)
+map <leader>jd <Action>(QuickJavaDoc)
 map <leader>fd <Action>(ReformatCode)
 map <leader>cc <Action>(SilentCodeCleanup)
 map <leader>re <Action>(RenameElement)
-map <leader>ne <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>pe <Action>(ReSharperGotoPrevErrorInSolution)
-map <leader>fu <Action>(FindUsages)
 map <leader>ff <Action>(FindInPath)
 map <leader>op <Action>(SelectInProjectView)
 map <leader>of <Action>(ActivateFindToolWindow)
@@ -69,9 +67,20 @@ map <leader>zc <Action>(CollapseAllRegions)
 map <leader>zo <Action>(ExpandAllRegions)
 map <leader>hs <Action>(HideSideWindows)
 map <leader>ha <Action>(HideActiveWindow)
-map <leader>ev :e ~\Dev\GitHub\dotfiles\.ideavimrc<CR>
-map [[ <Action>(MethodUp)
-map ]] <Action>(MethodDown)
+map <leader>ba <Action>(BuildWholeSolutionAction)
+map <leader>ra <Action>(Run)
+map <leader>da <Action>(Debug)
+map <leader>sa <Action>(Stop)
+map <leader>rt <Action>(RiderUnitTestRunContextAction)
+map <leader>nt <Action>(ReSharperNavigateTo)
+map <leader>gr <Action>(GotoRelated)
+map <leader>ev :e ~\.ideavimrc<CR>
+map <leader>sv :source ~\.ideavimrc<CR>
+map <leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+map [d <Action>(ReSharperGotoPrevErrorInSolution)
+map ]d <Action>(ReSharperGotoNextErrorInSolution)
+map [f <Action>(MethodUp)
+map ]f <Action>(MethodDown)
 
 " Copy line/selection down
 map <A-S-j> <Action>(EditorDuplicateLines)
