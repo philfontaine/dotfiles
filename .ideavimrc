@@ -15,31 +15,28 @@ noremap <Space> <Nop>
 
 let mapleader = " "
 
-" Scroll half page and recenter
+" Better behaviors
 noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz
-
-" Don't like the default jump behavior
 nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
-
-" Don't yank
+nnoremap Y y$
+nnoremap J Jh
 nnoremap x \"_x
 nnoremap s \"_s
 nnoremap c \"_c
 vnoremap p \"_dP
 vnoremap c \"_c
 
-" Make Y behave like C and D
-nnoremap Y y$
-
-" Don't move cursor when joining lines
-nnoremap J Jh
-
-" Easier to learn and type
+" Better shortcuts
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
 noremap gl $
 noremap gh ^
 noremap gm %
+noremap + <C-a>
+noremap - <C-x>
+noremap U <C-r>
 
 " Split at start of parenthesis
 nnoremap <Leader>sb hf(a<CR><Esc>
@@ -135,12 +132,6 @@ map <Right> <NOP>
 map <A-S-f> <NOP>
 map <C-S-f> <NOP>
 
-" Increment/decrement
-noremap + <C-a>
-noremap - <C-x>
-
-" Redo
-noremap U <C-r>
 
 " Handlers
 sethandler <C-2> a:vim
