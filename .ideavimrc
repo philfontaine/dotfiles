@@ -11,6 +11,8 @@ set ignorecase
 set smartcase
 set surround
 
+noremap <Space> <Nop>
+
 let mapleader = " "
 
 " Scroll half page and recenter
