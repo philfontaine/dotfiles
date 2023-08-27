@@ -117,11 +117,13 @@ nnoremap <Leader>wl <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
-" Remove arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" Break old habits
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+map <A-S-f> <NOP>
+map <C-S-f> <NOP>
 
 " Increment/decrement
 noremap + <C-a>
@@ -141,6 +143,8 @@ sethandler <C-F> a:vim
 sethandler <C-G> a:vim
 sethandler <C-H> a:vim
 sethandler <A-S-H> a:vim
+sethandler <A-S-F> a:vim
+sethandler <C-S-F> a:vim
 sethandler <C-I> a:vim
 sethandler <C-J> a:vim
 sethandler <A-C-J> a:vim
