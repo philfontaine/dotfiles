@@ -79,6 +79,7 @@ map <Leader>gr <Action>(GotoRelated)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv :source ~\.ideavimrc<CR>
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+map <leader>fs <Action>(FileStructurePopup)
 
 if &ide =~? 'rider'
     map [d <Action>(ReSharperGotoPrevErrorInSolution)
