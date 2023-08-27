@@ -77,8 +77,15 @@ map <leader>gr <Action>(GotoRelated)
 map <leader>ev :e ~\.ideavimrc<CR>
 map <leader>sv :source ~\.ideavimrc<CR>
 map <leader>ac <Action>(RiderDebuggerApplyEncChagnes)
-map [d <Action>(ReSharperGotoPrevErrorInSolution)
-map ]d <Action>(ReSharperGotoNextErrorInSolution)
+
+if &ide =~? 'rider'
+    map [d <Action>(ReSharperGotoPrevErrorInSolution)
+    map ]d <Action>(ReSharperGotoNextErrorInSolution)
+else
+    nmap [d <Action>(GotoNextError)
+    nmap ]d <Action>(GotoPreviousError)
+endif
+
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
 
