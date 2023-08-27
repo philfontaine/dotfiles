@@ -34,10 +34,10 @@ nnoremap Y y$
 " Don't move cursor when joining lines
 nnoremap J Jh
 
-" Symbols hard to reach
-noremap L $
-noremap H ^
-noremap <C-m> %
+" Easier to learn and type
+noremap gl $
+noremap gh ^
+noremap gm %
 
 " Split lines
 let @c = "hf,a<CR><Esc>"
