@@ -24,9 +24,9 @@ nmap <C-i> <Action>(Forward)
 " Don't yank what was just erased
 vnoremap p pgvy
 
-" Keep the cursor at the same line when scrolling by a line
-nnoremap <C-e> <C-e>j
-nnoremap <C-y> <C-y>k
+" Do not overwrite unnamed register with x and s
+nnoremap x "_x
+nnoremap s "_s
 
 " Make Y behave like C and D
 nnoremap Y y$
