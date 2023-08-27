@@ -25,8 +25,8 @@ nmap <C-i> <Action>(Forward)
 vnoremap p pgvy
 
 " Do not overwrite unnamed register with x and s
-nnoremap x "_x
-nnoremap s "_s
+nnoremap x \"_x
+nnoremap s \"_s
 
 " Make Y behave like C and D
 nnoremap Y y$
