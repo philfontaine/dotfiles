@@ -128,7 +128,6 @@ map <Right> <NOP>
 map <A-S-f> <NOP>
 map <C-S-f> <NOP>
 
-
 " Handlers
 sethandler <C-2> a:vim
 sethandler <C-A> a:vim
