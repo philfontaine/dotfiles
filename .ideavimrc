@@ -11,8 +11,8 @@ set ignorecase
 set smartcase
 set surround
 
+" Leader
 noremap <Space> <Nop>
-
 let mapleader = " "
 
 " Better behaviors
