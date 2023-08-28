@@ -91,18 +91,12 @@ endif
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
 
-" Copy line/selection down
+" Great stuff from VS Code but without arrow keys
 map <A-S-j> <Action>(EditorDuplicateLines)
-
-" Move line/selection up/down
 map <A-j> <Action>(MoveLineDown)
 map <A-k> <Action>(MoveLineUp)
-
-" Grow/Shrink selection
 map <A-S-h> <Action>(EditorUnSelectWord)
 map <A-S-l> <Action>(EditorSelectWord)
-
-" Multiple cursors
 map <A-C-j> <Action>(EditorCloneCaretBelow)
 map <A-C-k> <Action>(EditorCloneCaretAbove)
 map <A-C-h> <Action>(UnselectPreviousOccurrence)
