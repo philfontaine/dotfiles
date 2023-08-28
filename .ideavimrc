@@ -73,7 +73,6 @@ map <Leader>ra <Action>(Run)
 map <Leader>da <Action>(Debug)
 map <Leader>sa <Action>(Stop)
 map <Leader>rt <Action>(RiderUnitTestRunContextAction)
-map <Leader>nt <Action>(ReSharperNavigateTo)
 map <Leader>gr <Action>(GotoRelated)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv :source ~\.ideavimrc<CR>
