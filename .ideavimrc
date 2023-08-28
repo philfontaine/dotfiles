@@ -84,8 +84,8 @@ if &ide =~? 'rider'
     map [d <Action>(ReSharperGotoPrevErrorInSolution)
     map ]d <Action>(ReSharperGotoNextErrorInSolution)
 else
-    nmap [d <Action>(GotoNextError)
-    nmap ]d <Action>(GotoPreviousError)
+    map [d <Action>(GotoNextError)
+    map ]d <Action>(GotoPreviousError)
 endif
 
 map [f <Action>(MethodUp)
