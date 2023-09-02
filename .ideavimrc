@@ -76,7 +76,7 @@ map <Leader>da <Action>(Debug)
 map <Leader>sa <Action>(Stop)
 map <Leader>rt <Action>(RiderUnitTestRunContextAction)
 map <Leader>ev :e ~\.ideavimrc<CR>
-map <Leader>sv :source ~\.ideavimrc<CR>
+map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 
 if &ide =~? 'rider'
