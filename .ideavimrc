@@ -53,7 +53,8 @@ nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
 " Editor shortcuts
 map <C-p> <Action>(GotoFile)
-map gr <Action>(FindUsages)
+map <C-m> <Action>(ShowPopupMenu)
+map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
 map <Leader>ff <Action>(FindInPath)
 map <Leader>jd <Action>(QuickJavaDoc)
