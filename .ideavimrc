@@ -25,10 +25,10 @@ nnoremap J Jh
 nnoremap x \"_x
 nnoremap s \"_s
 nnoremap c \"_c
-vnoremap p \"_dP
-vnoremap c \"_c
-vnoremap < <gv
-vnoremap > >gv
+xnoremap p \"_dP
+xnoremap c \"_c
+xnoremap < <gv
+xnoremap > >gv
 
 " Better shortcuts
 noremap <C-j> <C-e>
