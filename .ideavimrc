@@ -39,6 +39,7 @@ noremap gm %
 noremap + <C-a>
 noremap - <C-x>
 noremap U <C-r>
+noremap Q @q
 
 " Split at start of parenthesis
 nnoremap <Leader>sb hf(a<CR><Esc>
