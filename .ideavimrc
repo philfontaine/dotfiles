@@ -1,3 +1,7 @@
+" Leader
+noremap <Space> <Nop>
+let mapleader = " "
+
 " Options
 set clipboard+=unnamed
 set clipboard+=ideaput
@@ -10,10 +14,6 @@ set highlightedyank
 set ignorecase
 set smartcase
 set surround
-
-" Leader
-noremap <Space> <Nop>
-let mapleader = " "
 
 " Better behaviors
 noremap <C-d> <C-d>zz
