@@ -89,15 +89,10 @@ map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
-
-if &ide =~? 'rider'
-    map [d <Action>(ReSharperGotoPrevErrorInSolution)
-    map ]d <Action>(ReSharperGotoNextErrorInSolution)
-else
-    map [d <Action>(GotoNextError)
-    map ]d <Action>(GotoPreviousError)
-endif
-
+map <Leader>ne <Action>(GotoNextError)
+map <Leader>pe <Action>(GotoPreviousError)
+map [d <Action>(ReSharperGotoPrevErrorInSolution)
+map ]d <Action>(ReSharperGotoNextErrorInSolution)
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
 
