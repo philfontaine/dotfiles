@@ -60,6 +60,8 @@ nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 " Editor shortcuts
 map <C-p> <Action>(GotoFile)
 map <C-m> <Action>(ShowPopupMenu)
+map <C-s> <Action>(SaveAll)
+imap <C-s> <Action>(SaveAll)
 map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
 map <Leader>ff <Action>(FindInPath)
