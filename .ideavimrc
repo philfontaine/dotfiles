@@ -38,7 +38,7 @@ noremap gh ^
 noremap gm %
 noremap + <C-a>
 noremap - <C-x>
-noremap U <C-r>
+nnoremap U <C-r>
 noremap Q @q
 
 " Split at start of parenthesis
