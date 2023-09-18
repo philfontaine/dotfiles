@@ -85,6 +85,7 @@ map <Leader>ra <Action>(Run)
 map <Leader>da <Action>(Debug)
 map <Leader>sa <Action>(Stop)
 map <Leader>rt <Action>(RiderUnitTestRunContextAction)
+map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
