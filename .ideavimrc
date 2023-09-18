@@ -89,6 +89,7 @@ map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+map <Leader>ss <Action>(ShowSettings)
 map <Leader>ne <Action>(GotoNextError)
 map <Leader>pe <Action>(GotoPreviousError)
 map [d <Action>(ReSharperGotoPrevErrorInSolution)
