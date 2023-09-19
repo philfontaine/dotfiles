@@ -14,6 +14,7 @@ set highlightedyank
 set ignorecase
 set smartcase
 set surround
+set easymotion
 set matchit
 
 " Better behaviors
@@ -42,6 +43,7 @@ nnoremap U <C-r>
 noremap Q @q
 
 " Plugin shortcuts
+map s <Plug>(easymotion-s)
 map gm <Plug>(MatchitMotion)
 
 " Camel case text object
