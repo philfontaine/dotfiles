@@ -44,6 +44,17 @@ noremap - <C-x>
 nnoremap U <C-r>
 noremap Q @q
 
+" Break old habits / unwanted shortcuts
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+map <A-S-f> <Nop>
+map <C-S-f> <Nop>
+imap <C-n> <Nop>
+imap <C-p> <Nop>
+map <C-n> <Nop>
+
 " Plugin shortcuts
 map s <Plug>(easymotion-s)
 map gm <Plug>(MatchitMotion)
@@ -64,45 +75,61 @@ nnoremap <Leader>s, @s
 " Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
-" Editor shortcuts
+" General IDE shortcuts
 map <C-p> <Action>(GotoFile)
-map <C-m> <Action>(ShowPopupMenu)
-map <C-s> <Action>(SaveAll)
-imap <C-s> <Action>(SaveAll)
 map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
 map <Leader>ff <Action>(FindInPath)
-map <Leader>ed <Action>(ShowErrorDescription)
-map <Leader>pi <Action>(ParameterInfo)
-map <Leader>fs <Action>(FileStructurePopup)
-map <Leader>fd <Action>(ReformatCode)
-map <Leader>cc <Action>(SilentCodeCleanup)
 map <Leader>re <Action>(RenameElement)
-map <Leader>oi <Action>(OptimizeImports)
-map <Leader>op <Action>(SelectInProjectView)
-map <Leader>of <Action>(ActivateFindToolWindow)
-map <Leader>ot <Action>(ActivateTerminalToolWindow)
-map <Leader>tb <Action>(ToggleLineBreakpoint)
 map <Leader>zc <Action>(CollapseAllRegions)
 map <Leader>zo <Action>(ExpandAllRegions)
-map <Leader>hs <Action>(HideSideWindows)
-map <Leader>ha <Action>(HideActiveWindow)
-map <Leader>ba <Action>(BuildWholeSolutionAction)
-map <Leader>ra <Action>(Run)
-map <Leader>da <Action>(Debug)
-map <Leader>sa <Action>(Stop)
-map <Leader>rt <Action>(RiderUnitTestRunContextAction)
-map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
 map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 map <Leader>ss <Action>(ShowSettings)
+
+" Save/Cleanup
+map <C-s> <Action>(SaveAll)
+imap <C-s> <Action>(SaveAll)
+map <Leader>fd <Action>(ReformatCode)
+map <Leader>cc <Action>(SilentCodeCleanup)
+map <Leader>oi <Action>(OptimizeImports)
+
+" IDE windows
+map <Leader>sp <Action>(SelectInProjectView)
+map <Leader>op <Action>(ActivateProjectToolWindow)
+map <Leader>of <Action>(ActivateFindToolWindow)
+map <Leader>ot <Action>(ActivateTerminalToolWindow)
+map <Leader>hs <Action>(HideSideWindows)
+map <Leader>ha <Action>(HideActiveWindow)
+
+" Popups
+map <C-m> <Action>(ShowPopupMenu)
+map <Leader>ed <Action>(ShowErrorDescription)
+map <Leader>pi <Action>(ParameterInfo)
+map <Leader>fs <Action>(FileStructurePopup)
+
+" Editor navigation
 map <Leader>ne <Action>(GotoNextError)
 map <Leader>pe <Action>(GotoPreviousError)
 map [d <Action>(ReSharperGotoPrevErrorInSolution)
 map ]d <Action>(ReSharperGotoNextErrorInSolution)
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
+
+" Build/Run/Debug
+map <Leader>ba <Action>(BuildWholeSolutionAction)
+map <Leader>ra <Action>(Run)
+map <Leader>da <Action>(Debug)
+map <Leader>sa <Action>(Stop)
+map <Leader>rt <Action>(RiderUnitTestRunContextAction)
+map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
+map <Leader>tb <Action>(ToggleLineBreakpoint)
+map <C-S-A-j> <Action>(StepOver)
+map <C-S-A-k> <Action>(Resume)
+map <C-S-A-h> <Action>(StepOut)
+map <C-S-A-l> <Action>(StepInto)
+map <Leader>ee <Action>(QuickEvaluateExpression)
 
 " Great stuff from VS Code but without arrow keys
 map <A-S-j> <Action>(EditorDuplicateLines)
@@ -134,16 +161,15 @@ nnoremap <Leader>wl <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
-" Break old habits
-map <Up> <NOP>
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
-map <A-S-f> <NOP>
-map <C-S-f> <NOP>
-
 " Handlers
+sethandler <A-C-J> a:vim
+sethandler <A-C-K> a:vim
+sethandler <A-C-S-H> a:vim
+sethandler <A-S-F> a:vim
+sethandler <A-S-H> a:vim
+sethandler <A-S-L> a:vim
 sethandler <C-2> a:vim
+sethandler <C-;> a:vim
 sethandler <C-A> a:vim
 sethandler <C-B> a:vim
 sethandler <C-C> a:vim
@@ -152,20 +178,17 @@ sethandler <C-E> a:vim
 sethandler <C-F> a:vim
 sethandler <C-G> a:vim
 sethandler <C-H> a:vim
-sethandler <A-S-H> a:vim
-sethandler <A-S-F> a:vim
-sethandler <C-S-F> a:vim
 sethandler <C-I> a:vim
 sethandler <C-J> a:vim
-sethandler <A-C-J> a:vim
 sethandler <C-K> a:vim
-sethandler <A-C-K> a:vim
 sethandler <C-L> a:vim
 sethandler <C-M> a:vim
 sethandler <C-N> a:vim
 sethandler <C-O> a:vim
 sethandler <C-P> a:vim
 sethandler <C-R> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-S-F> a:vim
 sethandler <C-S> a:vim
 sethandler <C-T> a:vim
 sethandler <C-U> a:vim
