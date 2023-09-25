@@ -44,6 +44,8 @@ noremap + <C-a>
 noremap - <C-x>
 nnoremap U <C-r>
 noremap Q @q
+noremap [[ [{
+noremap ]] ]}
 
 " Break old habits / unwanted shortcuts
 map <Up> <Nop>
