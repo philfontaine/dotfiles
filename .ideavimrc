@@ -92,7 +92,7 @@ map <Leader>ss <Action>(ShowSettings)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
-imap <C-s> <Action>(SaveAll)
+imap <C-s> <Action>(SaveAll)<Esc>
 map <Leader>fd <Action>(ReformatCode)
 map <Leader>cc <Action>(SilentCodeCleanup)
 map <Leader>oi <Action>(OptimizeImports)
