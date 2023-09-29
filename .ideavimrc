@@ -31,7 +31,6 @@ xnoremap p \"_dP
 xnoremap c \"_c
 xnoremap < <gv
 xnoremap > >gv
-nnoremap u u<Esc>
 
 " Better shortcuts
 noremap <C-j> <C-e>
