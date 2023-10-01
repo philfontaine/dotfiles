@@ -81,6 +81,7 @@ nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 map <C-p> <Action>(GotoFile)
 map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
+map <leader>gi <Action>(GotoImplementation)
 map <Leader>ff <Action>(FindInPath)
 map <Leader>re <Action>(RenameElement)
 map <Leader>zc <Action>(CollapseAllRegions)
