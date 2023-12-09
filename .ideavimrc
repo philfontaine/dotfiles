@@ -28,6 +28,7 @@ nnoremap J Jh
 nnoremap x \"_x
 nnoremap s \"_s
 nnoremap c \"_c
+nnoremap C \"_C
 xnoremap p \"_dP
 xnoremap c \"_c
 xnoremap < <gv
