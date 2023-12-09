@@ -92,6 +92,7 @@ map <Leader>ev :e ~\.ideavimrc<CR>
 map <Leader>sv <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 map <Leader>ss <Action>(ShowSettings)
+map <Leader>ao <Action>(SelectAllOccurrences)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
