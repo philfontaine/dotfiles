@@ -112,6 +112,7 @@ map <Leader>hw <Action>(HideAllWindows)
 map <C-m> <Action>(ShowPopupMenu)
 map <Leader>pi <Action>(ParameterInfo)
 map <Leader>fs <Action>(FileStructurePopup)
+map <Leader>rf <Action>(RecentFiles)
 
 " Editor navigation
 map <Leader>ne <Action>(GotoNextError)
