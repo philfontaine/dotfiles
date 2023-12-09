@@ -106,8 +106,7 @@ map <Leader>sp <Action>(SelectInProjectView)
 map <Leader>op <Action>(ActivateProjectToolWindow)
 map <Leader>of <Action>(ActivateFindToolWindow)
 map <Leader>ot <Action>(ActivateTerminalToolWindow)
-map <Leader>hs <Action>(HideSideWindows)
-map <Leader>ha <Action>(HideActiveWindow)
+map <Leader>hw <Action>(HideAllWindows)
 
 " Popups
 map <C-m> <Action>(ShowPopupMenu)
