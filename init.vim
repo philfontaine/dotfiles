@@ -51,4 +51,4 @@ map <C-n> <Nop>
 " Edit config files
 map <Leader>ei :e ~\.ideavimrc<CR>
 map <Leader>ev :e ~\init.vim<CR>
-map <Leader>sv :s ~\init.vim<CR>
+map <Leader>sv :source ~\init.vim<CR>
