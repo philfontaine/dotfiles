@@ -21,8 +21,10 @@ imap <C-p> <Nop>
 map <C-n> <Nop>
 
 " Plugin shortcuts
-map s <Plug>(easymotion-s)
-map gm <Plug>(MatchitMotion)
+nmap s <Plug>(easymotion-s)
+xmap s <Plug>(easymotion-s)
+nmap gm <Plug>(MatchitMotion)
+xmap gm <Plug>(MatchitMotion)
 
 " Camel case text object
 nnoremap vic l[bv]w
