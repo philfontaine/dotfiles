@@ -42,6 +42,10 @@ nmap <Leader>sf _f(a<CR><Esc> 10<Leader>s,
 " Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
+" Edit config
+map <Leader>ei :e ~\.ideavimrc<CR>
+map <Leader>si :source ~\.ideavimrc<CR>
+
 " General IDE shortcuts
 map <C-p> <Action>(GotoFile)
 map <Leader>fu <Action>(FindUsages)
@@ -51,7 +55,6 @@ map <Leader>ff <Action>(FindInPath)
 map <Leader>re <Action>(RenameElement)
 map <Leader>zc <Action>(CollapseAllRegions)
 map <Leader>zo <Action>(ExpandAllRegions)
-map <Leader>si <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 map <Leader>ss <Action>(ShowSettings)
 map <Leader>ao <Action>(SelectAllOccurrences)

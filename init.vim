@@ -50,7 +50,6 @@ imap <C-n> <Nop>
 imap <C-p> <Nop>
 map <C-n> <Nop>
 
-" Edit config files
-map <Leader>ei :e ~\.ideavimrc<CR>
+" Edit config 
 map <Leader>ev :e ~\init.vim<CR>
 map <Leader>sv :source ~\init.vim<CR>
