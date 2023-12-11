@@ -32,8 +32,10 @@ inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 nnoremap gl $
 xnoremap gl $
+onoremap gl $
 nnoremap gh ^
 xnoremap gh ^
+onoremap gh ^
 noremap + <C-a>
 noremap - <C-x>
 nnoremap U <C-r>
