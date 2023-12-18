@@ -1,4 +1,1 @@
-*
-!.gitignore
-!.ideavimrc
-!init.vim
+.idea/
