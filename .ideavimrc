@@ -58,6 +58,7 @@ map <Leader>zo <Action>(ExpandAllRegions)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 map <Leader>ss <Action>(ShowSettings)
 map <Leader>ao <Action>(SelectAllOccurrences)
+imap <S-Space> <Action>(copilot.requestCompletions)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
