@@ -53,5 +53,5 @@ imap <C-p> <Nop>
 map <C-n> <Nop>
 
 " Edit config 
-map <Leader>ev :e ~\init.vim<CR>
-map <Leader>sv :source ~\init.vim<CR>
+map <Leader>ev :e ~\Dev\GitHub\dotfiles\init.vim<CR>
+map <Leader>sv :source ~\Dev\GitHub\dotfiles\init.vim<CR>
