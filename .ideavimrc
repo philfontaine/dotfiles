@@ -59,6 +59,7 @@ map <Leader>zo <Action>(ExpandAllRegions)
 map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
 map <Leader>ss <Action>(ShowSettings)
 map <Leader>ao <Action>(SelectAllOccurrences)
+map <Leader>rp <Action>(Replace)
 imap <S-Space> <Action>(copilot.requestCompletions)
 
 " Save/Cleanup
