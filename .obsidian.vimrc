@@ -1,0 +1,32 @@
+" Better behaviors
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+nnoremap Y y$
+nnoremap J Jh
+nnoremap x "_x
+nnoremap s "_s
+nnoremap c "_c
+nnoremap C "_C
+vnoremap p "_dP
+vnoremap c "_c
+vnoremap < <gv
+vnoremap > >gv
+
+" Better shortcuts
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+nnoremap gl $
+vnoremap gl $
+onoremap gl $
+nnoremap gh ^
+vnoremap gh ^
+onoremap gh ^
+noremap + <C-a>
+noremap - <C-x>
+nnoremap U <C-r>
+noremap Q @q
+noremap [[ [{
+noremap ]] ]}
+
