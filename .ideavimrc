@@ -48,6 +48,7 @@ map <Leader>si :source ~\.ideavimrc<CR>
 
 " General IDE shortcuts
 map gs <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
 map <C-p> <Action>(GotoFile)
 map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
