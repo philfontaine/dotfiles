@@ -14,6 +14,8 @@ set smartcase
 " Better behaviors
 noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz
+noremap n nzz
+noremap N Nzz
 nnoremap Y y$
 nnoremap J Jh
 nnoremap x "_x
