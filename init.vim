@@ -6,6 +6,7 @@ let mapleader = " "
 set clipboard+=unnamed
 set scrolloff=10
 set incsearch
+set hlsearch
 set number
 set relativenumber
 set ignorecase
@@ -44,6 +45,9 @@ nnoremap U <C-r>
 noremap Q @q
 noremap [[ [{
 noremap ]] ]}
+
+" Misc
+nmap <Leader>ns :nohlsearch<CR>
 
 " Break old habits / unwanted shortcuts
 map <Up> <Nop>
