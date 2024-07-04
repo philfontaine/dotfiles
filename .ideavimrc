@@ -63,6 +63,7 @@ map <Leader>ao <Action>(SelectAllOccurrences)
 map <Leader>rp <Action>(Replace)
 map <Leader>il <Action>(Inline)
 imap <S-Space> <Action>(copilot.requestCompletions)
+map <Leader>oe <Action>(RevealIn)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
