@@ -77,6 +77,7 @@ map <Leader>sp <Action>(SelectInProjectView)
 map <Leader>op <Action>(ActivateProjectToolWindow)
 map <Leader>of <Action>(ActivateFindToolWindow)
 map <Leader>ot <Action>(ActivateTerminalToolWindow)
+map <Leader>od <Action>(ActivateDebugToolWindow)
 map <Leader>hw <Action>(HideAllWindows)
 map <Leader>oc <Action>(ActivateCommitToolWindow)
 
