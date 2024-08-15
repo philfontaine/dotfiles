@@ -27,10 +27,13 @@ nmap gm <Plug>(MatchitMotion)
 xmap gm <Plug>(MatchitMotion)
 
 " Camel case text object
-nnoremap vic l[bv]w
-nnoremap cic l[bv]wc
-nnoremap dic l[bv]wd
-nnoremap yic l[bv]wy
+nmap vic l[bv]w
+nmap cic l[bv]wc
+nmap dic l[bv]wd
+nmap yic l[bv]wy
+
+" The below is needed because camel case text object mess up `nnoremap c "_c`
+nnoremap ci "_ci
 
 " Split at next comma
 let @s = "hf,a<CR><Esc>"
