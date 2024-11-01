@@ -42,6 +42,10 @@ nnoremap <Leader>s, @s
 " Split function
 nmap <Leader>sf _f(a<CR><Esc> 10<Leader>s,
 
+" Split chain
+let @c = "f)f.i<CR><Esc>"
+nmap <Leader>sc _f(F.i<CR><Esc> 10<Leader>@c
+
 " Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
