@@ -142,6 +142,7 @@ imap <C-l> <Action>(NextTab)
 map <Leader>tc <Action>(CloseContent)
 map <Leader>to <Action>(CloseAllEditorsButActive)
 map <Leader>tp <Action>(PinActiveEditorTab)
+map <Leader>tm <Action>(CloseAllUnmodifiedEditors)
 
 " Window navigation
 nnoremap <Leader>wc <C-W>c
