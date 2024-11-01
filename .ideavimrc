@@ -72,6 +72,7 @@ map <Leader>rp <Action>(Replace)
 map <Leader>il <Action>(Inline)
 imap <S-Space> <Action>(copilot.requestCompletions)
 map <Leader>oe <Action>(RevealIn)
+map <Leader>os <Action>(RecentProjectListGroup)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
