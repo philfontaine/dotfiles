@@ -57,6 +57,7 @@ map <Leader>si :source ~\.ideavimrc<CR>
 map gs <Action>(GotoSymbol)
 map gc <Action>(GotoClass)
 map <C-p> <Action>(GotoFile)
+map <C-e> <Action>(RecentFiles)
 map <Leader>fu <Action>(FindUsages)
 map <Leader>gr <Action>(GotoRelated)
 map <leader>gi <Action>(GotoImplementation)
@@ -93,7 +94,6 @@ map <Leader>oc <Action>(ActivateCommitToolWindow)
 map <C-m> <Action>(ShowPopupMenu)
 map <Leader>pi <Action>(ParameterInfo)
 map <Leader>fs <Action>(FileStructurePopup)
-map <Leader>rf <Action>(RecentFiles)
 
 " Editor navigation
 map <Leader>ne <Action>(GotoNextError)
