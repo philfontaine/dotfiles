@@ -7,7 +7,6 @@ set highlightedyank
 set surround
 set easymotion
 set matchit
-set which-key
 set notimeout
 
 " Better behaviors
