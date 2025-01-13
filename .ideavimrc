@@ -97,6 +97,7 @@ map <Leader>oc <Action>(ActivateCommitToolWindow)
 map <C-m> <Action>(ShowPopupMenu)
 map <Leader>pi <Action>(ParameterInfo)
 map <Leader>fs <Action>(FileStructurePopup)
+map <Leader>rf <Action>(Refactorings.QuickListPopupAction)
 
 " Editor navigation
 map <Leader>ne <Action>(GotoNextError)
