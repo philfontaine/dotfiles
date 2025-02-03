@@ -36,16 +36,21 @@ nmap yic l[bv]wy
 " The below is needed because camel case text object mess up `nnoremap c "_c`
 nnoremap ci "_ci
 
-" Split at next comma
-let @s = "hf,a<CR><Esc>"
-nnoremap <Leader>s, @s
-
 " Split function
-nmap <Leader>sf _f(a<CR><Esc> 10<Leader>s,
+nmap <Leader>sf2 _f(a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf3 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf4 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf5 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf6 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf7 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
 
 " Split chain
-let @c = "f)f.i<CR><Esc>"
-nmap <Leader>sc _f(F.i<CR><Esc> 10<Leader>@c
+nmap <Leader>sc2 _f(F.i<CR><Esc> f)f.i<CR><Esc>
+nmap <Leader>sc3 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc4 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc5 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc6 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc7 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
 
 " Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
