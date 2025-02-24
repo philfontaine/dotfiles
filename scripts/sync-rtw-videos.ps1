@@ -1,0 +1,2 @@
+robocopy "\\tecsrvqnap01\storage\Employees\P.Fontaine\RTW Videos\_Root" "C:\Users\pfont\Documents\RTW Videos\_Root" /E /MIR
+robocopy "\\tecsrvqnap01\storage\Employees\P.Fontaine\RTW Videos\_Fill" "C:\Users\pfont\Documents\RTW Videos\_Fill" /E /MIR
