@@ -23,7 +23,7 @@ nnoremap x "_x
 nnoremap s "_s
 nnoremap c "_c
 nnoremap C "_C
-xnoremap p "_dP
+xnoremap p "0p
 xnoremap c "_c
 xnoremap < <gv
 xnoremap > >gv
