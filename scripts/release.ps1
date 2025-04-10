@@ -17,6 +17,11 @@ function ExecuteGitCommand($command)
     }
 }
 
+if (!($version))
+{
+    throw "Missing version."
+}
+
 Write-Host "Releasing v$version..."
 
 ExecuteGitCommand "git add ."
