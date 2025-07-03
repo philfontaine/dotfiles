@@ -1,4 +1,4 @@
-source ~\AppData\Local\nvim\init.vim
+source ~/.vimrc
 
 " Options
 set clipboard+=ideaput
@@ -56,8 +56,8 @@ nmap <Leader>sc7 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
 " Edit config
-map <Leader>ei :e ~\.ideavimrc<CR>
-map <Leader>si :source ~\.ideavimrc<CR>
+map <Leader>ei :e ~/.ideavimrc<CR>
+map <Leader>si :source ~/.ideavimrc<CR>
 
 " General IDE shortcuts
 map gs <Action>(GotoSymbol)

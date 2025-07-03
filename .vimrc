@@ -59,5 +59,5 @@ imap <C-p> <Nop>
 map <C-n> <Nop>
 
 " Edit config 
-map <Leader>ev :e ~\AppData\Local\nvim\init.vim<CR>
-map <Leader>sv :source ~\AppData\Local\nvim\init.vim<CR>
+map <Leader>ev :e ~/.vimrc<CR>
+map <Leader>sv :source ~/.vimrc<CR>
