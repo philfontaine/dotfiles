@@ -83,6 +83,7 @@ map <Leader>oe <Action>(RevealIn)
 map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
+map <Leader>og :!wt lg<CR>
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
