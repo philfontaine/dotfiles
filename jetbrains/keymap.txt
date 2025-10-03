@@ -1,0 +1,17 @@
+﻿<C-j> Down
+<C-k> Up
+<C-h> Left
+<C-l> Right
+<C-n> New...
+<C-o> Back
+<S-C-A-j> Resize window down
+<S-C-A-k> Resize window up
+<S-C-A-h> Resize window left
+<S-C-A-l> Resize window right
+<C-s> Save all
+<C-m> Show popup menu
+<C-r> Split vertically
+<S-A-v> Toggle vim plugin
+<C-h> Previous splitter
+<C-l> Next splitter
+<C-r> Show in explorer
