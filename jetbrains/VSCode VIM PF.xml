@@ -1,0 +1,245 @@
+<keymap version="1" name="VSCode VIM PF" parent="VSCode">
+  <action id="Arrangement.Alias.Rule.Add">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="Arrangement.Rule.Add">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="alt left" />
+    <keyboard-shortcut first-keystroke="ctrl o" />
+  </action>
+  <action id="BookmarksView.Create" />
+  <action id="BookmarksView.MoveDown" />
+  <action id="CIDR.Debugger.CopyAddress">
+    <keyboard-shortcut first-keystroke="shift alt c" />
+  </action>
+  <action id="CheckinFiles">
+    <keyboard-shortcut first-keystroke="s" />
+  </action>
+  <action id="CloseAllEditors" />
+  <action id="CloseAllEditorsButActive" />
+  <action id="CloseProject">
+    <keyboard-shortcut first-keystroke="shift ctrl w" />
+  </action>
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="ctrl space" />
+  </action>
+  <action id="CollapseAllRegions" />
+  <action id="CollapseBlock">
+    <keyboard-shortcut first-keystroke="ctrl alt open_bracket" />
+  </action>
+  <action id="CollapseDocComments" />
+  <action id="CollapseRegionRecursively" />
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="ctrl slash" />
+  </action>
+  <action id="CompareClipboardWithSelection" />
+  <action id="Console.TableResult.SelectRow" />
+  <action id="CopyAbsolutePath">
+    <keyboard-shortcut first-keystroke="shift alt c" />
+  </action>
+  <action id="CopyPaths">
+    <keyboard-shortcut first-keystroke="shift alt c" />
+  </action>
+  <action id="EditSourceInNewWindow" />
+  <action id="EditWithSupermaven" />
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="EditorDownWithSelection">
+    <keyboard-shortcut first-keystroke="shift down" />
+    <keyboard-shortcut first-keystroke="shift ctrl down" />
+  </action>
+  <action id="EditorDuplicate" />
+  <action id="EditorDuplicateLines">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="EditorJoinLines" />
+  <action id="EditorLeft">
+    <keyboard-shortcut first-keystroke="left" />
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="EditorRight">
+    <keyboard-shortcut first-keystroke="right" />
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="EditorScrollToCenter" />
+  <action id="EditorSelectLine" />
+  <action id="EditorUnSelectWord">
+    <keyboard-shortcut first-keystroke="shift alt left" />
+  </action>
+  <action id="EditorUp">
+    <keyboard-shortcut first-keystroke="up" />
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="EditorUpWithSelection">
+    <keyboard-shortcut first-keystroke="shift up" />
+    <keyboard-shortcut first-keystroke="shift ctrl up" />
+  </action>
+  <action id="ExpandAllRegions" />
+  <action id="ExpandRegionRecursively" />
+  <action id="FileChooser.NewFile" />
+  <action id="FileStructurePopup" />
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="ctrl t" />
+  </action>
+  <action id="Help.KeymapReference" />
+  <action id="HideActiveWindow" />
+  <action id="JumpToLastChange" />
+  <action id="List-selectNextRow">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="Markdown.Layout.EditorAndPreview" />
+  <action id="MoveTabRight" />
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="NextOccurence">
+    <keyboard-shortcut first-keystroke="shift alt n" />
+  </action>
+  <action id="NextSplitter" />
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="ctrl page_down" />
+    <keyboard-shortcut first-keystroke="shift ctrl space" />
+  </action>
+  <action id="OpenFile" />
+  <action id="OpenInRightSplit">
+    <keyboard-shortcut first-keystroke="shift enter" />
+  </action>
+  <action id="OpenInlineChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
+  <action id="OverrideFileTypeAction" />
+  <action id="PinActiveTabAction" />
+  <action id="PopupHector" />
+  <action id="PopupMenu-selectNext">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="PrevSplitter" />
+  <action id="PreviousOccurence">
+    <keyboard-shortcut first-keystroke="shift alt p" />
+  </action>
+  <action id="QuickChangeScheme" />
+  <action id="QuickJavaDoc" />
+  <action id="ReSharperNavigateTo" />
+  <action id="RecentProjectListGroup" />
+  <action id="ReformatCode" />
+  <action id="RemoteServers.EditServerConfig" />
+  <action id="ResizeToolWindowDown">
+    <keyboard-shortcut first-keystroke="shift ctrl alt down" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt j" />
+  </action>
+  <action id="ResizeToolWindowLeft">
+    <keyboard-shortcut first-keystroke="shift ctrl alt left" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt h" />
+  </action>
+  <action id="ResizeToolWindowRight">
+    <keyboard-shortcut first-keystroke="shift ctrl alt right" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt l" />
+  </action>
+  <action id="ResizeToolWindowUp">
+    <keyboard-shortcut first-keystroke="shift ctrl alt up" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt k" />
+  </action>
+  <action id="RevealIn">
+    <keyboard-shortcut first-keystroke="ctrl r" />
+  </action>
+  <action id="RiderNuGetToggleInfoExpanderAction" />
+  <action id="RiderOpenSolution" />
+  <action id="RiderUnitTestRunContextTwAction">
+    <keyboard-shortcut first-keystroke="shift enter" />
+  </action>
+  <action id="RiderUnitTestRunSolutionTwAction" />
+  <action id="RunDashboard.EditConfiguration" />
+  <action id="SaveAll">
+    <keyboard-shortcut first-keystroke="ctrl s" />
+  </action>
+  <action id="SelectInProjectView" />
+  <action id="ServiceView.AddService">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="ShowPopupMenu">
+    <keyboard-shortcut first-keystroke="shift f10" />
+    <keyboard-shortcut first-keystroke="context_menu" />
+    <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
+  <action id="ShowReformatFileDialog" />
+  <action id="SilentCodeCleanup">
+    <keyboard-shortcut first-keystroke="shift alt f" />
+  </action>
+  <action id="Table-selectNextRow">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="Terminal.ClearBuffer" />
+  <action id="Terminal.NextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="Terminal.PrevSplitter">
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="Terminal.SelectBlockBelow">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="Terminal.SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift alt minus" />
+  </action>
+  <action id="Terminal.SplitVertically">
+    <keyboard-shortcut first-keystroke="shift alt equals" />
+    <keyboard-shortcut first-keystroke="ctrl r" />
+  </action>
+  <action id="TextEditorWithPreview.Layout.EditorAndPreview" />
+  <action id="ToggleZenMode" />
+  <action id="Tree-selectNext">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="Tree-selectParent">
+    <keyboard-shortcut first-keystroke="left" />
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="Uml.NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="UsageFiltering.Imports" />
+  <action id="UsageFiltering.ReadAccess" />
+  <action id="Vcs.Log.FocusTextFilter" />
+  <action id="Vcs.Log.ShowTooltip" />
+  <action id="Vcs.ShowMessageHistory" />
+  <action id="VimPluginToggle">
+    <keyboard-shortcut first-keystroke="shift alt v" />
+  </action>
+  <action id="WeighingNewGroup">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="com.github.continuedev.continueintellijextension.autocomplete.CancelAutocompleteAction" />
+  <action id="dev.sweep.assistant.actions.FocusChatAction" />
+  <action id="dev.sweep.assistant.actions.NewChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl n" />
+  </action>
+  <action id="dev.sweep.assistant.actions.RejectCodeBlockAction" />
+  <action id="dev.sweep.assistant.actions.ScrollToNextCodeBlockAction" />
+  <action id="dev.sweep.assistant.actions.ScrollToPreviousCodeBlockAction" />
+  <action id="dev.sweep.assistant.apply.RejectCodeBlockAction">
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="dev.sweep.assistant.apply.RejectFileAction" />
+  <action id="dev.sweep.assistant.autocomplete.edit.RejectEditCompletionAction" />
+  <action id="dev.sweep.assistant.controllers.RightClickAction">
+    <keyboard-shortcut first-keystroke="shift ctrl j" />
+  </action>
+  <action id="org.intellij.plugins.markdown.ui.actions.styling.ToggleItalicAction" />
+  <action id="tasks.goto" />
+</keymap>
