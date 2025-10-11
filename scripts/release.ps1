@@ -22,6 +22,11 @@ if (!($version))
     throw "Missing version."
 }
 
+if ($version.StartsWith("v"))
+{
+    $version = $version.Substring(1)
+}
+
 Write-Host "Releasing v$version..."
 
 ExecuteGitCommand "git add ."
