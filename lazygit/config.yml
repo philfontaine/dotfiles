@@ -3,3 +3,5 @@ git:
   allBranchesLogCmds:
     - git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline
 notARepository: 'skip'
+gui:
+  showFileTree: false
