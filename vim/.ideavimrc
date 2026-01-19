@@ -86,6 +86,7 @@ map <Leader>ta <Action>(VimFindActionIdAction)
 map <Leader>og :!wt lg<CR>
 map <Leader>ie <Action>(dev.sweep.assistant.components.ShowPromptBarAction)
 map <Leader>oa <Action>(dev.sweep.assistant.actions.NewChatAction)
+map <Leader>nc <Action>(dev.sweep.assistant.actions.GoToFileWithChangesAction)
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
