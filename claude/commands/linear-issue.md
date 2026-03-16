@@ -36,3 +36,4 @@ When the implementation is complete:
 1. Commit the changes and push the branch.
 2. Use the Linear MCP to transition the issue status to **In Review**.
 3. Create a pull request using `gh pr create`. Reference the Linear issue ID in the PR title or body.
+4. Use the Linear MCP to attach the PR URL to the issue (add it as a comment or set it as the issue's attachment/URL).

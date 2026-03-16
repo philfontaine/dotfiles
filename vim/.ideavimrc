@@ -87,6 +87,7 @@ map <Leader>og :!wt lg<CR>
 map <Leader>ie <Action>(dev.sweep.assistant.components.ShowPromptBarAction)
 map <Leader>oa <Action>(dev.sweep.assistant.actions.NewChatAction)
 map <Leader>nc <Action>(dev.sweep.assistant.actions.GoToFileWithChangesAction)
+map <Leader>cl :!wt claude<CR>
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
