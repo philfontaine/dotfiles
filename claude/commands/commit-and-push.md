@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git *:*)
+allowed-tools: Bash(git push:*)
 description: Commit all changes and push to the remote branch
 ---
 
