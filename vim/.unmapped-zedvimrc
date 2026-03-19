@@ -1,0 +1,219 @@
+" ============================================================
+" Entries from .zedvimrc that could NOT be mapped to keymap.json
+" ============================================================
+
+" ============================================================
+" VIM SETTINGS — Use Zed's settings.json instead
+" ============================================================
+
+" set clipboard+=unnamed
+"   → "vim": { "use_system_clipboard": "always" }
+
+" set scrolloff=10
+"   → "vertical_scroll_margin": 10  (approximate — Zed uses pixels not lines)
+
+" set number + set relativenumber
+"   → "line_numbers": "relative"
+"   → In vim settings: "toggle_relative_line_numbers": true  (absolute in insert, relative in normal)
+
+" set ignorecase + set smartcase
+"   → "vim": { "use_smartcase_find": true }
+
+" set hlsearch + set incsearch
+"   → Built-in behavior in Zed's vim mode, no setting needed.
+
+
+" ============================================================
+" SCROLL + CENTER — Cannot chain vim commands in keymap.json
+" ============================================================
+
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+noremap n nzz
+noremap N Nzz
+" Zed's keymap.json does not support chaining multiple vim operations.
+" No known viewport scroll-only action (ctrl-e/ctrl-y equivalent) was found
+" for ctrl-j/ctrl-k remapping either — those bindings were omitted.
+" ctrl-e / ctrl-y work natively in Zed's vim mode if you use them directly.
+
+
+" ============================================================
+" COMPLEX VIM SEQUENCES — No equivalent Zed action
+" ============================================================
+
+nnoremap J Jh
+" Join lines while keeping cursor on the last character of the first line.
+" No Zed action equivalent.
+
+" Blackhole register operations — Zed's keymap actions don't expose register selection:
+nnoremap x "_x
+nnoremap s "_s
+nnoremap c "_c
+nnoremap C "_C
+xnoremap c "_c
+
+xnoremap p "_dP
+" Paste in visual mode without overwriting the yank register.
+" This is a complex two-step vim sequence with register selection.
+
+xnoremap < <gv
+xnoremap > >gv
+" Indent and re-enter visual mode to keep selection.
+" NOTE: Test this in Zed first — Zed may already re-select after indent/dedent in visual mode.
+
+noremap gm %
+" Mapped as editor::MoveToEnclosingBracket in keymap.json (normal + visual cursor jump).
+" LIMITATION: Won't work as a motion for operators (e.g., d gm, y gm) because
+" Zed's keymap.json has no operator-pending context.
+
+noremap [[ [{
+noremap ]] ]}
+" Jump to previous/next enclosing brace. No direct Zed action equivalent.
+
+noremap Q @q
+" Run macro 'q'. No Zed action to replay a named macro.
+
+" Operator-pending mode for gl / gh:
+onoremap gl $
+onoremap gh ^
+" Zed keymap.json has no operator-pending context. The gl/gh bindings in
+" keymap.json only work as cursor movements in normal/visual mode, not as
+" motions for d, c, y, etc.
+
+noremap + <C-a>
+noremap - <C-x>
+" Increment/decrement number under cursor. No confirmed Zed action name found.
+
+" g h is mapped to editor::MoveToBeginningOfLine (equivalent to vim's `0`).
+" vim's `^` (first non-whitespace) has no confirmed distinct Zed action name.
+noremap gh ^
+
+
+" ============================================================
+" CAMEL CASE TEXT OBJECTS — No Zed equivalent
+" ============================================================
+
+nmap vic l[bv]w
+nmap cic l[bv]wc
+nmap dic l[bv]wd
+nmap yic l[bv]wy
+" These simulate camel case text objects via complex vim sequences.
+" Consider a Zed extension for camel case word operations.
+
+
+" ============================================================
+" CONFLICTING BINDINGS
+" ============================================================
+
+map gc <Action>(GotoClass)
+" CONFLICT: `gc` is the vim-commentary operator prefix in Zed's vim mode.
+" Mapping gc to an action breaks gc + motion (gcc, gcj, etc.) for toggling comments.
+" Alternative: use command_palette::Toggle and search for the symbol type,
+" or remap to a different key like <Leader>gc.
+
+
+" ============================================================
+" SHELL COMMANDS — No Zed keymap equivalent
+" ============================================================
+
+map <Leader>lg :!wt lg<CR>
+map <Leader>cl :!wt claude<CR>
+" These open Windows Terminal with lazygit/claude.
+" Workaround: Define Zed tasks in tasks.json, then bind via task::Spawn.
+" Example tasks.json entry:
+"   { "label": "lazygit", "command": "wt", "args": ["lg"] }
+" Then bind: "space l g": ["task::Spawn", { "task_name": "lazygit" }]
+
+
+" ============================================================
+" RIDER / RESHARPER SPECIFIC — No Zed equivalent
+" ============================================================
+
+map gn <Action>(ReSharperNavigateTo)
+" Use editor::GoToDefinition or command_palette::Toggle as alternatives.
+
+map <Leader>gr <Action>(GotoRelated)
+" No direct Zed equivalent.
+
+map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+" Rider hot reload / apply changes. No Zed equivalent.
+
+map <Leader>il <Action>(Inline)
+" Rider inline refactoring. Use editor::ToggleCodeActions for available refactors.
+
+map <Leader>iv <Action>(IntroduceVariable)
+" Rider extract variable. Use editor::ToggleCodeActions for available refactors.
+
+map <Leader>cc <Action>(SilentCodeCleanup)
+" Rider code cleanup. No direct Zed equivalent.
+
+map <Leader>ba <Action>(BuildWholeSolutionAction)
+" Rider solution build. Use Zed tasks for build commands.
+
+map <Leader>rt <Action>(RiderUnitTestRunContextAction)
+map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
+" Rider test runner. Use Zed tasks for test run/debug commands.
+
+map <Leader>cs <Action>(CloseProject)
+" Close project/workspace. Potentially workspace::CloseWindow but unconfirmed.
+
+map <C-m> <Action>(ShowPopupMenu)
+" Rider context menu. No standard Zed equivalent.
+
+
+" ============================================================
+" UNCERTAIN / UNCONFIRMED — Omitted from keymap.json
+" ============================================================
+
+" ctrl-e → Recent files
+" Action name not confirmed. Candidates: recent_files::Toggle, workspace::OpenRecent.
+" Omitted to avoid breaking Zed's built-in ctrl-e behavior.
+map <C-e> <Action>(RecentFiles)
+
+" ctrl-j / ctrl-k → Scroll viewport one line (ctrl-e / ctrl-y)
+" No confirmed viewport-only scroll action found. editor::LineDown moves the cursor.
+" ctrl-e and ctrl-y work natively in Zed's vim mode.
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
+
+map <Leader>tp <Action>(PinActiveEditorTab)
+" Pin active tab. Unknown if Zed has a pin tab action (pane::Pin?).
+
+map <Leader>tm <Action>(CloseAllUnmodifiedEditors)
+" Close unmodified tabs. Unknown Zed equivalent.
+
+nnoremap <Leader>wo <C-W>o
+" Close all other splits (keep only current). Unknown Zed action.
+
+map <Leader>pi <Action>(ParameterInfo)
+" Mapped as editor::ShowSignatureHelp in keymap.json — verify this is correct.
+
+map <A-C-h> <Action>(UnselectPreviousOccurrence)
+" Deselect the last added occurrence. No confirmed Zed action found.
+
+map <Leader>ra <Action>(Run)
+" Run last configuration. task::Spawn opens the task picker, not run-last.
+" May need ["task::Rerun", {}] if that action exists.
+
+map <Leader>ee <Action>(QuickEvaluateExpression)
+" Mapped as debugger::EvaluateSelectedText in keymap.json — verify action name.
+
+
+" ============================================================
+" ACTIONS IN keymap.json THAT MAY NEED NAME VERIFICATION
+" ============================================================
+" The following are included as best guesses — confirm against Zed's action list:
+"
+"   editor::ContextMenuNext / ContextMenuPrev   (insert ctrl-j/k completions)
+"   editor::MoveToBeginningOfLine               (gh — this is `0`, not `^`)
+"   editor::GoToPreviousSymbol / GoToNextSymbol ([f / ]f — may not be method-specific)
+"   workspace::NewSearch                        (space f f — could be project_search::ToggleFocus)
+"   workspace::OpenRecent                       (space o s)
+"   workspace::ToggleZoom                       (space h w — not the same as HideAllWindows)
+"   debug_panel::Toggle                         (space o d)
+"   git_panel::Toggle                           (space o c)
+"   pane::RevealInProjectPanel                  (space o e / space s p)
+"   pane::CloseInactiveItems                    (space t o)
+"   editor::ShowSignatureHelp                   (space p i)
+"   debugger::EvaluateSelectedText              (space e e)
+"   pane::SplitDown / pane::SplitRight          (space w s / space w v)

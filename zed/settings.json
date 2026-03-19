@@ -1,0 +1,70 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "agent": {
+    "use_modifier_to_send": true,
+    "favorite_models": [],
+    "play_sound_when_agent_done": true,
+    "model_parameters": []
+  },
+  "tabs": {
+    "show_diagnostics": "errors",
+    "git_status": false,
+    "file_icons": true
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "document_folding_ranges": "on",
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "show_parameter_hints": false,
+    "show_type_hints": false,
+    "show_value_hints": true,
+    "enabled": true
+  },
+  "always_treat_brackets_as_autoclosed": false,
+  "allow_rewrap": "in_comments",
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length",
+  "vim": {
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "relative_line_numbers": "disabled",
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "which_key": {
+    "enabled": true
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+}

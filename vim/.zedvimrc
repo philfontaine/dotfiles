@@ -1,0 +1,173 @@
+" Leader
+noremap <Space> <Nop>
+let mapleader = " "
+
+" Options
+set clipboard+=unnamed
+set scrolloff=10
+set incsearch
+set hlsearch
+set number
+set relativenumber
+set ignorecase
+set smartcase
+
+" Better behaviors
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+noremap n nzz
+noremap N Nzz
+nnoremap Y y$
+nnoremap J Jh
+nnoremap x "_x
+nnoremap s "_s
+nnoremap c "_c
+nnoremap C "_C
+xnoremap p "_dP
+xnoremap c "_c
+xnoremap < <gv
+xnoremap > >gv
+
+" Better shortcuts
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+nnoremap gl $
+xnoremap gl $
+onoremap gl $
+nnoremap gh ^
+xnoremap gh ^
+onoremap gh ^
+noremap gm %
+noremap + <C-a>
+noremap - <C-x>
+nnoremap U <C-r>
+noremap Q @q
+noremap [[ [{
+noremap ]] ]}
+
+" Misc
+nmap <Leader>ns :nohlsearch<CR>
+
+" Break old habits / unwanted shortcuts
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+imap <C-n> <Nop>
+imap <C-p> <Nop>
+map <C-n> <Nop>
+
+" Break old habits / unwanted shortcuts
+map <A-S-f> <Nop>
+map <C-S-f> <Nop>
+imap <C-n> <Nop>
+imap <C-p> <Nop>
+map <C-n> <Nop>
+
+" Camel case text object
+nmap vic l[bv]w
+nmap cic l[bv]wc
+nmap dic l[bv]wd
+nmap yic l[bv]wy
+
+" General IDE shortcuts
+map gs <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
+map gn <Action>(ReSharperNavigateTo)
+map <C-p> <Action>(GotoFile)
+map <C-e> <Action>(RecentFiles)
+map <Leader>fu <Action>(FindUsages)
+map <Leader>gr <Action>(GotoRelated)
+map <leader>gi <Action>(GotoImplementation)
+map <Leader>ff <Action>(FindInPath)
+map <Leader>re <Action>(RenameElement)
+map <Leader>zc <Action>(CollapseAllRegions)
+map <Leader>zo <Action>(ExpandAllRegions)
+map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+map <Leader>ss <Action>(ShowSettings)
+map <Leader>ao <Action>(SelectAllOccurrences)
+map <Leader>rp <Action>(Replace)
+map <Leader>il <Action>(Inline)
+map <Leader>iv <Action>(IntroduceVariable)
+map <Leader>oe <Action>(RevealIn)
+map <Leader>os <Action>(RecentProjectListGroup)
+map <Leader>cs <Action>(CloseProject)
+map <Leader>ta <Action>(VimFindActionIdAction)
+map <Leader>lg :!wt lg<CR>
+map <Leader>cl :!wt claude<CR>
+
+" Save/Cleanup
+imap <C-s> <Action>(SaveAll)<Esc>
+map <Leader>fd <Action>(ReformatCode)
+map <Leader>cc <Action>(SilentCodeCleanup)
+map <Leader>oi <Action>(OptimizeImports)
+
+" IDE windows
+map <Leader>sp <Action>(SelectInProjectView)
+map <Leader>op <Action>(ActivateProjectToolWindow)
+map <Leader>of <Action>(ActivateFindToolWindow)
+map <Leader>ot <Action>(ActivateTerminalToolWindow)
+map <Leader>od <Action>(ActivateDebugToolWindow)
+map <Leader>hw <Action>(HideAllWindows)
+map <Leader>oc <Action>(ActivateCommitToolWindow)
+
+" Popups
+map <C-m> <Action>(ShowPopupMenu)
+map <Leader>pi <Action>(ParameterInfo)
+map <Leader>fs <Action>(FileStructurePopup)
+map <Leader>rf <Action>(Refactorings.QuickListPopupAction)
+
+" Editor navigation
+map <Leader>ne <Action>(GotoNextError)
+map <Leader>pe <Action>(GotoPreviousError)
+map [d <Action>(ReSharperGotoPrevErrorInSolution)
+map ]d <Action>(ReSharperGotoNextErrorInSolution)
+map [f <Action>(MethodUp)
+map ]f <Action>(MethodDown)
+
+" Build/Run/Debug
+map <Leader>ba <Action>(BuildWholeSolutionAction)
+map <Leader>ra <Action>(Run)
+map <Leader>da <Action>(Debug)
+map <Leader>sa <Action>(Stop)
+map <Leader>rt <Action>(RiderUnitTestRunContextAction)
+map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
+map <Leader>tb <Action>(ToggleLineBreakpoint)
+map <C-S-A-j> <Action>(StepOver)
+map <C-S-A-k> <Action>(Resume)
+map <C-S-A-h> <Action>(StepOut)
+map <C-S-A-l> <Action>(StepInto)
+map <Leader>ee <Action>(QuickEvaluateExpression)
+
+" Great stuff from VS Code but without arrow keys
+map <A-S-j> <Action>(EditorDuplicateLines)
+map <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)
+map <A-S-h> <Action>(EditorUnSelectWord)
+map <A-S-l> <Action>(EditorSelectWord)
+map <A-C-j> <Action>(EditorCloneCaretBelow)
+map <A-C-k> <Action>(EditorCloneCaretAbove)
+map <A-C-h> <Action>(UnselectPreviousOccurrence)
+map <A-C-l> <Action>(SelectNextOccurrence)
+
+" Tab navigation
+nmap <C-h> <Action>(PreviousTab)
+nmap <C-l> <Action>(NextTab)
+imap <C-h> <Action>(PreviousTab)
+imap <C-l> <Action>(NextTab)
+map <Leader>tc <Action>(CloseContent)
+map <Leader>to <Action>(CloseAllEditorsButActive)
+map <Leader>tp <Action>(PinActiveEditorTab)
+map <Leader>tm <Action>(CloseAllUnmodifiedEditors)
+
+" Window navigation
+nnoremap <Leader>wc <C-W>c
+nnoremap <Leader>wo <C-W>o
+nnoremap <Leader>wj <C-W>j
+nnoremap <Leader>wk <C-W>k
+nnoremap <Leader>wh <C-W>h
+nnoremap <Leader>wl <C-W>l
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>wv <C-W>v
