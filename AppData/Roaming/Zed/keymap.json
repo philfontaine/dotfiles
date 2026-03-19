@@ -15,7 +15,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-s": "workspace::Save",
+      "ctrl-s": "workspace::SaveAll",
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
       "alt-shift-j": "editor::DuplicateLineDown",
