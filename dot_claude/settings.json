@@ -3,7 +3,6 @@
     "defaultMode": "acceptEdits",
     "allow": [
       "Bash(dotnet build*)",
-      "Bash(dotnet rebuild*)",
       "Bash(dotnet restore*)",
       "Bash(dotnet run*)",
       "Bash(dotnet test*)",
