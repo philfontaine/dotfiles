@@ -94,4 +94,17 @@
       "space f f": "workspace::NewSearch",
     },
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-j": null,
+    },
+  },
+  {
+    "context": "(Editor && (showing_code_actions || showing_completions))",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
+  },
 ]
