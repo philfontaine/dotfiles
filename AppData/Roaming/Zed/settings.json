@@ -37,7 +37,7 @@
   "always_treat_brackets_as_autoclosed": false,
   "allow_rewrap": "in_comments",
   "preferred_line_length": 100,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "none",
   "vim": {
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true,
