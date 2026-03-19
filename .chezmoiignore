@@ -2,6 +2,9 @@
 *
 
 ## Zed
+!AppData/
+!AppData/Roaming/
+!AppData/Roaming/Zed/
 !AppData/Roaming/Zed/keymap.json
 !AppData/Roaming/Zed/settings.json
 
@@ -17,4 +20,17 @@
 !.claude/skills/**
 
 ## Lazygit
+!AppData/
+!AppData/Local/
+!AppData/Local/lazygit/
 !AppData/Local/lazygit/config.yml
+
+## Vim
+!.vimrc
+
+## Ideavim
+!.ideavimrc
+
+## Obsidian Vim
+!Obsidian/
+!Obsidian/.obsidian.vimrc
