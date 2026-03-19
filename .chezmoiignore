@@ -1,0 +1,8 @@
+## Ignore everything except chezmoi-managed paths
+*
+
+## Zed
+!AppData
+!AppData/Roaming
+!AppData/Roaming/Zed
+!AppData/Roaming/Zed/**
