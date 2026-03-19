@@ -27,6 +27,7 @@
       "Bash(pnpm install*)",
       "Bash(pnpm lint*)",
       "Bash(pnpm tsc*)",
+      "Bash(pnpm check*)",
       "Read",
       "mcp__linear-server__get_issue",
       "mcp__linear-server__save_issue"
