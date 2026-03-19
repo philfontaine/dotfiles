@@ -33,6 +33,9 @@
       "mcp__linear-server__save_issue"
     ]
   },
+  "env": {
+    "EDITOR": "zed --new --wait"
+  },
   "autoUpdatesChannel": "latest",
   "enabledPlugins": {
     "csharp-lsp@claude-plugins-official": true
