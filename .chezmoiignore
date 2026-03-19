@@ -2,14 +2,11 @@
 *
 
 ## Zed
-!AppData
-!AppData/Roaming
-!AppData/Roaming/Zed
-!AppData/Roaming/Zed/**
+!AppData/Roaming/Zed/keymap.json
+!AppData/Roaming/Zed/settings.json
 
 ## Claude Code
 !CLAUDE.md
-!.claude
 !.claude/settings.json
 !.claude/keymaps.json
 !.claude/agents/**
