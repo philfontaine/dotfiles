@@ -34,7 +34,7 @@
     ]
   },
   "env": {
-    "EDITOR": "zed --new --wait"
+    "EDITOR": "nvim"
   },
   "autoUpdatesChannel": "latest",
   "enabledPlugins": {
