@@ -84,9 +84,6 @@ map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
 map <Leader>og :!wt lg<CR>
-map <Leader>ie <Action>(dev.sweep.assistant.components.ShowPromptBarAction)
-map <Leader>oa <Action>(dev.sweep.assistant.actions.NewChatAction)
-map <Leader>nc <Action>(dev.sweep.assistant.actions.GoToFileWithChangesAction)
 map <Leader>cl :!wt claude<CR>
 
 " Save/Cleanup
@@ -202,6 +199,3 @@ sethandler <C-Y> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
 sethandler <C-]> a:vim
-
-" Sweep AI Tab completion mapping
-map <Tab> :action dev.sweep.assistant.autocomplete.edit.AcceptEditCompletionAction<CR>
