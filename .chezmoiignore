@@ -23,10 +23,11 @@
 !AppData/
 !AppData/Local/
 !AppData/Local/lazygit/
-!AppData/Local/lazygit/config.yml
 
-## Vim
-!.vimrc
+## Neovim
+!AppData/
+!AppData/Local/
+!AppData/Local/nvim/
 
 ## Ideavim
 !.ideavimrc
