@@ -1,37 +1,22 @@
 ## Ignore everything except chezmoi-managed paths
 *
 
-## Zed
+## AppData
 !AppData/
 !AppData/Roaming/
-!AppData/Roaming/Zed/
-!AppData/Roaming/Zed/keymap.json
-!AppData/Roaming/Zed/settings.json
+!AppData/Local/
 
 ## Claude Code
 !CLAUDE.md
 !.claude/
-!.claude/settings.json
-!.claude/keymaps.json
 !.claude/agents/**
 !.claude/commands/**
 !.claude/hooks/**
 !.claude/rules/**
 !.claude/skills/**
 
-## Lazygit
-!AppData/
-!AppData/Local/
-!AppData/Local/lazygit/
-
-## Neovim
-!AppData/
-!AppData/Local/
-!AppData/Local/nvim/
-
 ## Ideavim
 !.ideavimrc
 
-## Obsidian Vim
+## Obsidian
 !Obsidian/
-!Obsidian/.obsidian.vimrc
