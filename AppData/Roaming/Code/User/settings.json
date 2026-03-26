@@ -157,5 +157,7 @@
     { "before": ["<C-l>"], "commands": ["workbench.action.nextEditor"] },
     { "before": ["<C-s>"], "commands": ["workbench.action.files.saveAll"], "after": ["<Esc>"] },
     { "before": ["<S-Space>"], "commands": ["editor.action.inlineSuggest.trigger"] }
-  ]
+  ],
+  "claudeCode.preferredLocation": "panel",
+  "diffEditor.renderSideBySide": false
 }

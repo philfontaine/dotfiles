@@ -28,5 +28,4 @@
   { "key": "ctrl+shift+alt+k", "command": "workbench.action.debug.continue" },
   { "key": "ctrl+shift+alt+h", "command": "workbench.action.debug.stepOut" },
   { "key": "ctrl+shift+alt+l", "command": "workbench.action.debug.stepInto" }
-
 ]
