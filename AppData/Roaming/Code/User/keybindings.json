@@ -1,0 +1,32 @@
+[
+  // Place your key bindings in this file to overwrite the defaults
+  { "key": "ctrl+shift+-", "command": "-workbench.action.navigateForward" },
+  { "key": "ctrl+n", "command": "-workbench.action.files.newUntitledFile" },
+  { "key": "ctrl+n", "command": "explorer.newFile", "when": "filesExplorerFocus" },
+  { "key": "ctrl+d", "command": "explorer.newFolder", "when": "filesExplorerFocus" },
+  { "key": "shift+alt+v", "command": "toggleVim", "when": "editorFocus" }, 
+  { "key": "shift+alt+down", "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus && !editorReadonly" }, 
+  { "key": "shift+alt+k", "command": "editor.action.copyLinesUpAction", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "ctrl+alt+l", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
+  { "key": "ctrl+alt+h", "command": "editor.action.addSelectionToPreviousFindMatch" },
+  { "key": "ctrl+alt+h", "command": "cursorUndo", "when": "textInputFocus" },
+  { "key": "shift+alt+n", "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" },
+  { "key": "shift+alt+p", "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" },
+  { "key": "ctrl+l", "command": "-expandLineSelection", "when": "textInputFocus" },
+  { "key": "ctrl+l", "command": "workbench.action.nextEditor" },
+  { "key": "ctrl+h", "command": "workbench.action.previousEditor" },
+  { "key": "alt+j", "command": "editor.action.moveLinesDownAction", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+k", "command": "editor.action.moveLinesUpAction", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+shift+j", "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+shift+h", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
+  { "key": "alt+shift+l", "command": "editor.action.smartSelect.grow", "when": "editorTextFocus" },
+  { "key": "alt+ctrl+j", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" },
+  { "key": "alt+ctrl+k", "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" },
+  { "key": "alt+ctrl+h", "command": "editor.action.moveSelectionToPreviousFindMatch", "when": "editorTextFocus" },
+  { "key": "alt+ctrl+l", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorTextFocus" },
+  { "key": "ctrl+shift+alt+j", "command": "workbench.action.debug.stepOver" },
+  { "key": "ctrl+shift+alt+k", "command": "workbench.action.debug.continue" },
+  { "key": "ctrl+shift+alt+h", "command": "workbench.action.debug.stepOut" },
+  { "key": "ctrl+shift+alt+l", "command": "workbench.action.debug.stepInto" }
+
+]
