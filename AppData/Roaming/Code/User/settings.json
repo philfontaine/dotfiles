@@ -3,7 +3,6 @@
   "editor.cursorSurroundingLines": 10,
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
-  "gitlens.telemetry.enabled": false,
   "telemetry.editStats.enabled": false,
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "error",
@@ -17,7 +16,6 @@
   "vim.surround": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
-  "workbench.colorTheme": "Dark Modern",
   "workbench.startupEditor": "none",
 
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -159,5 +157,6 @@
     { "before": ["<S-Space>"], "commands": ["editor.action.inlineSuggest.trigger"] }
   ],
   "claudeCode.preferredLocation": "panel",
-  "diffEditor.renderSideBySide": false
+  "diffEditor.renderSideBySide": false,
+  "claudeCode.useTerminal": true
 }
