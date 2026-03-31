@@ -31,11 +31,25 @@ process.stdin.on('end', () => {
   }
 
   // Daily (5-hour window)
-  const daily = json.rate_limits?.five_hour?.used_percentage;
-  if (daily != null) {
-    const pct = Math.round(daily);
+  const fiveHour = json.rate_limits?.five_hour;
+  if (fiveHour?.used_percentage != null) {
+    const pct = Math.round(fiveHour.used_percentage);
     const color = pct >= 90 ? red : pct >= 70 ? yellow : `${dim}${white}`;
-    parts.push(`${color}daily:${pct}%${reset}`);
+    let label = `daily:${pct}%`;
+    if (fiveHour.resets_at != null) {
+      const resetsAt = new Date(fiveHour.resets_at * 1000);
+      const now = new Date();
+      const diffMs = resetsAt - now;
+      if (diffMs > 0) {
+        const hours = resetsAt.getHours();
+        const suffix = hours >= 12 ? 'PM' : 'AM';
+        const displayHour = hours % 12 || 12;
+        label += ` (resets at ${displayHour}${suffix})`;
+      } else {
+        label += ` (resetting)`;
+      }
+    }
+    parts.push(`${color}${label}${reset}`);
   }
 
   // Weekly (7-day window)
