@@ -1,6 +1,8 @@
 {
+  "env": {
+    "EDITOR": "nvim"
+  },
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(dotnet build*)",
       "Bash(dotnet restore*)",
@@ -31,13 +33,16 @@
       "Read",
       "mcp__linear-server__get_issue",
       "mcp__linear-server__save_issue"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
-  "env": {
-    "EDITOR": "nvim"
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "node ~/.claude/statusline.js"
   },
-  "autoUpdatesChannel": "latest",
   "enabledPlugins": {
     "csharp-lsp@claude-plugins-official": true
-  }
+  },
+  "autoUpdatesChannel": "latest"
 }
