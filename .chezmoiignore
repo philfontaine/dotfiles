@@ -7,7 +7,6 @@
 !AppData/Local/
 
 ## Claude Code
-!CLAUDE.md
 !.claude/
 !.claude/agents/**
 !.claude/commands/**
