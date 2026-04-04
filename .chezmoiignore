@@ -19,3 +19,7 @@
 
 ## Obsidian
 !Obsidian/
+
+## WezTerm
+!.config/
+!.config/wezterm/

@@ -3,6 +3,8 @@ local act = wezterm.action
 local mux = wezterm.mux
 local config = wezterm.config_builder()
 
+config.font = wezterm.font 'JetBrains Mono'
+
 config.keys = {
   { key = 'h', mods = 'CTRL', action = act.ActivateTabRelative(-1) },
   { key = 'l', mods = 'CTRL', action = act.ActivateTabRelative(1) },
