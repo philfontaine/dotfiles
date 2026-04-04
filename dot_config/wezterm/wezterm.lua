@@ -21,10 +21,10 @@ config.keys = {
   { key = 'w', mods = 'CTRL', action = act.CloseCurrentPane { confirm = false } },
   { key = 'c', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
   { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
-  { key = 'h', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Left', 2 } },
+  { key = 'h', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Left', 4 } },
   { key = 'j', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Down', 2 } },
   { key = 'k', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Up', 2 } },
-  { key = 'l', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 2 } },
+  { key = 'l', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 4 } },
 }
 
 config.mouse_bindings = {
