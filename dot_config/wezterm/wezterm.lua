@@ -6,7 +6,8 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'JetBrains Mono'
 config.color_scheme = 'Catppuccin Mocha'
 
-config.default_prog = { 'pwsh' }
+-- The NoLogo fixes a column offset bug
+config.default_prog = { 'pwsh', '-NoLogo' }
 
 config.keys = {
   { key = 'h', mods = 'CTRL', action = act.ActivateTabRelative(-1) },
