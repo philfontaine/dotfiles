@@ -86,8 +86,8 @@ map <Leader>oe <Action>(RevealIn)
 map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
-map <Leader>og :!wezterm lg<CR>
-map <Leader>cl :!wezterm cl<CR>
+map <Leader>lg :!wezterm lazygit<CR>
+map <Leader>cl :!wezterm claude<CR>
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
