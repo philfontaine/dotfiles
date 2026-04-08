@@ -55,6 +55,9 @@ nmap <Leader>sc7 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i
 " Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
+" Combos
+nmap <Leader>gu <Leader>[f<Leader>fu
+
 " Edit config
 map <Leader>ei :e ~/.ideavimrc<CR>
 map <Leader>si :source ~/.ideavimrc<CR>
@@ -83,8 +86,8 @@ map <Leader>oe <Action>(RevealIn)
 map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
-map <Leader>og :!wt lg<CR>
-map <Leader>cl :!wt claude<CR>
+map <Leader>og :!wezterm lg<CR>
+map <Leader>cl :!wezterm cl<CR>
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)
