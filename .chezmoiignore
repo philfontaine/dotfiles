@@ -6,6 +6,9 @@
 !AppData/Roaming/
 !AppData/Local/
 
+## .config
+!.config/
+
 ## Claude Code
 !.claude/
 !.claude/agents/**
@@ -19,7 +22,3 @@
 
 ## Obsidian
 !Obsidian/
-
-## WezTerm
-!.config/
-!.config/wezterm/
