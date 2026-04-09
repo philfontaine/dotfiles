@@ -44,5 +44,6 @@
   "enabledPlugins": {
     "csharp-lsp@claude-plugins-official": true
   },
-  "autoUpdatesChannel": "latest"
+  "autoUpdatesChannel": "latest",
+  "skipAutoPermissionPrompt": true
 }
