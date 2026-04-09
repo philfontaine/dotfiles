@@ -1,6 +1,5 @@
 # Add . ~/.config/powershell/profile.ps1 to $PROFILE
 
-Set-PSReadLineOption -PredictionViewStyle ListView
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Set-Alias -Name cl -Value claude
 Set-Alias -Name lg -Value lazygit
