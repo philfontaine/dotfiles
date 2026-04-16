@@ -9,6 +9,7 @@
 
 - If a refactor helps to implement a feature, plan/propose the refactor first
 - Only add comments to explain the "why", not the "what"
+- If you learned something non-obvious and you think it's worth remembering, propose adding it to the project's CLAUDE.md.
 
 ## Backend (.NET C#)
 
