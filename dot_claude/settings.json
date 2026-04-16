@@ -1,6 +1,7 @@
 {
   "env": {
-    "EDITOR": "nvim"
+    "EDITOR": "nvim",
+    "DISABLE_TELEMETRY": "1"
   },
   "permissions": {
     "allow": [
