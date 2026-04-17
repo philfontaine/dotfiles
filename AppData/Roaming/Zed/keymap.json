@@ -83,6 +83,8 @@
       "space w v": "pane::SplitRight",
       "space w c": "pane::CloseActiveItem",
       "ctrl-n": null,
+      "+": "vim::Increment",
+      "-": "vim::Decrement",
     },
   },
   {
