@@ -18,6 +18,19 @@ process.stdin.on('end', () => {
 
   const parts = [];
 
+  // Repo: current directory + git branch
+  const cwd = json.cwd;
+  if (cwd) {
+    const dir = cwd.split(/[\\/]/).filter(Boolean).pop() || cwd;
+    parts.push(`${ESC}[36m${dir}${reset}`);
+  }
+  if (cwd) {
+    try {
+      const branch = execSync(`git -C "${cwd}" --no-optional-locks rev-parse --abbrev-ref HEAD 2>/dev/null`, { encoding: 'utf8' }).trim();
+      if (branch && branch !== 'HEAD') parts.push(`${magenta}${branch}${reset}`);
+    } catch {}
+  }
+
   // Model
   const model = json.model?.display_name || json.model?.id || '?';
   parts.push(`${blue}${model}${reset}`);
@@ -58,21 +71,6 @@ process.stdin.on('end', () => {
     const pct = Math.round(weekly);
     const color = pct >= 90 ? red : pct >= 70 ? yellow : `${dim}${white}`;
     parts.push(`${color}weekly:${pct}%${reset}`);
-  }
-
-  // Current directory
-  const cwd = json.cwd;
-  if (cwd) {
-    const dir = cwd.split(/[\\/]/).filter(Boolean).pop() || cwd;
-    parts.push(`${ESC}[36m${dir}${reset}`);
-  }
-
-  // Git branch
-  if (cwd) {
-    try {
-      const branch = execSync(`git -C "${cwd}" --no-optional-locks rev-parse --abbrev-ref HEAD 2>/dev/null`, { encoding: 'utf8' }).trim();
-      if (branch && branch !== 'HEAD') parts.push(`${magenta}${branch}${reset}`);
-    } catch {}
   }
 
   process.stdout.write(parts.join(` ${dim}|${reset} `));
