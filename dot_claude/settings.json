@@ -50,5 +50,6 @@
     "figma@claude-plugins-official": true
   },
   "autoUpdatesChannel": "latest",
+  "editorMode": "vim",
   "skipAutoPermissionPrompt": true
 }
