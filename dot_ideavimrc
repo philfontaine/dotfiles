@@ -104,6 +104,7 @@ map <Leader>ot <Action>(ActivateTerminalToolWindow)
 map <Leader>od <Action>(ActivateDebugToolWindow)
 map <Leader>hw <Action>(HideAllWindows)
 map <Leader>oc <Action>(ActivateCommitToolWindow)
+map <Leader>oa <Action>(ActivateAIAssistantToolWindow)
 
 " Popups
 map <C-m> <Action>(ShowPopupMenu)
