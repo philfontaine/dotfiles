@@ -58,7 +58,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cmd /c chcp 65001 >nul && powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\claude-hook-toast.ps1"
+            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
           }
         ]
       }
@@ -68,10 +68,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cmd /c chcp 65001 >nul && powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\claude-hook-toast.ps1"
+            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
           }
         ]
       }
-    ]
+    ],
+    "PermissionRequest": {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
+        }
+      ]
+    }
   }
 }
