@@ -72,14 +72,6 @@
           }
         ]
       }
-    ],
-    "PermissionRequest": {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
-        }
-      ]
-    }
+    ]
   }
 }
