@@ -1,6 +1,6 @@
 ---
 name: add-tfw-arch-testing
-description: Wires ArchUnitNET-based architecture tests into a TFW-based .NET solution. Adds the Tfw.Tests.Architecture project to the solution, ensures an xUnit test project exists, generates ArchitectureTests.cs with the correct assembly names, and verifies the test runs. Use when the user asks to add architecture tests or TFW arch testing to a project.
+description: Wires ArchUnitNET-based architecture tests into a TFW-based .NET solution. Adds the Tfw.Tests.Architecture project to the solution, ensures a test project exists, generates ArchitectureTests.cs with the correct assembly names and test framework syntax, and verifies the test runs. Use when the user asks to add architecture tests or TFW arch testing to a project.
 ---
 
 # Add TFW Architecture Testing
@@ -29,22 +29,37 @@ Wire ArchUnitNET-based architecture tests into the current TFW project by follow
 
 ---
 
-## Step 2 — Ensure an xUnit test project exists
+## Step 2 — Ensure a test project exists
 
-1. Search for any `*.csproj` under the repo root that contains a `PackageReference` to
-   `Microsoft.NET.Test.Sdk` or `xunit`. Also accept a top-level `Tests/Tests.csproj` if present.
-2. **If found**: record its path as `<TestsCsproj>` and `<TestsDir>`. Skip to step 2c.
-3. **If not found**: create one.
-   - Read `<TargetFramework>` from the App csproj (identified in step 3 below — you may need to
-     do a quick scan first) to use the same value.
+**Detecting the test framework** in an existing project — check the csproj for these
+`PackageReference` includes:
+
+| Framework   | Package(s) to look for                          | ArchUnitNET adapter package              |
+|-------------|--------------------------------------------------|------------------------------------------|
+| xUnit v2    | `xunit` (no `.v3`) + `Microsoft.NET.Test.Sdk`   | `TngTech.ArchUnitNET.xUnit`              |
+| xUnit v3    | `xunit.v3` or `XUnit.v3`                         | `TngTech.ArchUnitNET.xUnit`              |
+| TUnit       | `TUnit`                                          | `TngTech.ArchUnitNET.TUnit` *(if available, otherwise fall back to the xUnit adapter and note it)* |
+| NUnit       | `NUnit`                                          | `TngTech.ArchUnitNET.NUnit`              |
+| MSTest      | `MSTest.TestFramework`                           | `TngTech.ArchUnitNET.MSTestV2`           |
+
+Record the detected framework as `<TestFramework>`.
+
+1. Search for any `*.csproj` under the repo root whose content matches one of the package patterns
+   above. Also accept a top-level `Tests/Tests.csproj` if present.
+2. **If found**: record its path as `<TestsCsproj>`, its directory as `<TestsDir>`, and its
+   detected framework as `<TestFramework>`. Skip to step 2d.
+3. **If not found**: create one using xUnit v2 as the default.
+   - Read `<TargetFramework>` from the App csproj to use the same value.
    - Run: `dotnet new xunit -o Tests -f <TargetFramework>`
    - Add it to the solution (`.slnx` XML edit or `dotnet sln add Tests/Tests.csproj`).
-   - Record `Tests/Tests.csproj` as `<TestsCsproj>`, `Tests/` as `<TestsDir>`.
-4. Add the ArchUnitNET xUnit package if not already present:
+   - Record `Tests/Tests.csproj` as `<TestsCsproj>`, `Tests/` as `<TestsDir>`, `xunit` as
+     `<TestFramework>`.
+4. Add the appropriate ArchUnitNET adapter package if not already present (see table above):
    ```
-   dotnet add <TestsCsproj> package TngTech.ArchUnitNET.xUnit
+   dotnet add <TestsCsproj> package <ArchUnitNET-adapter-package>
    ```
-   Skip if `TngTech.ArchUnitNET.xUnit` is already in the csproj.
+   Also add the base package `TngTech.ArchUnitNET` if the adapter does not pull it in transitively
+   (check after restore).
 
 ---
 
@@ -57,8 +72,11 @@ Wire ArchUnitNET-based architecture tests into the current TFW project by follow
 
 **Identify the UiApp project** (entry point, contains Views):
 
-- Heuristic: a `*.csproj` that has `<OutputType>Exe</OutputType>` (or is a WPF/Avalonia app) and
-  contains a `<ProjectReference>` pointing to the App project.
+- Primary heuristic: a `*.csproj` named `*Views*`, or any project that references the App project
+  **and** contains `.cs` files with classes inheriting from `TfwView` (grep for `: TfwView` or
+  `TfwView<`).
+- Fallback heuristic: a `*.csproj` that has `<OutputType>Exe</OutputType>` (or is a WPF/Avalonia
+  app) and contains a `<ProjectReference>` pointing to the App project.
 
 **Disambiguation**: if more than one candidate is found for either role, list them to the user with
 `AskUserQuestion` and let them pick.
@@ -93,24 +111,37 @@ dotnet add <TestsCsproj> reference Tfw/Tfw.Tests.Architecture/Tfw.Tests.Architec
 - If the file already exists, leave it untouched and inform the user.
 - Resolve the namespace: read `<RootNamespace>` from the test csproj; fall back to the project file
   name without `.csproj`.
-- Write the file with this exact content (substituting the three placeholders):
+- Pick the using directive, attribute, and method signature based on `<TestFramework>`:
+
+| Framework      | `using` directive             | Attribute      | Method signature       |
+|----------------|-------------------------------|----------------|------------------------|
+| xUnit v2/v3    | `using ArchUnitNET.xUnit;`    | `[Fact]`       | `public void`          |
+| NUnit          | `using ArchUnitNET.NUnit;`    | `[Test]`       | `public void`          |
+| MSTest         | `using ArchUnitNET.MSTestV2;` | `[TestMethod]` | `public void`          |
+| TUnit          | `using ArchUnitNET.TUnit;`    | `[Test]`       | `public async Task`    |
+
+- Write the file using the template below, substituting all five placeholders:
 
 ```csharp
-using ArchUnitNET.xUnit;
+<using-directive>
 using Tfw.Tests.Architecture;
 
 namespace <RootNamespace>;
 
 public class ArchitectureTests
 {
-    [Fact]
-    public void CheckTfwRules()
+    [<attribute>]
+    public <method-signature> CheckTfwRules()
     {
         var tfwArchitecture = new TfwArchitecture("<AppAssembly>", "<UiAppAssembly>");
         tfwArchitecture.GetStrictRules().Check(tfwArchitecture.Architecture);
     }
 }
 ```
+
+  For TUnit add `await` before `tfwArchitecture.GetStrictRules().Check(...)` only if the adapter's
+  `Check` method is awaitable; otherwise keep it synchronous and change the signature back to
+  `public void`.
 
 ---
 
