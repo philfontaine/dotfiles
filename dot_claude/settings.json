@@ -39,19 +39,6 @@
     "defaultMode": "acceptEdits"
   },
   "model": "opusplan",
-  "statusLine": {
-    "type": "command",
-    "command": "node ~/.claude/statusline.js"
-  },
-  "enabledPlugins": {
-    "csharp-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "figma@claude-plugins-official": true
-  },
-  "autoUpdatesChannel": "latest",
-  "editorMode": "vim",
-  "skipAutoPermissionPrompt": true,
   "hooks": {
     "Notification": [
       {
@@ -73,5 +60,28 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node ~/.claude/statusline.js"
+  },
+  "enabledPlugins": {
+    "csharp-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "tfw@tecnar": true
+  },
+  "extraKnownMarketplaces": {
+    "tecnar": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:Tecnar/claude-plugins.git"
+      },
+      "autoUpdate": true
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "editorMode": "vim",
+  "skipAutoPermissionPrompt": true
 }
