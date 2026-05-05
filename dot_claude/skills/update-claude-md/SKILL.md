@@ -15,10 +15,10 @@ If unclear, ask the user which sections need updating.
 
 **Sections:**
 
-- Project description
-- Project structure
+- Project Description
+- Project Structure
 - Commands
-- Key files or directories
+- Key Files or Directories
 - Gotchas
 
 **Principles:**
