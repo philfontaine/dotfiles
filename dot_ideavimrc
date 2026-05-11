@@ -86,6 +86,7 @@ map <Leader>oe <Action>(RevealIn)
 map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
+map <Leader>rc <Action>(RedesignedRunConfigurationSelector)
 map <Leader>lg :!start /b wezterm start --cwd . lazygit<CR>
 map <Leader>cl :!start /b wezterm start --cwd . claude<CR>
 
