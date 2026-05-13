@@ -6,6 +6,11 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'JetBrains Mono'
 config.color_scheme = 'Catppuccin Mocha'
 
+config.inactive_pane_hsb = {
+  saturation = 0.8,
+  brightness = 0.6,
+}
+
 -- The NoLogo fixes a column offset bug
 config.default_prog = { 'pwsh', '-NoLogo' }
 
