@@ -43,21 +43,19 @@ process.stdin.on('end', () => {
     parts.push(`${color}ctx:${pct}%${reset}`);
   }
 
-  // Daily (5-hour window)
+  // 5-hour window
   const fiveHour = json.rate_limits?.five_hour;
   if (fiveHour?.used_percentage != null) {
     const pct = Math.round(fiveHour.used_percentage);
     const color = pct >= 90 ? red : pct >= 70 ? yellow : `${dim}${white}`;
-    let label = `daily:${pct}%`;
+    let label = `5h: ${pct}%`;
     if (fiveHour.resets_at != null) {
       const resetsAt = new Date(fiveHour.resets_at * 1000);
-      const now = new Date();
-      const diffMs = resetsAt - now;
-      if (diffMs > 0) {
+      if (resetsAt - new Date() > 0) {
         const hours = resetsAt.getHours();
         const suffix = hours >= 12 ? 'PM' : 'AM';
         const displayHour = hours % 12 || 12;
-        label += ` (resets at ${displayHour}${suffix})`;
+        label += ` (${displayHour}${suffix})`;
       } else {
         label += ` (resetting)`;
       }
@@ -65,12 +63,26 @@ process.stdin.on('end', () => {
     parts.push(`${color}${label}${reset}`);
   }
 
-  // Weekly (7-day window)
-  const weekly = json.rate_limits?.seven_day?.used_percentage;
-  if (weekly != null) {
-    const pct = Math.round(weekly);
+  // 7-day window
+  const sevenDay = json.rate_limits?.seven_day;
+  if (sevenDay?.used_percentage != null) {
+    const pct = Math.round(sevenDay.used_percentage);
     const color = pct >= 90 ? red : pct >= 70 ? yellow : `${dim}${white}`;
-    parts.push(`${color}weekly:${pct}%${reset}`);
+    let label = `7d: ${pct}%`;
+    if (sevenDay.resets_at != null) {
+      const resetsAt = new Date(sevenDay.resets_at * 1000);
+      if (resetsAt - new Date() > 0) {
+        const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const hours = resetsAt.getHours();
+        const suffix = hours >= 12 ? 'PM' : 'AM';
+        const displayHour = hours % 12 || 12;
+        label += ` (${days[resetsAt.getDay()]} ${months[resetsAt.getMonth()]} ${resetsAt.getDate()} ${displayHour}${suffix})`;
+      } else {
+        label += ` (resetting)`;
+      }
+    }
+    parts.push(`${color}${label}${reset}`);
   }
 
   process.stdout.write(parts.join(` ${dim}|${reset} `));
