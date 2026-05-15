@@ -4,6 +4,7 @@
 
 - Primary stack: .NET C# (backend), Vue.js + Quasar (frontend)
 - OS: Windows 11
+- Available runtimes: .NET and Node.js — Python is NOT installed, do not generate Python scripts
 
 ## General Preferences
 
