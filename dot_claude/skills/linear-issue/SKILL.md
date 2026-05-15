@@ -1,4 +1,7 @@
-Work on a Linear issue end-to-end: fetch the issue, plan, implement, and open a PR.
+---
+name: linear-issue
+description: Work on a Linear issue end-to-end: fetch the issue, plan, implement, and open a PR.
+---
 
 ## Usage
 `/linear-issue <ISSUE-ID>` (e.g. `/linear-issue ENG-123`)

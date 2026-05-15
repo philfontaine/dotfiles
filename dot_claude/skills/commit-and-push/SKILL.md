@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git push:*)
+name: commit-and-push
 description: Commit session-related changes and push to the remote branch
 ---
 

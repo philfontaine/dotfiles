@@ -9,7 +9,6 @@ This repo is managed with [Chezmoi](https://www.chezmoi.io/). Always edit files 
 - `dot_claude/settings.json`
 - `dot_claude/keybindings.json`
 - `dot_claude/executable_statusline.js`
-- `dot_claude/commands/*`
 - `dot_claude/skills/*`
 
 ### VS Code
