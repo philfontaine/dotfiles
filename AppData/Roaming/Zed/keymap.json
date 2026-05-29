@@ -94,6 +94,8 @@
       "g h": "vim::StartOfLine",
       "g m": "vim::Matching",
       "space f f": "workspace::NewSearch",
+      "+": "vim::Increment",
+      "-": "vim::Decrement",
     },
   },
   {
