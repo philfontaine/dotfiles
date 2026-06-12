@@ -31,9 +31,11 @@ process.stdin.on('end', () => {
     } catch {}
   }
 
-  // Model
+  // Model + effort
   const model = json.model?.display_name || json.model?.id || '?';
-  parts.push(`${blue}${model}${reset}`);
+  const effort = json.effort?.level;
+  const modelLabel = effort ? `${model} ${dim}[${effort}]${reset}` : model;
+  parts.push(`${blue}${modelLabel}${reset}`);
 
   // Context %
   const ctxPct = json.context_window?.used_percentage;
