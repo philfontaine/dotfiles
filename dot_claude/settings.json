@@ -38,7 +38,7 @@
       "mcp__linear-server__get_issue",
       "mcp__linear-server__save_issue"
     ],
-    "defaultMode": "auto"
+    "defaultMode": "plan"
   },
   "model": "opusplan",
   "hooks": {
