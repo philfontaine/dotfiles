@@ -1,0 +1,164 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "disableAnimations": true,
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.ResizePaneDown",
+            "keys": "ctrl+alt+shift+j"
+        },
+        {
+            "id": "Terminal.OpenNewTab",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+h"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.NextTab",
+            "keys": "ctrl+l"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "alt+shift+h"
+        },
+        {
+            "id": "Terminal.SplitPaneRight",
+            "keys": "ctrl+r"
+        },
+        {
+            "id": "Terminal.SplitPaneDown",
+            "keys": "ctrl+j"
+        },
+        {
+            "id": "Terminal.MoveFocusDown",
+            "keys": "alt+shift+j"
+        },
+        {
+            "id": "Terminal.MoveFocusUp",
+            "keys": "alt+shift+k"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "alt+shift+l"
+        },
+        {
+            "id": "Terminal.ClosePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "Terminal.ResizePaneLeft",
+            "keys": "ctrl+alt+shift+h"
+        },
+        {
+            "id": "Terminal.ResizePaneUp",
+            "keys": "ctrl+alt+shift+k"
+        },
+        {
+            "id": "Terminal.ResizePaneRight",
+            "keys": "ctrl+alt+shift+l"
+        }
+    ],
+    "launchMode": "maximized",
+    "newTabMenu": [],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "Catppuccin Mocha",
+            "unfocusedAppearance": 
+            {
+                "colorScheme": "Catppuccin Mocha Dim"
+            }
+        },
+        "list": 
+        [
+            {
+                "commandline": "pwsh.exe -NoLogo",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore",
+                "startingDirectory": null
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#1E1E2E",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#CBA6F7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#CBA6F7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
+        {
+            "background": "#14141C",
+            "black": "#2C2D36",
+            "blue": "#607596",
+            "brightBlack": "#383943",
+            "brightBlue": "#607596",
+            "brightCyan": "#628881",
+            "brightGreen": "#6B8869",
+            "brightPurple": "#7F6D94",
+            "brightRed": "#92606E",
+            "brightWhite": "#686B78",
+            "brightYellow": "#958A72",
+            "cursorColor": "#938987",
+            "cyan": "#628881",
+            "foreground": "#808498",
+            "green": "#6B8869",
+            "name": "Catppuccin Mocha Dim",
+            "purple": "#7F6D94",
+            "red": "#92606E",
+            "selectionBackground": "#383943",
+            "white": "#747885",
+            "yellow": "#958A72"
+        }
+    ],
+    "showTabsFullscreen": true,
+    "tabSwitcherMode": "disabled",
+    "themes": []
+}
