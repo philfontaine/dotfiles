@@ -32,9 +32,13 @@ process.stdin.on('end', () => {
   }
 
   // Model + effort
-  const model = json.model?.display_name || json.model?.id || '?';
+  const modelRaw = json.model?.display_name || json.model?.id || '?';
+  const modelId = json.model?.id || '';
   const effort = json.effort?.level;
-  const modelLabel = effort ? `${model} ${dim}[${effort}]${reset}` : model;
+  const is1M = modelRaw.includes('1M') || modelId.includes('1m');
+  const modelName = modelRaw.replace(/\s*\(1M context\)/i, '').trim();
+  const bracket = is1M && effort ? `[1M-${effort}]` : is1M ? '[1M]' : effort ? `[${effort}]` : '';
+  const modelLabel = bracket ? `${modelName} ${dim}${bracket}${reset}` : modelName;
   parts.push(`${blue}${modelLabel}${reset}`);
 
   // Context %
