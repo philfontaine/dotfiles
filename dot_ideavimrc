@@ -87,8 +87,8 @@ map <Leader>os <Action>(RecentProjectListGroup)
 map <Leader>cs <Action>(CloseProject)
 map <Leader>ta <Action>(VimFindActionIdAction)
 map <Leader>rc <Action>(RedesignedRunConfigurationSelector)
-map <Leader>lg :!start /b wezterm start --cwd . lazygit<CR>
-map <Leader>cl :!start /b wezterm start --cwd . claude<CR>
+map <Leader>lg :!wt lazygit<CR>
+map <Leader>cl :!wt claude<CR>
 
 " Save/Cleanup
 map <C-s> <Action>(SaveAll)

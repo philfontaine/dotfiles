@@ -35,6 +35,7 @@ This repo is managed with [Chezmoi](https://www.chezmoi.io/). Always edit files 
 ### Terminal & OS
 
 - `wezterm/wezterm.lua`
+- `AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json`
 - `AppData/Local/lazygit/config.yml`
 
 ### Chezmoi
