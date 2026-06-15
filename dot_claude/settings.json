@@ -4,7 +4,7 @@
     "DISABLE_TELEMETRY": "1",
     "CLAUDE_CODE_NEW_INIT": "1",
     "CLAUDE_CODE": "1",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "sonnet[1m]"
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6[1m]"
   },
   "permissions": {
     "allow": [
