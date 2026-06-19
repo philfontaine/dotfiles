@@ -1,6 +1,7 @@
 ---
 name: commit-and-push
 description: Commit session-related changes and push to the remote branch
+allowed-tools: Bash(git status:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*)
 ---
 
 Note: git should work fine from any subdirectory. Do NOT use `cd` nor `git -C`.

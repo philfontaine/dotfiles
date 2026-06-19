@@ -91,7 +91,7 @@
   "autoMode": {
     "soft_deny": [
       "$defaults",
-      "Don't use `git stage`, `git commit` or `git push` unless explicitly told to."
+      "Don't run git commit, git push, or other commands that write to git history (e.g. git cherry-pick, git merge, git rebase, git am) without explicit user approval for each operation. This overrides the Git Push to Working Branch allow rule."
     ]
   }
 }
