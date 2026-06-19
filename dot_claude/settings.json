@@ -87,5 +87,11 @@
   "autoUpdatesChannel": "latest",
   "theme": "dark",
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Don't use `git stage`, `git commit` or `git push` unless explicitly told to."
+    ]
+  }
 }
