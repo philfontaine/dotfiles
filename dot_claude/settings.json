@@ -70,7 +70,7 @@
     "csharp-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "tfw@tecnar": true
+    "tfw@tecnar": false
   },
   "extraKnownMarketplaces": {
     "tecnar": {
