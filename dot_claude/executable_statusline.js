@@ -18,17 +18,17 @@ process.stdin.on('end', () => {
 
   const parts = [];
 
-  // Repo: current directory + git branch
+  // Repo: current directory + git branch (e.g. "dotfiles@main")
   const cwd = json.cwd;
   if (cwd) {
     const dir = cwd.split(/[\\/]/).filter(Boolean).pop() || cwd;
-    parts.push(`${ESC}[36m${dir}${reset}`);
-  }
-  if (cwd) {
+    let repoLabel = `${ESC}[36m${dir}${reset}`;
     try {
-      const branch = execSync(`git -C "${cwd}" --no-optional-locks rev-parse --abbrev-ref HEAD 2>/dev/null`, { encoding: 'utf8' }).trim();
-      if (branch && branch !== 'HEAD') parts.push(`${magenta}${branch}${reset}`);
+      // stdio ignores stderr instead of "2>/dev/null", which cmd.exe (Windows) doesn't understand
+      const branch = execSync(`git -C "${cwd}" --no-optional-locks rev-parse --abbrev-ref HEAD`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+      if (branch && branch !== 'HEAD') repoLabel += `${dim}@${reset}${magenta}${branch}${reset}`;
     } catch {}
+    parts.push(repoLabel);
   }
 
   // Model + effort
