@@ -71,6 +71,10 @@
         {
             "id": "Terminal.ResizePaneRight",
             "keys": "ctrl+alt+shift+l"
+        },
+        {
+            "id": "Terminal.OpenTabRenamer",
+            "keys": "f2"
         }
     ],
     "launchMode": "maximized",
