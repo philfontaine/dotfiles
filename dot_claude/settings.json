@@ -82,6 +82,9 @@
     }
   },
   "effortLevel": "high",
+  "worktree": {
+    "baseRef": "head"
+  },
   "autoUpdatesChannel": "latest",
   "theme": "dark",
   "editorMode": "vim",
