@@ -1,6 +1,7 @@
 ---
 name: git-diff
 description: Load current git changes as context, then perform a task
+disable-model-invocation: true
 ---
 
 First, run these commands to gather the current git state:
