@@ -13,6 +13,9 @@ survives across invocations — each run just repoints the chosen worktree to a 
 
 `$ARGUMENTS` is `worktree-name branch-name`. If either is missing, stop and ask for both.
 
+0. **If currently in plan mode, stop immediately** — do not run any of the steps below. Tell the user
+   to switch to auto mode first, then re-run this skill.
+
 1. **Create the branch at current HEAD** (from the main session, before switching):
    `git branch <branch-name>`. Only ever create — never `--force` or reset an existing branch. If a
    branch with that name already exists, stop and warn the user (they can pick a different name or
