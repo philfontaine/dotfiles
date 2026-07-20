@@ -5,8 +5,6 @@ argument-hint: "worktree-name branch-name"
 disable-model-invocation: true
 ---
 
-Note: git should work fine from any subdirectory. Do NOT use `cd` nor `git -C`.
-
 This skill maintains a small pool of reusable worktrees (e.g. `wt1`, `wt2`). Worktrees are never
 removed between uses, so any expensive one-time setup (submodules, `node_modules`, build output)
 survives across invocations — each run just repoints the chosen worktree to a fresh branch at HEAD.

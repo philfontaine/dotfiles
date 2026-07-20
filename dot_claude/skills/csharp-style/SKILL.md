@@ -1,6 +1,7 @@
 ---
 name: csharp-style
-description: The user's C# coding conventions and style preferences. Use whenever writing, editing, generating, or reviewing C# code (.cs files) — before producing any C# so the output matches these conventions.
+description: The user's C# coding conventions and style preferences. Use whenever writing, editing, generating, or reviewing C# code (.cs files).
+user-invocable: false
 ---
 
 Apply these conventions to any C# code you write, edit, or review. If the surrounding file already follows a different established convention, match the file over these rules — consistency within a file wins.
