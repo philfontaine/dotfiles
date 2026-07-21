@@ -37,6 +37,13 @@
       "mcp__linear-server__get_issue",
       "mcp__linear-server__save_issue"
     ],
+    "deny": [
+      "DesignSync",
+      "NotebookEdit",
+      "CronCreate",
+      "CronDelete",
+      "CronList"
+    ],
     "defaultMode": "plan"
   },
   "model": "opus[1m]",
@@ -94,5 +101,6 @@
       "$defaults",
       "Don't run git commit, git push, or other commands that write to git history (e.g. git cherry-pick, git merge, git rebase, git am) without explicit user approval for each operation. This overrides the Git Push to Working Branch allow rule."
     ]
-  }
+  },
+  "disableWorkflows": true
 }
