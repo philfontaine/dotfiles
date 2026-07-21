@@ -39,7 +39,7 @@
     ],
     "defaultMode": "plan"
   },
-  "model": "opusplan",
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -62,6 +62,9 @@
       }
     ]
   },
+  "worktree": {
+    "baseRef": "head"
+  },
   "statusLine": {
     "type": "command",
     "command": "node ~/.claude/statusline.js"
@@ -82,9 +85,6 @@
     }
   },
   "effortLevel": "high",
-  "worktree": {
-    "baseRef": "head"
-  },
   "autoUpdatesChannel": "latest",
   "theme": "dark",
   "editorMode": "vim",
