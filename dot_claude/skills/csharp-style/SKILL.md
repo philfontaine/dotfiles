@@ -70,3 +70,15 @@ bool paramsMenuOpen;
 // Acceptable — used dozens of times in a boilerplate-heavy method
 var a = advancedParams;
 ```
+
+## Explicit nullable value types
+
+Prefer explicit nullable value types over implicit sentinel values.
+
+```csharp
+// Bad
+int position = -1;
+
+// Good
+int? position = null;
+```
