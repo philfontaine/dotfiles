@@ -33,21 +33,25 @@
       "Bash(pnpm lint*)",
       "Bash(pnpm tsc*)",
       "Bash(pnpm check*)",
-      "Read",
-      "mcp__linear-server__get_issue",
-      "mcp__linear-server__save_issue"
+      "Read"
     ],
-    "deny": [
-      "DesignSync",
-      "NotebookEdit",
-      "CronCreate",
-      "CronDelete",
-      "CronList"
-    ],
+    "deny": ["DesignSync", "NotebookEdit", "CronCreate", "CronDelete", "CronList"],
     "defaultMode": "plan"
   },
   "model": "opus[1m]",
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-block-onedrive-find.ps1\"",
+            "statusMessage": "Checking find scope (OneDrive guard)"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "hooks": [
