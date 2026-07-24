@@ -11,6 +11,7 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Set-Alias -Name cl -Value claude
 Set-Alias -Name lg -Value lazygit
 Set-Alias -Name cm -Value chezmoi
+Set-Alias -Name sg -Value SourceGit
 
 # Claude Code OpenRouter
 function clor {
