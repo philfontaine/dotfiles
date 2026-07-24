@@ -1,0 +1,174 @@
+{
+  "Locale": "en_US",
+  "Theme": "Dark",
+  "ThemeOverrides": "C:\\Users\\pfontaine\\AppData\\Roaming\\SourceGit\\JetBrainsDark_DiffHighContrast.json",
+  "DefaultFontFamily": "",
+  "MonospaceFontFamily": "",
+  "UseSystemWindowFrame": false,
+  "DefaultFontSize": 14,
+  "EditorFontSize": 13,
+  "EditorTabWidth": 4,
+  "Zoom": 1,
+  "Layout": {
+    "LauncherWidth": 1038.4,
+    "LauncherHeight": 637.6,
+    "LauncherPositionX": 0,
+    "LauncherPositionY": 0,
+    "LauncherWindowState": 2,
+    "RepositorySidebarWidth": 322,
+    "WorkingCopyLeftWidth": 300,
+    "StashesLeftWidth": 372,
+    "CommitDetailChangesLeftWidth": 378.40000000000003,
+    "CommitDetailFilesLeftWidth": 256
+  },
+  "ShowLocalChangesByDefault": false,
+  "ShowChangesInCommitDetailByDefault": true,
+  "MaxHistoryCommits": 20000,
+  "SubjectGuideLength": 50,
+  "DateTimeFormat": 0,
+  "Use24Hours": true,
+  "UseFixedTabWidth": false,
+  "UseAutoHideScrollBars": true,
+  "UseGitHubStyleAvatar": true,
+  "Check4UpdatesOnStartup": true,
+  "ShowChildren": true,
+  "IgnoreUpdateTag": "",
+  "ShowTagsInGraph": true,
+  "UseCompactBranchNamesInGraph": true,
+  "UseTwoColumnsLayoutInHistories": true,
+  "DisplayTimeAsPeriodInHistories": false,
+  "UseSideBySideDiff": false,
+  "UseSyntaxHighlighting": true,
+  "IgnoreCRAtEOLInDiff": true,
+  "UseStashAndReapplyByDefault": true,
+  "EnableAutoFetch": true,
+  "AutoFetchInterval": 5,
+  "IgnoreWhitespaceChangesInDiff": false,
+  "EnableDiffViewWordWrap": false,
+  "ShowHiddenSymbolsInDiffView": false,
+  "UseFullTextDiff": false,
+  "LFSImageActiveIdx": 0,
+  "ImageDiffActiveIdx": 0,
+  "EnableCompactFoldersInChangesTree": true,
+  "UnstagedChangeViewMode": 0,
+  "StagedChangeViewMode": 0,
+  "CommitChangeViewMode": 2,
+  "StashChangeViewMode": 0,
+  "GitInstallPath": "C:\\Program Files\\Git\\bin\\git.exe",
+  "GitDefaultCloneDir": "",
+  "UseLibsecretInsteadOfGCM": false,
+  "ShellOrTerminalType": 3,
+  "ShellOrTerminalPath": "C:\\Users\\pfontaine\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+  "ShellOrTerminalArgs": "-d .",
+  "ExternalMergeToolType": 0,
+  "ExternalMergeToolPath": "",
+  "ExternalMergeToolDiffArgs": "",
+  "ExternalMergeToolMergeArgs": "",
+  "RepositoryNodes": [
+    {
+      "Id": "9476d59c-a3ca-4bae-831e-f4fbed42aa78",
+      "Name": "other",
+      "Bookmark": 0,
+      "IsRepository": false,
+      "IsExpanded": true,
+      "Status": null,
+      "SubNodes": []
+    },
+    {
+      "Id": "9949ec76-57e4-4f0a-8e5d-3a74e86672aa",
+      "Name": "personal",
+      "Bookmark": 6,
+      "IsRepository": false,
+      "IsExpanded": true,
+      "Status": null,
+      "SubNodes": [
+        {
+          "Id": "C:/Users/pfontaine/Dev/philfontaine/dotfiles",
+          "Name": "dotfiles",
+          "Bookmark": 6,
+          "IsRepository": true,
+          "IsExpanded": false,
+          "Status": {
+            "CurrentBranch": "main",
+            "Ahead": 0,
+            "Behind": 0,
+            "LocalChanges": 0
+          },
+          "SubNodes": []
+        }
+      ]
+    },
+    {
+      "Id": "72de90fe-b285-4c1b-86b8-2552b47af05a",
+      "Name": "rotoweld",
+      "Bookmark": 2,
+      "IsRepository": false,
+      "IsExpanded": true,
+      "Status": null,
+      "SubNodes": [
+        {
+          "Id": "C:/Users/pfontaine/Dev/tecnar/rtw-prodatalog",
+          "Name": "prodatalog",
+          "Bookmark": 3,
+          "IsRepository": true,
+          "IsExpanded": false,
+          "Status": {
+            "CurrentBranch": "main",
+            "Ahead": 0,
+            "Behind": 0,
+            "LocalChanges": 0
+          },
+          "SubNodes": []
+        },
+        {
+          "Id": "C:/Users/pfontaine/Dev/tecnar/tfw-rtw-controller",
+          "Name": "rtw-controller",
+          "Bookmark": 1,
+          "IsRepository": true,
+          "IsExpanded": false,
+          "Status": {
+            "CurrentBranch": "main",
+            "Ahead": 0,
+            "Behind": 0,
+            "LocalChanges": 0
+          },
+          "SubNodes": []
+        },
+        {
+          "Id": "C:/Users/pfontaine/Dev/tecnar/rtw-hub",
+          "Name": "rtw-hub",
+          "Bookmark": 5,
+          "IsRepository": true,
+          "IsExpanded": false,
+          "Status": {
+            "CurrentBranch": "main",
+            "Ahead": 0,
+            "Behind": 0,
+            "LocalChanges": 0
+          },
+          "SubNodes": []
+        }
+      ]
+    }
+  ],
+  "Workspaces": [
+    {
+      "Name": "Default",
+      "Color": 4278221015,
+      "Repositories": [
+        "C:/Users/pfontaine/Dev/tecnar/tfw-rtw-controller",
+        "C:/Users/pfontaine/Dev/tecnar/tfw-rtw-controller.worktrees/tig",
+        "C:/Users/pfontaine/Dev/tecnar/rtw-prodatalog",
+        "C:/Users/pfontaine/Dev/tecnar/rtw-hub",
+        "C:/Users/pfontaine/Dev/philfontaine/dotfiles"
+      ],
+      "ActiveIdx": 4,
+      "IsActive": true,
+      "RestoreOnStartup": true,
+      "DefaultCloneDir": ""
+    }
+  ],
+  "CustomActions": [],
+  "OpenAIServices": [],
+  "LastCheckUpdateTime": 1784895972.4586165
+}
