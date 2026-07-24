@@ -168,7 +168,16 @@
       "DefaultCloneDir": ""
     }
   ],
-  "CustomActions": [],
+  "CustomActions": [
+    {
+      "Name": "Open in Rider",
+      "Scope": 0,
+      "Executable": "rider",
+      "Arguments": "${REPO}",
+      "Controls": [],
+      "WaitForExit": false
+    }
+  ],
   "OpenAIServices": [],
   "LastCheckUpdateTime": 1784895972.4586165
 }
