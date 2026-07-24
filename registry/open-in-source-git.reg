@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; ============================================================
+; Open in SourceGit - Explorer context menu
+; ============================================================
+
+; --- Right-click ON a folder ---
+[HKEY_CLASSES_ROOT\Directory\shell\OpenInSourceGit]
+@="Open in SourceGit"
+"Icon"="C:\\Program Files\\SourceGit\\SourceGit.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\OpenInSourceGit\command]
+@="\"C:\\Program Files\\SourceGit\\SourceGit.exe\" \"%1\""
+
+; --- Right-click INSIDE a folder (empty space) ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenInSourceGit]
+@="Open in SourceGit"
+"Icon"="C:\\Program Files\\SourceGit\\SourceGit.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenInSourceGit\command]
+@="\"C:\\Program Files\\SourceGit\\SourceGit.exe\" \"%V\""
