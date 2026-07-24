@@ -60,10 +60,10 @@
   "ShellOrTerminalType": 3,
   "ShellOrTerminalPath": "C:\\Users\\pfontaine\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
   "ShellOrTerminalArgs": "-d .",
-  "ExternalMergeToolType": 0,
-  "ExternalMergeToolPath": "",
-  "ExternalMergeToolDiffArgs": "",
-  "ExternalMergeToolMergeArgs": "",
+  "ExternalMergeToolType": 1,
+  "ExternalMergeToolPath": "C:\\Users\\pfontaine\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+  "ExternalMergeToolDiffArgs": "-n --wait --diff \u0022$LOCAL\u0022 \u0022$REMOTE\u0022",
+  "ExternalMergeToolMergeArgs": "-n --wait \u0022$MERGED\u0022",
   "RepositoryNodes": [
     {
       "Id": "9476d59c-a3ca-4bae-831e-f4fbed42aa78",
