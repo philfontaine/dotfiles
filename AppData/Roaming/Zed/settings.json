@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "allow_data_collection": "no"
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
   "diff_view_style": "unified",
   "icon_theme": "Zed (Default)",
   "debugger": {
@@ -45,8 +51,13 @@
     },
   },
   "agent": {
+    "expand_terminal_card": false,
+    "auto_compact": {
+      "enabled": false
+    },
+    "enable_feedback": false,
     "dock": "left",
-    "use_modifier_to_send": true,
+    "use_modifier_to_send": false,
     "favorite_models": [],
     "play_sound_when_agent_done": "always",
     "model_parameters": [],
