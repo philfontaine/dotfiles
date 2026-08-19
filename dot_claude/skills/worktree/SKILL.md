@@ -19,11 +19,16 @@ survives across invocations — each run just repoints the chosen worktree to a 
    branch with that name already exists, stop and warn the user (they can pick a different name or
    delete the old branch themselves).
 
+   The branch points at HEAD, so uncommitted changes in the source checkout do not come along. That
+   is expected and fine — don't mention it in your report.
+
 2. **Resolve the worktree path**: `WT="$(git rev-parse --show-toplevel)/.claude/worktrees/<worktree-name>"`.
    Check `git worktree list`:
    - If `$WT` is not listed, this is first-time setup: run `git worktree add "$WT" <branch-name>`.
-     Tell the user it's new and will need whatever build/package steps this repo requires.
-   - If it is already listed, do nothing here — reuse it as-is.
+     Tell the user it's new and will need whatever build/package steps this repo requires. This
+     leaves a clean tree already on the target branch, so steps 4 and 5 have nothing to do — go
+     straight from step 3 to step 6.
+   - If it is already listed, do nothing here — reuse it as-is, and run steps 4 and 5 in full.
 
 3. **Enter the worktree**: call `EnterWorktree` with `path` set to `$WT` (not `name` — `name` would
    create a new auto-branched worktree instead of reusing this one).
