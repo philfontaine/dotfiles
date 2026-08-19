@@ -9,8 +9,12 @@
 ## General Preferences
 
 - If a refactor helps to implement a feature, plan/propose the refactor first
-- Only add comments to explain the "why", not the "what"
 - If you learned something non-obvious and you think it's worth remembering, propose adding it to the project's CLAUDE.md.
+
+## Comments
+
+- Comments that explain "what" the code does: Avoid, improve the code instead.
+- Comments that explain the "why": Just because you decided to write something a certain way does not mean it needs a "why" comment. Only add a "why" comment if something is genuinely weird/unexpected.
 
 ## Backend (.NET C#)
 
