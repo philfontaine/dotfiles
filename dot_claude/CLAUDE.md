@@ -13,8 +13,8 @@
 
 ## Comments
 
-- Comments that explain "what" the code does: Avoid, improve the code instead.
-- Comments that explain the "why": Just because you decided to write something a certain way does not mean it needs a "why" comment. Only add a "why" comment if something is genuinely weird/unexpected.
+- Don't use comments to explain "what" the code does. Instead, refactor to improve clarity.
+- Don't use comments to explain YOUR reasoning/decisions. Only add commments if something is genuinely weird/unexpected.
 
 ## Backend (.NET C#)
 
