@@ -15,6 +15,7 @@
 
 - Don't use comments to explain "what" the code does. Instead, refactor to improve clarity.
 - Don't use comments to explain YOUR reasoning/decisions. Only add comments if something is genuinely weird/unexpected.
+- Use American English
 
 ## Working Habits
 
