@@ -14,11 +14,11 @@
 
 ## Working Habits
 
-- Don't create a worktree on your own initiative. I use them occasionally, and I'll set one up and tell you when I do.
-- Otherwise assume other agents are editing the same working tree on unrelated features:
-  - Uncommitted changes you didn't make are not yours. Never revert, stash, or stage them — stage only files you touched (no `git add -A`, no `git commit -a`).
-  - Never run repo-wide destructive commands: `git checkout .`, `git reset --hard`, `git clean`, `git stash`.
-  - Build/test failures and file locks may come from another agent's in-flight edit. If a failure is unrelated to your change, report it instead of fixing it.
+Assume that other agents or myself might be using the same working tree for unrelated features:
+
+- Uncommitted changes you didn't make are not yours. Never revert, stash, or stage them — stage only files you touched (no `git add -A`, no `git commit -a`).
+- Never run repo-wide destructive commands: `git checkout .`, `git reset --hard`, `git clean`, `git stash`.
+- Build/test failures and file locks may come from another agent's in-flight edit. If a failure is unrelated to your change, report it instead of fixing it.
 
 ## Backend (.NET C#)
 
