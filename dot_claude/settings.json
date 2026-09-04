@@ -103,7 +103,9 @@
     }
   },
   "effortLevel": "high",
+  "awaySummaryEnabled": false,
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "theme": "dark",
   "editorMode": "vim",
   "skipAutoPermissionPrompt": true,
@@ -112,7 +114,5 @@
       "$defaults",
       "Don't run git commit, git push, or other commands that write to git history (e.g. git cherry-pick, git merge, git rebase, git am) without explicit user approval for each operation. This overrides the Git Push to Working Branch allow rule."
     ]
-  },
-  "tui": "fullscreen",
-  "awaySummaryEnabled": false
+  }
 }
