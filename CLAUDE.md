@@ -34,6 +34,7 @@ After editing any file in this repo, apply it to the live config with `chezmoi a
 - `AppData/Local/nvim/init.vim`
 
 ### IdeaVim
+
 - `dot_ideavimrc`
 
 ### Obsidian
@@ -42,9 +43,7 @@ After editing any file in this repo, apply it to the live config with `chezmoi a
 
 ### Terminal & OS
 
-- `wezterm/wezterm.lua`
 - `AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json`
-- `AppData/Local/lazygit/config.yml`
 
 ### Chezmoi
 
