@@ -67,21 +67,38 @@ else
     Write-Host "    ${Yellow}Update available: $installedVersion -> $latestVersion${Reset}"
 }
 
-# Step 4: fail before downloading if the install folder is not writable
-# (C:\Program Files needs an elevated shell)
-WriteStep 'Checking write access to the install folder...'
-$writeTestPath = if (Test-Path $installPath) { $installPath } else { Split-Path -Parent $installPath }
-try
+# Step 4: writing to C:\Program Files needs an elevated shell, so relaunch
+# through UAC before anything is downloaded
+WriteStep 'Checking administrator rights...'
+$currentIdentity = [Security.Principal.WindowsIdentity]::GetCurrent()
+$isElevated = [Security.Principal.WindowsPrincipal]::new($currentIdentity).IsInRole(
+    [Security.Principal.WindowsBuiltInRole]::Administrator)
+if (!$isElevated)
 {
-    $probePath = Join-Path $writeTestPath ".write-test-$(Get-Random)"
-    New-Item -Path $probePath -ItemType File | Out-Null
-    Remove-Item -Path $probePath -Force
-    Write-Host '    Writable'
+    Write-Host "    ${Yellow}Not elevated, asking for administrator rights...${Reset}"
+    # -NoExit keeps the elevated window open so its output stays readable
+    $relaunchArguments = @(
+        '-NoExit'
+        '-ExecutionPolicy', 'Bypass'
+        '-File', "`"$PSCommandPath`""
+        '-installPath', "`"$installPath`""
+    )
+    if ($force)
+    {
+        $relaunchArguments += '-force'
+    }
+    try
+    {
+        Start-Process -FilePath (Get-Process -Id $PID).Path -Verb RunAs -ArgumentList $relaunchArguments
+    }
+    catch
+    {
+        throw 'Administrator rights are required to install SourceGit.'
+    }
+    Write-Host '    Continuing in the elevated window'
+    return
 }
-catch
-{
-    throw "$writeTestPath is not writable. Run this script from an elevated shell."
-}
+Write-Host '    Elevated'
 
 # Step 5: locate the Windows x64 archive in the release assets
 WriteStep 'Locating the win-x64 asset...'
