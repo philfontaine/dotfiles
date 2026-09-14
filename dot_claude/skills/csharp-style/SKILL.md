@@ -71,6 +71,26 @@ bool paramsMenuOpen;
 var a = advancedParams;
 ```
 
+## Measuring elapsed time
+
+Never use `DateTime` (`Now`, `UtcNow`) to measure elapsed time, durations, timeouts, or deadlines. Use
+`Stopwatch` instead.
+
+```csharp
+// Bad
+private DateTime _flashEndsAtUtc;
+_flashEndsAtUtc = DateTime.UtcNow + FlashDuration;
+if (DateTime.UtcNow >= _flashEndsAtUtc) StopFlash();
+
+// Good
+private readonly Stopwatch _flashElapsed = new();
+_flashElapsed.Restart();
+if (_flashElapsed.Elapsed >= FlashDuration) StopFlash();
+```
+
+For a one-off measurement without keeping a `Stopwatch` around, use `Stopwatch.GetTimestamp()` with
+`Stopwatch.GetElapsedTime(startTimestamp)`.
+
 ## Explicit nullable value types
 
 Prefer explicit nullable value types over implicit sentinel values.
