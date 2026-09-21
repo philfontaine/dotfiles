@@ -1,1 +1,1 @@
-dotnet run --project C:\Users\pfontaine\Dev\tecnar\rtw-prodatalog\Prodatalog.Local\
+dotnet watch --project C:\Users\pfontaine\Dev\tecnar\rtw-prodatalog\Prodatalog.Local\
