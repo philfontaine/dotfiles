@@ -14,15 +14,16 @@ Every dotnet repo on this machine has two output trees.
 
 ```
 %LOCALAPPDATA%\claude-shadow\
-  rtw4-314168388\          key: the dir of the NEAREST Directory.Build.props, + a hash of its path
+  repo1-314168388\         key: the dir of the NEAREST Directory.Build.props, + a hash of its path
     slot-0\                every agent build, unless a slot is locked
     slot-1\                only after a lock error in slot-0
     slot-lsp\              anything that did not come through an agent's shell — the C# LSP
 ```
 
 Because the key comes from the nearest `Directory.Build.props`, a submodule that has its own gets its
-own key: this repo really does have both `rtw4-…` and `Tfw-…` trees. That resolves consistently and is
-only a disk cost. `CLAUDE_SHADOW_KEY` pins one key for a whole solution if you want them merged.
+own key, so a repo with one ends up with both a `repo1-…` and a `submodule1-…` tree. That resolves
+consistently and is only a disk cost. `CLAUDE_SHADOW_KEY` pins one key for a whole solution if you
+want them merged.
 
 ## You normally do nothing
 
