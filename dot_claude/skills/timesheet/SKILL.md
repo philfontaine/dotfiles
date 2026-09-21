@@ -18,10 +18,7 @@ local branches. Run one Bash call per repo, in parallel:
 Use `$HOME` rather than `~`, which does not expand inside the quotes and makes git fail. A directory
 that is not a git repo, or that returns no commits, is simply skipped.
 
-Derive the product name from the repo's folder name: drop any leading `rtw-` or `tfw-` segments,
-replace the remaining hyphens with spaces, and title-case it, leaving acronyms uppercase — a folder
-ending in `-plc-server` becomes `PLC Server`. When nothing remains after dropping those prefixes,
-uppercase the folder name instead.
+Derive the product name from the repo's folder name, tidied up so it reads well.
 
 Then:
 
@@ -38,7 +35,7 @@ Output format per day:
 ```markdown
 ## Mon, May 4
 
-Prodatalog: KPI endpoint optimization
-Controller: Debug mode configuration from database; Weaving aggregator improvements
-TFW: Architecture testing framework
+Reporting: KPI endpoint optimization
+Scheduler: Debug mode configuration from database; retry policy rework
+Toolkit: Architecture testing framework
 ```
