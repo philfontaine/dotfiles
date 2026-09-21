@@ -71,6 +71,8 @@ $builders = [ordered]@{
     'hook-shadow-build' = { PublishDotnetAot 'hook-shadow-build' 'hook-shadow-build/hook-shadow-build.cs' }
     'hook-block-onedrive-find' = { PublishDotnetAot 'hook-block-onedrive-find' 'hook-block-onedrive-find/hook-block-onedrive-find.cs' }
     'hook-toast' = { PublishDotnetAot 'hook-toast' 'hook-toast/hook-toast.cs' }
+    'hook-comment-collector' = { PublishDotnetAot 'hook-comment-collector' 'hook-comment-collector/hook-comment-collector.cs' }
+    'hook-comment-review' = { PublishDotnetAot 'hook-comment-review' 'hook-comment-review/hook-comment-review.cs' }
 }
 
 # Step 1: pick the tools to build
