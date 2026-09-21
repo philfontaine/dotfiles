@@ -1,0 +1,12 @@
+# Native AOT binaries built from tools/ by scripts/build-claude-tools.ps1.
+# chezmoi reads the working tree rather than git, so these are still applied to
+# ~/.claude/bin; a fresh clone has to run the build script once.
+dot_claude/bin/
+
+# build-claude-tools.ps1 redirects these elsewhere, but an IDE opening a tool's
+# project creates them in place
+dot_claude/tools/**/bin/
+dot_claude/tools/**/obj/
+
+# JetBrains IDE project files
+.idea/

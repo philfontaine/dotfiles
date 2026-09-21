@@ -15,6 +15,9 @@
 !.claude/hooks/**
 !.claude/rules/**
 !.claude/skills/**
+# Build inputs for the binaries in .claude/bin, not config
+.claude/tools
+.claude/tools/**
 
 ## Ideavim
 !.ideavimrc

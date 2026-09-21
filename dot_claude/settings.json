@@ -53,8 +53,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-block-onedrive-find.ps1\"",
+            "command": "\"$USERPROFILE/.claude/bin/hook-block-onedrive-find.exe\"",
+            "timeout": 10,
             "statusMessage": "Checking find scope (OneDrive guard)"
+          },
+          {
+            "type": "command",
+            "command": "\"$USERPROFILE/.claude/bin/hook-shadow-build.exe\"",
+            "timeout": 10,
+            "statusMessage": "Routing build to the shadow tree"
           }
         ]
       }
@@ -64,7 +71,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
+            "command": "\"$USERPROFILE/.claude/bin/hook-toast.exe\""
           }
         ]
       }
@@ -74,7 +81,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/claude-hook-toast.ps1\""
+            "command": "\"$USERPROFILE/.claude/bin/hook-toast.exe\""
           }
         ]
       }
@@ -86,7 +93,7 @@
   "disableWorkflows": true,
   "statusLine": {
     "type": "command",
-    "command": "node ~/.claude/statusline.js"
+    "command": "~/.claude/bin/status-line.exe"
   },
   "enabledPlugins": {
     "csharp-lsp@claude-plugins-official": true,
