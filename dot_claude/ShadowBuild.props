@@ -1,0 +1,90 @@
+<!--
+***********************************************************************************************
+ShadowBuild.props — the Shadow Build strategy for Claude Code agents.
+
+WHAT THIS DOES
+  Redirects the entire build output (bin AND obj) of any dotnet project out of the repository
+  and into a per-worktree "shadow tree" under %LOCALAPPDATA%\claude-shadow, but ONLY for builds
+  started by a Claude Code agent. The repo's own output — the "live tree" — stays untouched, so
+  a running app, a hot-reload session or an IDE never fights an agent build for a file lock.
+
+HOW IT IS WIRED IN
+  ~/.claude/settings.json sets two environment variables:
+      CLAUDE_CODE=1
+      CustomAfterDirectoryBuildProps=<path to this file>
+  Sdk.props appends the SDK's own UseArtifactsOutputPath.props to CustomAfterDirectoryBuildProps
+  before it imports Microsoft.Common.props, which yields this import order:
+      repo Directory.Build.props  ->  THIS FILE  ->  SDK UseArtifactsOutputPath.props
+  That position matters twice over: it is late enough to override an ArtifactsPath the repo set
+  itself, and early enough that the SDK still moves BaseIntermediateOutputPath (obj). The
+  user-wide Imports\Microsoft.Common.props\ImportBefore\ folder is imported too late for that
+  and would leave obj/ behind in the repo — do not move this file there.
+
+  CustomAfterDirectoryBuildProps must be passed as an ENVIRONMENT VARIABLE, never as -p:. A -p:
+  value is a global property, which Sdk.props cannot append to, so the SDK's own artifacts props
+  would drop out of the chain and obj would stay in the repo.
+
+PRECEDENCE
+  An explicit `-p:ArtifactsPath` (or the equivalent `artifacts-path` CLI flag) is a global property,
+  which this file cannot override, so the flag always wins. That is deliberate.
+
+TO DISABLE
+  Unset the CustomAfterDirectoryBuildProps environment variable. Note that -p:CLAUDE_CODE=0 also
+  switches this off, silently sending output back into the repo — never pass it to dodge a lock.
+
+See the dotnet-shadow-build skill for the full strategy, including slot escalation on lock errors.
+***********************************************************************************************
+-->
+<Project>
+
+  <PropertyGroup Condition="'$(CLAUDE_CODE)' == '1'">
+
+    <_ShadowRoot>$(CLAUDE_SHADOW_ROOT)</_ShadowRoot>
+    <_ShadowRoot Condition="'$(_ShadowRoot)' == ''">$(LOCALAPPDATA)\claude-shadow</_ShadowRoot>
+
+    <!-- The key groups a subtree's projects together: it is the directory of the NEAREST
+         Directory.Build.props, which Microsoft.Common.props has already resolved by this point. A
+         submodule with its own Directory.Build.props therefore gets its own key, which costs disk but
+         resolves consistently. Set CLAUDE_SHADOW_KEY to pin one key for a whole solution; nothing sets
+         it automatically. -->
+    <_ShadowKeyPath Condition="'$(CLAUDE_SHADOW_KEY)' == ''">$(_DirectoryBuildPropsBasePath)</_ShadowKeyPath>
+    <_ShadowKeyPath Condition="'$(CLAUDE_SHADOW_KEY)' == '' and '$(_ShadowKeyPath)' == ''">$(MSBuildProjectDirectory)</_ShadowKeyPath>
+    <_ShadowKeyHash Condition="'$(_ShadowKeyPath)' != ''">$([MSBuild]::StableStringHash('$(_ShadowKeyPath)'))</_ShadowKeyHash>
+    <_ShadowKeyLeaf Condition="'$(_ShadowKeyPath)' != ''">$([System.IO.Path]::GetFileName('$(_ShadowKeyPath)'))</_ShadowKeyLeaf>
+    <_ShadowKeyLeaf Condition="'$(_ShadowKeyPath)' != '' and '$(_ShadowKeyLeaf)' == ''">repo</_ShadowKeyLeaf>
+
+    <_ShadowKey>$(CLAUDE_SHADOW_KEY)</_ShadowKey>
+    <_ShadowKey Condition="'$(_ShadowKey)' == ''">$(_ShadowKeyLeaf)-$(_ShadowKeyHash.Replace('-', ''))</_ShadowKey>
+
+    <!-- The hook sets CLAUDE_SHADOW_SLOT on every agent build it rewrites, so its absence means this
+         evaluation did not come from an agent's command line — in practice the C# language server
+         loading the project in-process. Those get their own slot so they never hold a lock on a file
+         an agent build is trying to write.
+
+         Do not try to detect this with DOTNET_CLI_TELEMETRY_SESSIONID: it is empty whenever telemetry
+         is opted out (DOTNET_CLI_TELEMETRY_OPTOUT=true is set in this environment), so the check
+         silently matches every build, CLI ones included. -->
+    <_ShadowSlot>$(CLAUDE_SHADOW_SLOT)</_ShadowSlot>
+    <_ShadowSlot Condition="'$(_ShadowSlot)' == ''">lsp</_ShadowSlot>
+
+    <ArtifactsPath>$(_ShadowRoot)\$(_ShadowKey)\slot-$(_ShadowSlot)</ArtifactsPath>
+    <_ShadowRedirected>true</_ShadowRedirected>
+
+    <!-- Force the artifacts layout on and clear any output path the repo pinned itself. Without this,
+         a repo that sets UseArtifactsOutput=false, or hardcodes BaseOutputPath / OutputPath /
+         BaseIntermediateOutputPath, keeps writing into itself: the SDK only *defaults* those from
+         ArtifactsPath when they are empty, so a repo-set value would win and the app lock would come
+         back. Clearing them here is safe because this props file only ever runs for agent builds. -->
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <BaseOutputPath />
+    <BaseIntermediateOutputPath />
+    <OutputPath />
+    <IntermediateOutputPath />
+
+  </PropertyGroup>
+
+  <Target Name="_AnnounceShadowBuild" BeforeTargets="Build" Condition="'$(_ShadowRedirected)' == 'true'">
+    <Message Importance="normal" Text="Shadow Build: output redirected to $(ArtifactsPath)" />
+  </Target>
+
+</Project>

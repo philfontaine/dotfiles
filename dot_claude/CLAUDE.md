@@ -22,8 +22,14 @@ Assume that other agents or myself might be using the same working tree for unre
 
 ## Backend (.NET C#)
 
-- Use `dotnet build --no-restore` to compile
-- Use `dotnet test` to run tests
+- Use `dotnet build` to compile and `dotnet test` to run tests. Don't pass `--no-restore` — it breaks a
+  cold Shadow Build slot.
+- **Always build with the Shadow Build strategy**, so a build never fights the app I have running. It is
+  automatic, but read the **`dotnet-shadow-build`** skill before working around any build output path or
+  file-lock error (`MSB3027`/`MSB3021`).
+- **Don't launch an app I'm running** to check your work — build and test, then ask me to run it, since I
+  do the visual testing. This is a default, not a rule: in a prototype, benchmark or scratch console
+  project, run it yourself.
 
 ## Frontend (Vue.js + Quasar)
 
