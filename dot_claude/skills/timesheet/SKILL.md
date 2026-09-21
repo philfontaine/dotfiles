@@ -5,27 +5,23 @@ model: haiku
 disable-model-invocation: true
 ---
 
-The root directory for all repos is `~/Dev/tecnar`. For each of the six repos below, run a `git log` to list the user's commits over the last 13 days, across all local branches:
+The root directory for all repos is `~/Dev/tecnar`. It holds far more repos than are ever active at
+once, so do not scan all of them. Start by finding the ones touched recently:
 
-- `rtw-prodatalog`
-- `tfw-rtw-controller`
-- `rtw-hub`
-- `tfw`
-- `tfw-power-wave-server`
-- `tfw-plc-server`
+`find "$HOME/Dev/tecnar" -maxdepth 1 -mindepth 1 -type d -mtime -14`
 
-Use this command, one Bash call per repo (run them in parallel):
+Then, for each directory that comes back, list the user's commits over the last 13 days across all
+local branches. Run one Bash call per repo, in parallel:
 
-`git -C "~/Dev/tecnar/<repo>" log --all --author=pfontaine --since="13 days ago" --pretty=format:"%ad|%s" --date=format:"%Y-%m-%d (%a)"`
+`git -C "$HOME/Dev/tecnar/<repo>" log --all --author=pfontaine --since="13 days ago" --pretty=format:"%ad|%s" --date=format:"%Y-%m-%d (%a)"`
 
-Repo-to-product mapping:
+Use `$HOME` rather than `~`, which does not expand inside the quotes and makes git fail. A directory
+that is not a git repo, or that returns no commits, is simply skipped.
 
-- rtw-prodatalog → Prodatalog
-- tfw-rtw-controller → Controller
-- rtw-hub → Hub
-- tfw → TFW
-- tfw-power-wave-server → Power Wave Server
-- tfw-plc-server → PLC Server
+Derive the product name from the repo's folder name: drop any leading `rtw-` or `tfw-` segments,
+replace the remaining hyphens with spaces, and title-case it, leaving acronyms uppercase — a folder
+ending in `-plc-server` becomes `PLC Server`. When nothing remains after dropping those prefixes,
+uppercase the folder name instead.
 
 Then:
 
