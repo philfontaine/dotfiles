@@ -10,6 +10,8 @@
 
 - Don't use comments to explain "what" the code does. Instead, refactor to improve clarity.
 - Don't use comments to explain YOUR reasoning/decisions. Only add comments if something is genuinely weird/unexpected.
+- A comment must make sense to someone who has never seen the diff. If it justifies a change, compares to how the
+  code used to be, or names an alternative you rejected — that's a commit message. Write it there instead.
 - Use American English
 
 ## Working Habits
