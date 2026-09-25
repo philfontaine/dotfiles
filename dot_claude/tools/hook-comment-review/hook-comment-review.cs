@@ -82,10 +82,13 @@ static string Reason(string report) =>
 
      {report}
 
-     For each one, answer: does it make sense to a reader who never saw the change?
-     If it justifies the change, compares to how the code used to be, or names an
-     alternative you rejected, delete it — that belongs in the commit message.
-     Then finish your turn.
+     Check each one against a reader who never saw the change. If it justifies the
+     change, compares to how the code used to be, or names an alternative you
+     rejected, delete it — that belongs in the commit message. Reword any other
+     comment that doesn't stand on its own.
+
+     This is a check for you, not a question for the user: fix what needs fixing
+     without reporting on the comments you keep, then finish your turn.
      """;
 
 static string? SessionFilePath(string sessionId) =>
