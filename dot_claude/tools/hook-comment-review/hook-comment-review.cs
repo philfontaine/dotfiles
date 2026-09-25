@@ -9,8 +9,9 @@
 // six months will. It prompts and does not enforce: no rule can tell a genuinely surprising
 // comment from a diff annotation, so both go in front of the model while it can still act.
 //
-// Reading the session file deletes it, which is the loop guard: a second Stop finds nothing to
-// report and lets the turn end. stop_hook_active covers the same ground from the other side.
+// Every Stop deletes the session file. When stop_hook_active is set, its comments were written
+// while answering this hook's own report, so they are dropped unreported: that is the loop guard,
+// and it keeps them from resurfacing as the next turn's comments.
 //
 // Every failure is swallowed, for the same reason the collector swallows its own: a reminder
 // about comments must never be able to wedge a session.
@@ -33,10 +34,15 @@ static void Review()
 {
     var input = JsonSerializer.Deserialize(Console.In.ReadToEnd(), HookJson.Default.HookInput);
     if (input?.SessionId is not { } sessionId
-        || input.StopHookActive == true
         || SessionFilePath(sessionId) is not { } sessionFile
         || !File.Exists(sessionFile))
     {
+        return;
+    }
+
+    if (input.StopHookActive == true)
+    {
+        File.Delete(sessionFile);
         return;
     }
 
