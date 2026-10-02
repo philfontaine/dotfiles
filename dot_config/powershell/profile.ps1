@@ -22,3 +22,11 @@ function zcl {
     }
     claude
 }
+
+function New-Tab([string] $Title, [string] $Script) {
+    wt -w 0 new-tab --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
+}
+
+function Split-Pane([string] $Title, [string] $Script) {
+    wt -w 0 split-pane -V --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
+}
