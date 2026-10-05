@@ -21,6 +21,9 @@ AppData/Local/nvim/lazy-lock.json
 .claude/tools
 .claude/tools/**
 
+## Git
+!.gitconfig
+
 ## Vim
 !.vimrc
 

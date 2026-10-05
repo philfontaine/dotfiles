@@ -67,6 +67,10 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 
 - `Obsidian/dot_obsidian.vimrc`
 
+### Git
+
+- `dot_gitconfig`
+
 ### Terminal & OS
 
 - `AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json`

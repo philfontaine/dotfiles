@@ -1,0 +1,11 @@
+[user]
+	email = pfontaine@tecnar.com
+	name = Philippe Fontaine
+[core]
+	autocrlf = true
+[fetch]
+	prune = true
+[merge]
+	ff = false
+[pull]
+	ff = true
