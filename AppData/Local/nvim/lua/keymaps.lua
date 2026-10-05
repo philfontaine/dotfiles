@@ -80,7 +80,12 @@ map("n", "<Leader>sp", function()
   Snacks.explorer.reveal()
 end)
 map("n", "<Leader>op", function()
-  Snacks.explorer()
+  local explorer = Snacks.picker.get({ source = "explorer" })[1]
+  if explorer then
+    explorer:focus()
+  else
+    Snacks.explorer()
+  end
 end)
 map("n", "<Leader>of", function()
   Snacks.picker.resume()
