@@ -78,15 +78,6 @@ nnoremap <Leader>wl <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 
-" Break old habits / unwanted shortcuts
-map <Up> <Nop>
-map <Down> <Nop>
-map <Left> <Nop>
-map <Right> <Nop>
-imap <C-n> <Nop>
-imap <C-p> <Nop>
-map <C-n> <Nop>
-
 " Edit config 
 map <Leader>ev :e ~/.vimrc<CR>
 map <Leader>sv :source ~/.vimrc<CR>

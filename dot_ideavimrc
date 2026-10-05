@@ -14,13 +14,6 @@ nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 nmap K <Action>(ShowHoverInfo)
 
-" Break old habits / unwanted shortcuts
-map <A-S-f> <Nop>
-map <C-S-f> <Nop>
-imap <C-n> <Nop>
-imap <C-p> <Nop>
-map <C-n> <Nop>
-
 " Plugin shortcuts
 nmap s <Plug>(easymotion-s)
 xmap s <Plug>(easymotion-s)
