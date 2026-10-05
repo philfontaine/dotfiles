@@ -48,13 +48,20 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 - `AppData/Roaming/Zed/settings.json`
 - `AppData/Roaming/Zed/keymap.json`
 
+### Vim
+
+- `dot_vimrc` — keybindings shared by Neovim and IdeaVim, so they stay in vimscript
+
 ### Neovim
 
-- `AppData/Local/nvim/init.vim`
+- `AppData/Local/nvim/init.lua.tmpl` — sources `~/.vimrc`, then loads the Lua config
+- `AppData/Local/nvim/lazy-lock.json` — not applied; lazy.nvim updates it in place in this repo, so commit it after `:Lazy update`
+- `AppData/Local/nvim/lua/keymaps.lua` — Neovim-only keybindings, sectioned like `dot_ideavimrc`
+- `AppData/Local/nvim/lua/plugins/*` — one lazy.nvim spec per plugin
 
 ### IdeaVim
 
-- `dot_ideavimrc`
+- `dot_ideavimrc` — sources `~/.vimrc`
 
 ### Obsidian
 

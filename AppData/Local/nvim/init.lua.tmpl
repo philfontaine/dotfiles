@@ -1,0 +1,11 @@
+vim.cmd.source("~/.vimrc")
+
+require("options")
+require("lazy-bootstrap")
+require("lazy").setup({
+  spec = { { import = "plugins" } },
+  lockfile = "{{ .chezmoi.sourceDir }}/AppData/Local/nvim/lazy-lock.json",
+  install = { colorscheme = { "catppuccin" } },
+  rocks = { enabled = false },
+})
+require("keymaps")

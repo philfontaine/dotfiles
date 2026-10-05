@@ -1,0 +1,92 @@
+" Leader
+noremap <Space> <Nop>
+let mapleader = " "
+
+" Options
+set clipboard+=unnamed
+set scrolloff=10
+set incsearch
+set hlsearch
+set number
+set relativenumber
+set ignorecase
+set smartcase
+
+" Better behaviors
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+noremap n nzz
+noremap N Nzz
+nnoremap Y y$
+nnoremap J Jh
+nnoremap x "_x
+nnoremap s "_s
+nnoremap c "_c
+nnoremap C "_C
+xnoremap p "_dP
+xnoremap c "_c
+xnoremap < <gv
+xnoremap > >gv
+
+" Better shortcuts
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+nnoremap gl $
+xnoremap gl $
+onoremap gl $
+nnoremap gh ^
+xnoremap gh ^
+onoremap gh ^
+noremap + <C-a>
+noremap - <C-x>
+nnoremap U <C-r>
+noremap Q @q
+noremap [[ [{
+noremap ]] ]}
+
+" Misc
+nmap <Leader>ns :nohlsearch<CR>
+
+" Split function
+nmap <Leader>sf2 _f(a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf3 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf4 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf5 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf6 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+nmap <Leader>sf7 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
+
+" Split chain
+nmap <Leader>sc2 _f(F.i<CR><Esc> f)f.i<CR><Esc>
+nmap <Leader>sc3 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc4 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc5 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc6 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+nmap <Leader>sc7 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
+
+" Split ternary
+nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
+
+" Window navigation
+nnoremap <Leader>wc <C-W>c
+nnoremap <Leader>wo <C-W>o
+nnoremap <Leader>wj <C-W>j
+nnoremap <Leader>wk <C-W>k
+nnoremap <Leader>wh <C-W>h
+nnoremap <Leader>wl <C-W>l
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>wv <C-W>v
+
+" Break old habits / unwanted shortcuts
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+imap <C-n> <Nop>
+imap <C-p> <Nop>
+map <C-n> <Nop>
+
+" Edit config 
+map <Leader>ev :e ~/.vimrc<CR>
+map <Leader>sv :source ~/.vimrc<CR>

@@ -5,6 +5,8 @@
 !AppData/
 !AppData/Roaming/
 !AppData/Local/
+# lazy.nvim reads and writes the lockfile in the source directory
+AppData/Local/nvim/lazy-lock.json
 
 ## .config
 !.config/
@@ -18,6 +20,9 @@
 # Build inputs for the binaries in .claude/bin, not config
 .claude/tools
 .claude/tools/**
+
+## Vim
+!.vimrc
 
 ## Ideavim
 !.ideavimrc
