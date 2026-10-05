@@ -84,6 +84,10 @@
         "defaults": 
         {
             "colorScheme": "Catppuccin Mocha",
+            "font": 
+            {
+                "face": "JetBrainsMono Nerd Font"
+            },
             "unfocusedAppearance": 
             {
                 "colorScheme": "Catppuccin Mocha Dim"
