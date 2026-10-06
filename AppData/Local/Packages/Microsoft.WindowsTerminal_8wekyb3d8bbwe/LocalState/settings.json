@@ -79,6 +79,7 @@
     ],
     "launchMode": "maximized",
     "newTabMenu": [],
+    "newTabPosition": "afterCurrentTab",
     "profiles": 
     {
         "defaults": 
