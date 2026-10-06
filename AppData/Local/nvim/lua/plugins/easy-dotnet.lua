@@ -6,6 +6,9 @@ return {
     "mfussenegger/nvim-dap",
   },
   opts = {
+    lsp = {
+      auto_refresh_codelens = false,
+    },
     test_runner = {
       mappings = {
         run_test_from_buffer = { lhs = "<Leader>rt", desc = "run test from buffer" },
