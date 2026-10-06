@@ -145,6 +145,9 @@ end)
 map({ "n", "x" }, "<Leader>ee", "<Cmd>DapViewHover<CR>")
 
 -- Great stuff from VS Code but without arrow keys
+map("i", "<C-BS>", "<C-w>")
+-- Terminals send Ctrl+Backspace as <C-h>
+map("i", "<C-h>", "<C-w>")
 map("n", "<A-S-j>", "<Cmd>t.<CR>")
 map("x", "<A-S-j>", ":t'><CR>")
 map("n", "<A-j>", "<Cmd>move .+1<CR>==")
