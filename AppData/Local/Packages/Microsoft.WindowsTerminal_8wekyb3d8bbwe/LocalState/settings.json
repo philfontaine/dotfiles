@@ -42,7 +42,7 @@
         },
         {
             "id": "Terminal.SplitPaneDown",
-            "keys": "ctrl+j"
+            "keys": "ctrl+b"
         },
         {
             "id": "Terminal.MoveFocusDown",
