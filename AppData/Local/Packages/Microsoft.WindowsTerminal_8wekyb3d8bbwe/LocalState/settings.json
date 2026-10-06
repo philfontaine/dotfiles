@@ -115,6 +115,19 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
+            },
+            {
+                "colorScheme": "Catppuccin Mocha Plum",
+                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\rocket.ps1",
+                "guid": "{edf58397-8a8b-4add-9754-f8f1f82dd5f4}",
+                "hidden": true,
+                "icon": "ms-appdata:///Local/rocket.ico",
+                "name": "Rocket",
+                "tabColor": "#F38BA8",
+                "unfocusedAppearance":
+                {
+                    "colorScheme": "Catppuccin Mocha Plum Dim"
+                }
             }
         ]
     },
@@ -160,6 +173,52 @@
             "foreground": "#808498",
             "green": "#6B8869",
             "name": "Catppuccin Mocha Dim",
+            "purple": "#7F6D94",
+            "red": "#92606E",
+            "selectionBackground": "#383943",
+            "white": "#747885",
+            "yellow": "#958A72"
+        },
+        {
+            "background": "#2A1B24",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#CBA6F7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha Plum",
+            "purple": "#CBA6F7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
+        {
+            "background": "#1C1218",
+            "black": "#2C2D36",
+            "blue": "#607596",
+            "brightBlack": "#383943",
+            "brightBlue": "#607596",
+            "brightCyan": "#628881",
+            "brightGreen": "#6B8869",
+            "brightPurple": "#7F6D94",
+            "brightRed": "#92606E",
+            "brightWhite": "#686B78",
+            "brightYellow": "#958A72",
+            "cursorColor": "#938987",
+            "cyan": "#628881",
+            "foreground": "#808498",
+            "green": "#6B8869",
+            "name": "Catppuccin Mocha Plum Dim",
             "purple": "#7F6D94",
             "red": "#92606E",
             "selectionBackground": "#383943",
