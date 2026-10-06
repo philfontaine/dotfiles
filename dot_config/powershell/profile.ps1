@@ -26,9 +26,9 @@ function zcl { if (Enter-ZLocation @args) { claude } }
 function znv { if (Enter-ZLocation @args) { nvim . } }
 
 function New-Tab([string] $Title, [string] $Script) {
-    wt -w 0 new-tab --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
+    wt -w 0 new-tab -p $env:WT_PROFILE_ID --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
 }
 
 function Split-Pane([string] $Title, [string] $Script) {
-    wt -w 0 split-pane -V --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
+    wt -w 0 split-pane -V -p $env:WT_PROFILE_ID --title $Title --suppressApplicationTitle pwsh -NoLogo -NoExit -File $Script
 }
