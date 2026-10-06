@@ -79,6 +79,7 @@ map({ "n", "x" }, "<Leader>fd", vim.lsp.buf.format)
 -- IDE windows
 map("n", "<Leader>sp", function()
   Snacks.explorer.reveal()
+  Snacks.picker.get({ source = "explorer" })[1]:focus()
 end)
 map("n", "<Leader>op", function()
   local explorer = Snacks.picker.get({ source = "explorer" })[1]
