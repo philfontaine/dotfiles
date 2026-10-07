@@ -38,3 +38,9 @@ Assume that other agents or myself might be using the same working tree for unre
 - Use `pnpm lint` to lint
 - Use `pnpm tsc` to typecheck
 - Prefer Composition API (`<script setup>`)
+
+## GitHub
+
+- Non-ASCII text passed to `gh` on the command line gets mangled into mojibake (`→` becomes `ΓåÆ`). For PR
+  and issue bodies and comments, write the text to a UTF-8 file in the scratchpad with the Write tool
+  and pass it with `--body-file`. Keep titles plain ASCII.
