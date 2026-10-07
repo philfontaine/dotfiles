@@ -74,7 +74,9 @@ map("n", "<Leader>rc", "<Cmd>Dotnet run<CR>")
 -- Save/Cleanup
 map("n", "<C-s>", "<Cmd>wall<CR>")
 map("i", "<C-s>", "<Cmd>wall<CR><Esc>")
-map({ "n", "x" }, "<Leader>fd", vim.lsp.buf.format)
+map({ "n", "x" }, "<Leader>fd", function()
+  require("conform").format()
+end)
 
 -- IDE windows
 map("n", "<Leader>sp", function()
