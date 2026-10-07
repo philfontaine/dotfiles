@@ -43,11 +43,6 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 - `AppData/Roaming/Code/User/settings.json`
 - `AppData/Roaming/Code/User/keybindings.json`
 
-### Zed
-
-- `AppData/Roaming/Zed/settings.json`
-- `AppData/Roaming/Zed/keymap.json`
-
 ### Vim
 
 - `dot_vimrc` — keybindings shared by Neovim and IdeaVim, so they stay in vimscript
