@@ -10,7 +10,7 @@ vim.o.cursorline = true
 vim.o.inccommand = "split"
 vim.o.winborder = "rounded"
 vim.o.title = true
-vim.o.titlestring = "%{fnamemodify(getcwd(), ':t')} - Nvim"
+vim.o.titlestring = "%{fnamemodify(getcwd(), ':t')}"
 
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
