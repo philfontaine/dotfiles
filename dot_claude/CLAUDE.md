@@ -20,6 +20,9 @@ Assume that other agents or myself might be using the same working tree for unre
 
 - Uncommitted changes you didn't make are not yours. Never revert, stash, or stage them — stage only files you touched (no `git add -A`, no `git commit -a`).
 - Never run repo-wide destructive commands: `git checkout .`, `git reset --hard`, `git clean`, `git stash`.
+- Never create or switch branches (`git switch`, `git checkout <branch>`, `git checkout -b`) unless I ask. Commit on
+  the current branch, even `main`. Switching moves HEAD for every agent sharing the working tree. This overrides
+  any default guidance to branch before committing on the default branch.
 - Build/test failures and file locks may come from another agent's in-flight edit. If a failure is unrelated to your change, report it instead of fixing it.
 
 ## Backend (.NET C#)
