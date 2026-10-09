@@ -1,16 +1,24 @@
-# Startup script of the Rocket profile in Windows Terminal.
+# Startup script of the Windows Terminal profiles that get a window of their own, like Rocket.
 #
 # Gives the hosting Terminal window its own taskbar identity: a taskbar group separate from the
-# regular Terminal windows, with the rocket icon. The taskbar takes the group's icon, and what a
+# regular Terminal windows, with the profile's icon. The taskbar takes the group's icon, and what a
 # pin launches, from the Start Menu shortcut carrying the same AppUserModelID, so that shortcut
-# is rewritten here too. Pin it from the rocket taskbar button or from the Start Menu.
+# is rewritten here too. Pin it from the taskbar button or from the Start Menu.
+#
+# -Name is the profile name. The window name and the icon in Terminal's LocalState are the same
+# name in lowercase: the Rocket profile opens in `wt -w rocket` with rocket.ico.
+
+param(
+    [Parameter(Mandatory)]
+    [string] $Name
+)
 
 Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-public static class RocketWindow
+public static class TaskbarWindow
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
     private struct PropertyKey
@@ -139,13 +147,13 @@ public static class RocketWindow
 }
 '@
 
-$appId = 'PhilFontaine.Rocket'
-$iconPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\rocket.ico"
+$appId = "PhilFontaine.$Name"
+$iconPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\$($Name.ToLower()).ico"
 
-[RocketWindow]::WriteShortcut(
-    "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Rocket.lnk",
+[TaskbarWindow]::WriteShortcut(
+    "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\$Name.lnk",
     "$env:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe",
-    '-w rocket -p Rocket',
+    "-w $($Name.ToLower()) -p $Name",
     $iconPath,
     $appId)
-[RocketWindow]::ApplyToWindow($appId, $iconPath)
+[TaskbarWindow]::ApplyToWindow($appId, $iconPath)

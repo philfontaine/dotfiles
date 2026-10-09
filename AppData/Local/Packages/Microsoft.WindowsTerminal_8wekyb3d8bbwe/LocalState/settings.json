@@ -118,7 +118,7 @@
             },
             {
                 "colorScheme": "Catppuccin Mocha Plum",
-                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\rocket.ps1",
+                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Rocket",
                 "guid": "{edf58397-8a8b-4add-9754-f8f1f82dd5f4}",
                 "hidden": true,
                 "icon": "ms-appdata:///Local/rocket.ico",
@@ -128,6 +128,14 @@
                 {
                     "colorScheme": "Catppuccin Mocha Plum Dim"
                 }
+            },
+            {
+                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Neovim",
+                "guid": "{9a7500b7-ba6a-495b-962e-977af755bf15}",
+                "hidden": true,
+                "icon": "ms-appdata:///Local/neovim.ico",
+                "name": "Neovim",
+                "tabColor": "#A6E3A1"
             }
         ]
     },
