@@ -70,6 +70,12 @@ map("n", "<Leader>ta", function()
   Snacks.picker.commands()
 end)
 map("n", "<Leader>rc", "<Cmd>Dotnet run<CR>")
+map("n", "<Leader>lg", function()
+  Snacks.lazygit()
+end)
+map("n", "<Leader>fh", function()
+  Snacks.lazygit.log_file()
+end)
 
 -- Save/Cleanup
 map("n", "<C-s>", "<Cmd>wall<CR>")
