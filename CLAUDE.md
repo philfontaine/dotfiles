@@ -58,6 +58,10 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 
 - `dot_ideavimrc` — sources `~/.vimrc`
 
+### Lazygit
+
+- `AppData/Local/lazygit/config.yml`
+
 ### Obsidian
 
 - `Obsidian/dot_obsidian.vimrc`
