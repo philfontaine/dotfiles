@@ -4,6 +4,13 @@ return {
   priority = 1000,
   opts = {
     picker = {
+      win = {
+        input = {
+          keys = {
+            ["<Esc>"] = { "cancel", mode = { "n", "i" } },
+          },
+        },
+      },
       actions = {
         focus_editor = function(picker)
           vim.api.nvim_set_current_win(picker.main)
@@ -17,7 +24,7 @@ return {
           win = {
             input = {
               keys = {
-                ["<Esc>"] = "focus_list",
+                ["<Esc>"] = { "focus_list", mode = { "n", "i" } },
                 ["q"] = false,
               },
             },
