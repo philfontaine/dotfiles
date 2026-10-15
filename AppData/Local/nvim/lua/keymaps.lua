@@ -122,6 +122,7 @@ end)
 map("n", "[d", function()
   require("diagnostic-jump").jump(-1)
 end)
+map("n", "<Leader>lw", "<Cmd>set wrap!<CR>")
 
 -- Build/Run/Debug
 map("n", "<Leader>ba", "<Cmd>Dotnet build solution<CR>")
