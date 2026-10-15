@@ -150,7 +150,7 @@
                 "hidden": true,
                 "icon": "ms-appdata:///Local/neovim.ico",
                 "name": "Neovim",
-                "tabColor": "#A6E3A1",
+                "tabColor": "#B4BEFE",
                 "unfocusedAppearance":
                 {
                     "colorScheme": "Catppuccin Mocha Dim"
