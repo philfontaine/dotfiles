@@ -66,8 +66,8 @@ end)
 map("n", "<Leader>fh", function()
   Snacks.lazygit.log_file()
 end)
-map("n", "<Leader>gd", function()
-  require("head-diff").toggle()
+map("n", "<Leader>go", function()
+  MiniDiff.toggle_overlay()
 end)
 
 -- Save/Cleanup
