@@ -110,7 +110,7 @@ map("n", "<Leader>pi", vim.lsp.buf.signature_help)
 map("n", "<Leader>fs", function()
   Snacks.picker.lsp_symbols()
 end)
-map({ "n", "x" }, "<Leader>rf", vim.lsp.buf.code_action)
+map({ "n", "x", "i" }, "<C-.>", vim.lsp.buf.code_action)
 map("n", "<Leader>?", function()
   vim.g.which_key_enabled = not vim.g.which_key_enabled
   vim.notify("which-key " .. (vim.g.which_key_enabled and "on" or "off"))
