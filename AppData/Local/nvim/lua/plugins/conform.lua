@@ -16,6 +16,7 @@ return {
       json5 = prettier,
       jsonc = prettier,
       less = prettier,
+      lua = { "stylua" },
       markdown = prettier,
       mdx = prettier,
       scss = prettier,
@@ -31,9 +32,11 @@ return {
 
     local registry = require("mason-registry")
     registry.refresh(function()
-      local package = registry.get_package("prettier")
-      if not package:is_installed() then
-        package:install()
+      for _, name in ipairs({ "prettier", "stylua" }) do
+        local package = registry.get_package(name)
+        if not package:is_installed() then
+          package:install()
+        end
       end
     end)
   end,
