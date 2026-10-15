@@ -19,7 +19,9 @@ map("n", "<C-_>", "gcc", { remap = true })
 map("x", "<C-_>", "gc", { remap = true })
 
 -- General IDE shortcuts
-map("n", "gd", vim.lsp.buf.definition)
+map("n", "gd", function()
+  Snacks.picker.lsp_definitions()
+end)
 map("n", "gs", function()
   Snacks.picker.lsp_workspace_symbols()
 end)
