@@ -42,6 +42,14 @@ return {
       },
     },
     explorer = {},
+    input = {},
+    styles = {
+      input = {
+        relative = "cursor",
+        row = -3,
+        col = 0,
+      },
+    },
   },
   config = function(_, opts)
     require("snacks").setup(opts)
