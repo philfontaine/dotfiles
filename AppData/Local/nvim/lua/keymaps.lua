@@ -111,6 +111,12 @@ map("n", "<Leader>fs", function()
   Snacks.picker.lsp_symbols()
 end)
 map({ "n", "x", "i" }, "<C-.>", vim.lsp.buf.code_action)
+map("n", "<Esc>", function()
+  local preview = vim.b.lsp_floating_preview
+  if preview and vim.api.nvim_win_is_valid(preview) then
+    vim.api.nvim_win_close(preview, true)
+  end
+end)
 map("n", "<Leader>?", function()
   vim.g.which_key_enabled = not vim.g.which_key_enabled
   vim.notify("which-key " .. (vim.g.which_key_enabled and "on" or "off"))
