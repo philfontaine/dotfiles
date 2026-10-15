@@ -1,3 +1,7 @@
+-- Shows LSP code lenses (like "3 references") as virtual text at the end of their line. Lenses
+-- that arrive without a title are resolved first. They refresh on attach, buffer enter, leaving
+-- insert mode, saving and when the cursor rests.
+
 local ns = vim.api.nvim_create_namespace("eol-codelens")
 
 local function render(bufnr, lenses)
