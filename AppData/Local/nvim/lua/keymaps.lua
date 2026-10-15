@@ -93,6 +93,9 @@ end)
 map("n", "<Leader>ot", function()
   Snacks.terminal.toggle("pwsh")
 end)
+map("n", "<Leader>od", function()
+  Snacks.picker.diagnostics()
+end)
 
 -- Popups
 map("n", "<Leader>fs", function()
@@ -107,11 +110,11 @@ map("n", "<Esc>", function()
 end)
 
 -- Editor navigation
-map("n", "<Leader>ne", function()
-  vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
+map("n", "]d", function()
+  require("diagnostic-jump").jump(1)
 end)
-map("n", "<Leader>pe", function()
-  vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+map("n", "[d", function()
+  require("diagnostic-jump").jump(-1)
 end)
 
 -- Build/Run/Debug
