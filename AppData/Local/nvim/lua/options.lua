@@ -28,6 +28,27 @@ vim.api.nvim_create_autocmd("FocusGained", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("two-space-indent", { clear = true }),
+  pattern = {
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "lua",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "vue",
+  },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
