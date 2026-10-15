@@ -183,7 +183,5 @@ map("n", "<Leader>to", function()
 end)
 map("n", "<Leader>tp", "<Cmd>BufferLineTogglePin<CR>")
 map("n", "<Leader>tm", function()
-  Snacks.bufdelete(function(buf)
-    return not vim.bo[buf].modified
-  end)
+  require("close-unchanged").close()
 end)
