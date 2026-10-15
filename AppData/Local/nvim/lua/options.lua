@@ -16,6 +16,8 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldlevelstart = 99
 
+vim.diagnostic.config({ virtual_text = { current_line = true } })
+
 -- Windows Terminal resets the cursor shape when its tab regains focus, so resend it
 vim.api.nvim_create_autocmd("FocusGained", {
   group = vim.api.nvim_create_augroup("restore-cursor-shape", { clear = true }),
