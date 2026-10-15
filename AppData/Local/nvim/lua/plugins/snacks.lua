@@ -14,6 +14,37 @@ local function restore_session()
   Snacks.explorer({ enter = vim.api.nvim_buf_get_name(0) == "" })
 end
 
+local preview_buf
+
+local function preview_in_editor(picker, item)
+  local main = picker.main
+  if not item or item.dir or vim.api.nvim_get_current_win() ~= picker.list.win.win then
+    return
+  end
+  local file = Snacks.picker.util.path(item)
+  local existing = vim.fn.bufnr(file)
+  if existing ~= -1 and existing == vim.api.nvim_win_get_buf(main) then
+    return
+  end
+
+  local previous = preview_buf
+  local already_open = existing ~= -1 and vim.bo[existing].buflisted and existing ~= previous
+  vim.api.nvim_win_call(main, function()
+    vim.cmd.edit(vim.fn.fnameescape(file))
+  end)
+  preview_buf = not already_open and vim.api.nvim_win_get_buf(main) or nil
+
+  if
+    previous
+    and previous ~= preview_buf
+    and vim.api.nvim_buf_is_valid(previous)
+    and not vim.bo[previous].modified
+    and #vim.fn.win_findbuf(previous) == 0
+  then
+    Snacks.bufdelete({ buf = previous })
+  end
+end
+
 local function opened_folder()
   if vim.fn.argc() == 0 then
     return "."
@@ -43,6 +74,11 @@ return {
         files = function()
           Snacks.picker.files()
         end,
+        keep_preview = function(_, item)
+          if item and not item.dir then
+            preview_buf = nil
+          end
+        end,
       },
       sources = {
         projects = {
@@ -62,6 +98,7 @@ return {
           end,
         },
         explorer = {
+          on_change = preview_in_editor,
           win = {
             input = {
               keys = {
@@ -72,6 +109,8 @@ return {
             list = {
               keys = {
                 ["<Esc>"] = "focus_editor",
+                ["<CR>"] = { { "keep_preview", "confirm" } },
+                ["l"] = { { "keep_preview", "confirm" } },
                 ["q"] = false,
                 ["<c-p>"] = "files",
                 ["<c-s>"] = false,
