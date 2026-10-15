@@ -97,14 +97,14 @@
     {
         "defaults": 
         {
-            "colorScheme": "Catppuccin Mocha",
+            "colorScheme": "Moonfly",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font"
             },
             "unfocusedAppearance": 
             {
-                "colorScheme": "Catppuccin Mocha Dim"
+                "colorScheme": "Moonfly Unfocused"
             }
         },
         "list": 
@@ -143,12 +143,17 @@
                 }
             },
             {
+                "colorScheme": "Catppuccin Mocha",
                 "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Neovim",
                 "guid": "{9a7500b7-ba6a-495b-962e-977af755bf15}",
                 "hidden": true,
                 "icon": "ms-appdata:///Local/neovim.ico",
                 "name": "Neovim",
-                "tabColor": "#A6E3A1"
+                "tabColor": "#A6E3A1",
+                "unfocusedAppearance":
+                {
+                    "colorScheme": "Catppuccin Mocha Dim"
+                }
             }
         ]
     },
@@ -245,6 +250,52 @@
             "selectionBackground": "#383943",
             "white": "#747885",
             "yellow": "#958A72"
+        },
+        {
+            "background": "#080808",
+            "black": "#323437",
+            "blue": "#80A0FF",
+            "brightBlack": "#949494",
+            "brightBlue": "#74B2FF",
+            "brightCyan": "#85DC85",
+            "brightGreen": "#36C692",
+            "brightPurple": "#AE81FF",
+            "brightRed": "#FF5189",
+            "brightWhite": "#E4E4E4",
+            "brightYellow": "#C6C684",
+            "cursorColor": "#9E9E9E",
+            "cyan": "#79DAC8",
+            "foreground": "#BDBDBD",
+            "green": "#8CC85F",
+            "name": "Moonfly",
+            "purple": "#CF87E8",
+            "red": "#FF5D5D",
+            "selectionBackground": "#303030",
+            "white": "#C6C6C6",
+            "yellow": "#E3C78A"
+        },
+        {
+            "background": "#141414",
+            "black": "#323437",
+            "blue": "#768AC0",
+            "brightBlack": "#7E7E7E",
+            "brightBlue": "#7296C2",
+            "brightCyan": "#81B280",
+            "brightGreen": "#5AA081",
+            "brightPurple": "#8F77BF",
+            "brightRed": "#C16079",
+            "brightWhite": "#BCBCBC",
+            "brightYellow": "#A4A47F",
+            "cursorColor": "#868686",
+            "cyan": "#7CB1A6",
+            "foreground": "#9E9E9E",
+            "green": "#80A369",
+            "name": "Moonfly Unfocused",
+            "purple": "#A57CB3",
+            "red": "#C16561",
+            "selectionBackground": "#3A3A3A",
+            "white": "#A5A5A5",
+            "yellow": "#B6A684"
         }
     ],
     "showTabsFullscreen": true,
