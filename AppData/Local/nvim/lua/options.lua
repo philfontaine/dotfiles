@@ -11,6 +11,8 @@ vim.o.inccommand = "split"
 vim.o.winborder = "rounded"
 vim.o.title = true
 vim.o.titlestring = "%{fnamemodify(getcwd(), ':t')}"
+-- globals: bufferline keeps pinned buffers in vim.g.BufferlinePinnedBuffers
+vim.o.sessionoptions = "buffers,globals"
 
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
