@@ -66,6 +66,9 @@ end)
 map("n", "<Leader>fh", function()
   Snacks.lazygit.log_file()
 end)
+map("n", "<Leader>gd", function()
+  require("head-diff").toggle()
+end)
 
 -- Save/Cleanup
 map("n", "<C-s>", "<Cmd>wall<CR>")
