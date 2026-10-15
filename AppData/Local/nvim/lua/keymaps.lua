@@ -99,6 +99,9 @@ end)
 map("n", "<Leader>od", function()
   Snacks.picker.diagnostics()
 end)
+map("n", "<Leader>og", function()
+  Snacks.picker.git_status()
+end)
 
 -- Popups
 map("n", "<Leader>fs", function()
