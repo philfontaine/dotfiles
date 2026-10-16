@@ -100,7 +100,11 @@
             "colorScheme": "Catppuccin Mocha Gray",
             "font": 
             {
-                "face": "JetBrainsMono Nerd Font"
+                "axes": 
+                {
+                    "wght": 375
+                },
+                "face": "Geist Mono, GeistMono NF"
             },
             "tabColor": "#EF7A12",
             "unfocusedAppearance": 
