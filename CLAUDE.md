@@ -27,6 +27,19 @@ Build them with `scripts/build-claude-tools.ps1`, optionally with `-tool <name>`
 
 A tool is only wired up once `dot_claude/settings.json` points a hook or the `statusLine` at its `.exe` in `~/.claude/bin`, and once `scripts/build-claude-tools.ps1` lists it in `$builders`.
 
+## Cheat Sheet
+
+`dot_config/cheatsheet/*.md` is a hand-curated list of shortcuts, one file per tab, shown with `glow` in the Cheatsheet Terminal window. `neovim.md` covers `dot_vimrc`, `AppData/Local/nvim/lua/keymaps.lua` and the keys set in the plugin specs; `terminal.md` covers the `keybindings` of the Windows Terminal `settings.json`.
+
+**When you add, change or remove a shortcut in one of those, update its row in the same commit.** A key set to `false` only disables a default, so it gets no row.
+
+"Rebuild the cheat sheet" means a full reconcile: every configured mapping has a row or sits in the file's `omit` line, and rows of mappings that no longer exist go. Keep the existing grouping and wording unless asked.
+
+- Sections group by purpose, not by source file, with a `Keys | Action` table each. `dot_vimrc`, `keymaps.lua` and `dot_ideavimrc` use the same section names in the same order, so a new mapping goes in the config section named like its cheat sheet section, and a new section is added to both.
+- Keys read like `Space f f`, `Ctrl+P` or `Alt+Shift+J`, and pairs share a row (`Alt+H` / `Alt+L`). The Action names the mode only when it isn't normal mode, e.g. "(visual)" or "(also insert)".
+- `*(built-in)*` marks a default the user wants listed even though no config sets it. Never remove one unless asked.
+- The `<!-- omit: ... -->` line at the end of a file lists mappings left out on purpose, such as terminal aliases.
+
 ## Important Files
 
 ### Claude Code
@@ -51,7 +64,7 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 
 - `AppData/Local/nvim/init.lua.tmpl` — sources `~/.vimrc`, then loads the Lua config
 - `AppData/Local/nvim/lazy-lock.json` — not applied; lazy.nvim updates it in place in this repo, so commit it after `:Lazy update`
-- `AppData/Local/nvim/lua/keymaps.lua` — Neovim-only keybindings, sectioned like `dot_ideavimrc`
+- `AppData/Local/nvim/lua/keymaps.lua` — Neovim-only keybindings, sectioned like the cheat sheet
 - `AppData/Local/nvim/lua/plugins/*` — one lazy.nvim spec per plugin
 
 ### IdeaVim
@@ -74,6 +87,8 @@ A tool is only wired up once `dot_claude/settings.json` points a hook or the `st
 
 - `AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json`
 - `dot_config/powershell/profile.ps1` — dot-sourced from `$PROFILE`
+- `dot_config/powershell/taskbar-window.ps1` — gives the Launcher, Neovim and Cheatsheet windows their own taskbar button
+- `dot_config/cheatsheet/*.md` — shortcut cheat sheet (see Cheat Sheet)
 - `dual-key-remap/config.txt` — caps lock / escape remapping
 - `registry/*.reg` — context menu entries, imported by hand
 
