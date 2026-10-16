@@ -102,7 +102,7 @@
             {
                 "face": "JetBrainsMono Nerd Font"
             },
-            "tabColor": "#C5C5C5",
+            "tabColor": "#EF7A12",
             "unfocusedAppearance": 
             {
                 "colorScheme": "Catppuccin Mocha Gray Dim"
@@ -137,7 +137,7 @@
                 "hidden": true,
                 "icon": "ms-appdata:///Local/rocket.ico",
                 "name": "Rocket",
-                "tabColor": "#F38BA8",
+                "tabColor": "#F7403A",
                 "unfocusedAppearance":
                 {
                     "colorScheme": "Catppuccin Mocha Plum Dim"
@@ -218,7 +218,7 @@
             "brightRed": "#F38BA8",
             "brightWhite": "#A6ADC8",
             "brightYellow": "#F9E2AF",
-            "cursorColor": "#F5E0DC",
+            "cursorColor": "#F7403A",
             "cyan": "#94E2D5",
             "foreground": "#CDD6F4",
             "green": "#A6E3A1",
@@ -241,7 +241,7 @@
             "brightRed": "#92606E",
             "brightWhite": "#686B78",
             "brightYellow": "#958A72",
-            "cursorColor": "#938987",
+            "cursorColor": "#8A3831",
             "cyan": "#628881",
             "foreground": "#808498",
             "green": "#6B8869",
@@ -264,7 +264,7 @@
             "brightRed": "#F38BA8",
             "brightWhite": "#A6ADC8",
             "brightYellow": "#F9E2AF",
-            "cursorColor": "#F5E0DC",
+            "cursorColor": "#EF7A12",
             "cyan": "#94E2D5",
             "foreground": "#CDD6F4",
             "green": "#A6E3A1",
@@ -287,7 +287,7 @@
             "brightRed": "#92606E",
             "brightWhite": "#686B78",
             "brightYellow": "#958A72",
-            "cursorColor": "#938987",
+            "cursorColor": "#88512C",
             "cyan": "#628881",
             "foreground": "#808498",
             "green": "#6B8869",
