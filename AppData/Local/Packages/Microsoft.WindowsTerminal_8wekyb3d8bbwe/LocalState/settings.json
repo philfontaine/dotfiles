@@ -30,6 +30,16 @@
             "icon": "ms-appdata:///Local/launcher.ico",
             "id": "User.OpenLauncherWindow",
             "name": "Launcher"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "commandline": "wt.exe -w cheatsheet -p Cheatsheet"
+            },
+            "icon": "ms-appdata:///Local/cheatsheet.ico",
+            "id": "User.OpenCheatsheetWindow",
+            "name": "Cheatsheet"
         }
     ],
     "copyFormatting": "none",
@@ -125,6 +135,10 @@
         {
             "id": "User.OpenLauncherWindow",
             "type": "action"
+        },
+        {
+            "id": "User.OpenCheatsheetWindow",
+            "type": "action"
         }
     ],
     "profiles": 
@@ -190,6 +204,19 @@
                 "icon": "ms-appdata:///Local/neovim.ico",
                 "name": "Neovim",
                 "tabColor": "#B4BEFE",
+                "unfocusedAppearance":
+                {
+                    "colorScheme": "Catppuccin Mocha Dim"
+                }
+            },
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "pwsh.exe -NoLogo -Command & $HOME\\.config\\powershell\\taskbar-window.ps1 -Name Cheatsheet; glow $HOME\\.config\\cheatsheet",
+                "guid": "{9189c27f-20ce-4ce8-9be9-e3c6bced1482}",
+                "hidden": true,
+                "icon": "ms-appdata:///Local/cheatsheet-tab.ico",
+                "name": "Cheatsheet",
+                "tabColor": "#40A02B",
                 "unfocusedAppearance":
                 {
                     "colorScheme": "Catppuccin Mocha Dim"
