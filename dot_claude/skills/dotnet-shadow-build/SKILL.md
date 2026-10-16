@@ -28,10 +28,10 @@ want them merged.
 ## You normally do nothing
 
 `~/.claude/settings.json` sets `CustomAfterDirectoryBuildProps` to `~/.claude/ShadowBuild.props`, which
-redirects `ArtifactsPath` whenever `CLAUDE_CODE=1`. It moves **both `bin` and `obj`**, applies to every
-project in the graph, needs no change to any repo, and covers scripts that shell out to `dotnet`. It also
-overrides an `ArtifactsPath`, `UseArtifactsOutput=false` or hardcoded `BaseOutputPath`/`OutputPath` that
-a repo sets for itself, so those repos redirect too.
+redirects `ArtifactsPath` whenever `CLAUDECODE=1`, which Claude Code sets in every shell it starts. It
+moves **both `bin` and `obj`**, applies to every project in the graph, needs no change to any repo, and
+covers scripts that shell out to `dotnet`. It also overrides an `ArtifactsPath`, `UseArtifactsOutput=false`
+or hardcoded `BaseOutputPath`/`OutputPath` that a repo sets for itself, so those repos redirect too.
 
 `publish` and `pack` are redirected as well (`PublishDir`, `PackageOutputPath`). If you need publish
 output inside the repo, pass `-o` explicitly — `dotnet publish` with no `-o` lands in the shadow tree.
@@ -101,7 +101,7 @@ Or ask MSBuild directly, which needs no build:
 dotnet msbuild Some.App/Some.App.csproj -getProperty:BaseOutputPath -getProperty:BaseIntermediateOutputPath
 ```
 
-Both should be under `claude-shadow`. If either points into the repo, `CLAUDE_CODE` is not `1` in this
+Both should be under `claude-shadow`. If either points into the repo, `CLAUDECODE` is not `1` in this
 environment or `CustomAfterDirectoryBuildProps` is not set — check those before assuming the repo is at
 fault, and never fall back to building into the live tree.
 

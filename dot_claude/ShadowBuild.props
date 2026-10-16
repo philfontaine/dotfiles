@@ -9,9 +9,9 @@ WHAT THIS DOES
   a running app, a hot-reload session or an IDE never fights an agent build for a file lock.
 
 HOW IT IS WIRED IN
-  ~/.claude/settings.json sets two environment variables:
-      CLAUDE_CODE=1
+  ~/.claude/settings.json sets the environment variable
       CustomAfterDirectoryBuildProps=<path to this file>
+  and Claude Code itself sets CLAUDECODE=1 in every shell it starts, which gates this file.
   Sdk.props appends the SDK's own UseArtifactsOutputPath.props to CustomAfterDirectoryBuildProps
   before it imports Microsoft.Common.props, which yields this import order:
       repo Directory.Build.props  ->  THIS FILE  ->  SDK UseArtifactsOutputPath.props
@@ -29,7 +29,7 @@ PRECEDENCE
   which this file cannot override, so the flag always wins. That is deliberate.
 
 TO DISABLE
-  Unset the CustomAfterDirectoryBuildProps environment variable. Note that -p:CLAUDE_CODE=0 also
+  Unset the CustomAfterDirectoryBuildProps environment variable. Note that -p:CLAUDECODE=0 also
   switches this off, silently sending output back into the repo — never pass it to dodge a lock.
 
 See the dotnet-shadow-build skill for the full strategy, including slot escalation on lock errors.
@@ -37,7 +37,7 @@ See the dotnet-shadow-build skill for the full strategy, including slot escalati
 -->
 <Project>
 
-  <PropertyGroup Condition="'$(CLAUDE_CODE)' == '1'">
+  <PropertyGroup Condition="'$(CLAUDECODE)' == '1'">
 
     <_ShadowRoot>$(CLAUDE_SHADOW_ROOT)</_ShadowRoot>
     <_ShadowRoot Condition="'$(_ShadowRoot)' == ''">$(LOCALAPPDATA)\claude-shadow</_ShadowRoot>
