@@ -10,6 +10,26 @@
                 "input": "\u001b[46;5u"
             },
             "id": "User.SendCtrlPeriod"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "commandline": "wt.exe -w neovim -p Neovim"
+            },
+            "icon": "ms-appdata:///Local/neovim.ico",
+            "id": "User.OpenNeovimWindow",
+            "name": "Neovim"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "commandline": "wt.exe -w launcher -p Launcher"
+            },
+            "icon": "ms-appdata:///Local/launcher.ico",
+            "id": "User.OpenLauncherWindow",
+            "name": "Launcher"
         }
     ],
     "copyFormatting": "none",
@@ -92,7 +112,21 @@
         }
     ],
     "launchMode": "maximized",
-    "newTabMenu": [],
+    "newTabMenu": 
+    [
+        {
+            "profile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+            "type": "profile"
+        },
+        {
+            "id": "User.OpenNeovimWindow",
+            "type": "action"
+        },
+        {
+            "id": "User.OpenLauncherWindow",
+            "type": "action"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
