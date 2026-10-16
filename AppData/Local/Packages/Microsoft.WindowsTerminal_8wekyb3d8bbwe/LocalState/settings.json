@@ -68,11 +68,11 @@
         },
         {
             "id": "Terminal.DuplicatePaneRight",
-            "keys": "ctrl+r"
+            "keys": "alt+shift+plus"
         },
         {
             "id": "Terminal.DuplicatePaneDown",
-            "keys": "ctrl+b"
+            "keys": "alt+shift+minus"
         },
         {
             "id": "Terminal.MoveFocusDown",
