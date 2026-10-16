@@ -6,6 +6,11 @@
 - OS: Windows 11
 - Available runtimes: .NET and Node.js — Python is NOT installed, do not generate Python scripts
 
+## Responses
+
+- When listing things (options, findings, steps, questions), number them or letter them, never plain bullets,
+  so I can reference items by label (e.g. "go with 2", "fix b and c")
+
 ## Comments
 
 - Don't use comments to explain "what" the code does. Instead, refactor to improve clarity.
