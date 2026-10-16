@@ -173,7 +173,7 @@
                 "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Launcher",
                 "guid": "{edf58397-8a8b-4add-9754-f8f1f82dd5f4}",
                 "hidden": true,
-                "icon": "ms-appdata:///Local/launcher.ico",
+                "icon": "ms-appdata:///Local/launcher-tab.ico",
                 "name": "Launcher",
                 "tabColor": "#F7403A",
                 "unfocusedAppearance":
