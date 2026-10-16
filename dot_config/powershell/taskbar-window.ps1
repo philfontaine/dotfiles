@@ -1,4 +1,4 @@
-# Startup script of the Windows Terminal profiles that get a window of their own, like Rocket.
+# Startup script of the Windows Terminal profiles that get a window of their own, like Launcher.
 #
 # Gives the hosting Terminal window its own taskbar identity: a taskbar group separate from the
 # regular Terminal windows, with the profile's icon. The taskbar takes the group's icon, and what a
@@ -6,7 +6,7 @@
 # is rewritten here too. Pin it from the taskbar button or from the Start Menu.
 #
 # -Name is the profile name. The window name and the icon in Terminal's LocalState are the same
-# name in lowercase: the Rocket profile opens in `wt -w rocket` with rocket.ico.
+# name in lowercase: the Launcher profile opens in `wt -w launcher` with launcher.ico.
 
 param(
     [Parameter(Mandatory)]

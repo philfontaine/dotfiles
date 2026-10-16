@@ -136,11 +136,11 @@
             },
             {
                 "colorScheme": "Catppuccin Mocha Plum",
-                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Rocket",
+                "commandline": "pwsh.exe -NoLogo -NoExit -File %USERPROFILE%\\.config\\powershell\\taskbar-window.ps1 -Name Launcher",
                 "guid": "{edf58397-8a8b-4add-9754-f8f1f82dd5f4}",
                 "hidden": true,
-                "icon": "ms-appdata:///Local/rocket.ico",
-                "name": "Rocket",
+                "icon": "ms-appdata:///Local/launcher.ico",
+                "name": "Launcher",
                 "tabColor": "#F7403A",
                 "unfocusedAppearance":
                 {
