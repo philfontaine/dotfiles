@@ -12,11 +12,11 @@ set relativenumber
 set ignorecase
 set smartcase
 
-" Better behaviors
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
-noremap n nzz
-noremap N Nzz
+" Completion
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
+" Editing
 nnoremap Y y$
 nnoremap J Jh
 nnoremap x "_x
@@ -27,37 +27,35 @@ xnoremap p "_dP
 xnoremap c "_c
 xnoremap < <gv
 xnoremap > >gv
-
-" Better shortcuts
-noremap <C-j> <C-e>
-noremap <C-k> <C-y>
-inoremap <C-j> <C-n>
-inoremap <C-k> <C-p>
-nnoremap gl $
-xnoremap gl $
-onoremap gl $
-nnoremap gh ^
-xnoremap gh ^
-onoremap gh ^
 noremap + <C-a>
 noremap - <C-x>
 nnoremap U <C-r>
 noremap Q @q
-noremap [[ [{
-noremap ]] ]}
-
-" Misc
-nmap <Leader>ns :nohlsearch<CR>
-
-" Split ternary
 nnoremap <Leader>st _f?i<CR><Esc>f:i<CR><Esc>
 
-" Window navigation
-nnoremap <Leader>wc <C-W>c
-nnoremap <Leader>wo <C-W>o
+" Moving around
+nnoremap gh ^
+xnoremap gh ^
+onoremap gh ^
+nnoremap gl $
+xnoremap gl $
+onoremap gl $
+noremap [[ [{
+noremap ]] ]}
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+noremap <C-j> <C-e>
+noremap <C-k> <C-y>
+noremap n nzz
+noremap N Nzz
+nmap <Leader>ns :nohlsearch<CR>
+
+" Tabs & windows
+nnoremap <Leader>wh <C-W>h
 nnoremap <Leader>wj <C-W>j
 nnoremap <Leader>wk <C-W>k
-nnoremap <Leader>wh <C-W>h
 nnoremap <Leader>wl <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>wc <C-W>c
+nnoremap <Leader>wo <C-W>o

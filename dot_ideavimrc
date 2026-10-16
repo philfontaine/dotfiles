@@ -9,38 +9,63 @@ set easymotion
 set matchit
 set notimeout
 
-" Better behaviors
-nmap <C-o> <Action>(Back)
-nmap <C-i> <Action>(Forward)
+" Files & search
+map gn <Action>(ReSharperNavigateTo)
+map <C-p> <Action>(GotoFile)
+map <C-e> <Action>(RecentFiles)
+map <Leader>ff <Action>(FindInPath)
+map <Leader>rp <Action>(Replace)
+map <Leader>os <Action>(RecentProjectListGroup)
+map <Leader>of <Action>(ActivateFindToolWindow)
+
+" Explorer
+map <Leader>sp <Action>(SelectInProjectView)
+map <Leader>op <Action>(ActivateProjectToolWindow)
+map <Leader>oe <Action>(RevealIn)
+
+" Code
+map gs <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
+map <leader>gi <Action>(GotoImplementation)
+map <Leader>gr <Action>(GotoRelated)
+map <Leader>fu <Action>(FindUsages)
+nmap <Leader>gu <Leader>[f<Leader>fu
+map <Leader>fs <Action>(FileStructurePopup)
+map <Leader>re <Action>(RenameElement)
+map <Leader>rf <Action>(Refactorings.QuickListPopupAction)
+map <Leader>il <Action>(Inline)
+map <Leader>iv <Action>(IntroduceVariable)
+map <C-m> <Action>(ShowPopupMenu)
+map <Leader>pi <Action>(ParameterInfo)
 nmap K <Action>(ShowHoverInfo)
+map <Leader>fd <Action>(ReformatCode)
+map <Leader>cc <Action>(SilentCodeCleanup)
+map <Leader>oi <Action>(OptimizeImports)
+map <Leader>zc <Action>(CollapseAllRegions)
+map <Leader>zo <Action>(ExpandAllRegions)
+map <Leader>ne <Action>(GotoNextError)
+map <Leader>pe <Action>(GotoPreviousError)
+map [d <Action>(ReSharperGotoPrevErrorInSolution)
+map ]d <Action>(ReSharperGotoNextErrorInSolution)
 
-" Plugin shortcuts
-nmap s <Plug>(easymotion-s)
-xmap s <Plug>(easymotion-s)
-nmap gm <Plug>(MatchitMotion)
-xmap gm <Plug>(MatchitMotion)
-
-" Camel case text object
+" Editing
+map <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)
+map <A-S-j> <Action>(EditorDuplicateLines)
+map <A-S-l> <Action>(EditorSelectWord)
+map <A-S-h> <Action>(EditorUnSelectWord)
 nmap vic l[bv]w
 nmap cic l[bv]wc
 nmap dic l[bv]wd
 nmap yic l[bv]wy
-
 " The below is needed because camel case text object mess up `nnoremap c "_c`
 nnoremap ci "_ci
-
-" Combos
-nmap <Leader>gu <Leader>[f<Leader>fu
-
-" Split function
 nmap <Leader>sf2 _f(a<CR><Esc>hf,a<CR><Esc>
 nmap <Leader>sf3 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
 nmap <Leader>sf4 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
 nmap <Leader>sf5 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
 nmap <Leader>sf6 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
 nmap <Leader>sf7 _f(a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>hf,a<CR><Esc>
-
-" Split chain
 nmap <Leader>sc2 _f(F.i<CR><Esc> f)f.i<CR><Esc>
 nmap <Leader>sc3 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>
 nmap <Leader>sc4 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
@@ -48,103 +73,69 @@ nmap <Leader>sc5 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i
 nmap <Leader>sc6 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
 nmap <Leader>sc7 _f(F.i<CR><Esc> f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>f)f.i<CR><Esc>
 
-" Edit config
-map <Leader>ei :e ~/.ideavimrc<CR>
-map <Leader>si :source ~/.ideavimrc<CR>
-map <Leader>ev :e ~/.vimrc<CR>
-map <Leader>sv :source ~/.vimrc<CR>
-
-" General IDE shortcuts
-map gs <Action>(GotoSymbol)
-map gc <Action>(GotoClass)
-map gn <Action>(ReSharperNavigateTo)
-map <C-p> <Action>(GotoFile)
-map <C-e> <Action>(RecentFiles)
-map <Leader>fu <Action>(FindUsages)
-map <Leader>gr <Action>(GotoRelated)
-map <leader>gi <Action>(GotoImplementation)
-map <Leader>ff <Action>(FindInPath)
-map <Leader>re <Action>(RenameElement)
-map <Leader>zc <Action>(CollapseAllRegions)
-map <Leader>zo <Action>(ExpandAllRegions)
-map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
-map <Leader>ss <Action>(ShowSettings)
-map <Leader>ao <Action>(SelectAllOccurrences)
-map <Leader>rp <Action>(Replace)
-map <Leader>il <Action>(Inline)
-map <Leader>iv <Action>(IntroduceVariable)
-map <Leader>oe <Action>(RevealIn)
-map <Leader>os <Action>(RecentProjectListGroup)
-map <Leader>cs <Action>(CloseProject)
-map <Leader>ta <Action>(VimFindActionIdAction)
-map <Leader>rc <Action>(RedesignedRunConfigurationSelector)
-map <Leader>lg :!wt lazygit<CR>
-
-" Save/Cleanup
-map <C-s> <Action>(SaveAll)
-imap <C-s> <Action>(SaveAll)<Esc>
-map <Leader>fd <Action>(ReformatCode)
-map <Leader>cc <Action>(SilentCodeCleanup)
-map <Leader>oi <Action>(OptimizeImports)
-
-" IDE windows
-map <Leader>sp <Action>(SelectInProjectView)
-map <Leader>op <Action>(ActivateProjectToolWindow)
-map <Leader>of <Action>(ActivateFindToolWindow)
-map <Leader>ot <Action>(ActivateTerminalToolWindow)
-map <Leader>od <Action>(ActivateDebugToolWindow)
-map <Leader>hw <Action>(HideAllWindows)
-map <Leader>oc <Action>(ActivateCommitToolWindow)
-map <Leader>oa <Action>(ActivateAgentDockToolWindow)
-
-" Popups
-map <C-m> <Action>(ShowPopupMenu)
-map <Leader>pi <Action>(ParameterInfo)
-map <Leader>fs <Action>(FileStructurePopup)
-map <Leader>rf <Action>(Refactorings.QuickListPopupAction)
-
-" Editor navigation
-map <Leader>ne <Action>(GotoNextError)
-map <Leader>pe <Action>(GotoPreviousError)
-map [d <Action>(ReSharperGotoPrevErrorInSolution)
-map ]d <Action>(ReSharperGotoNextErrorInSolution)
+" Moving around
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+nmap s <Plug>(easymotion-s)
+xmap s <Plug>(easymotion-s)
+nmap gm <Plug>(MatchitMotion)
+xmap gm <Plug>(MatchitMotion)
 map [f <Action>(MethodUp)
 map ]f <Action>(MethodDown)
 
-" Build/Run/Debug
-map <Leader>ba <Action>(BuildWholeSolutionAction)
-map <Leader>ra <Action>(Run)
-map <Leader>da <Action>(Debug)
-map <Leader>sa <Action>(Stop)
-map <Leader>rt <Action>(RiderUnitTestRunContextAction)
-map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
-map <Leader>tb <Action>(ToggleLineBreakpoint)
-map <C-S-A-j> <Action>(StepOver)
-map <C-S-A-k> <Action>(Resume)
-map <C-S-A-h> <Action>(StepOut)
-map <C-S-A-l> <Action>(StepInto)
-map <Leader>ee <Action>(QuickEvaluateExpression)
-
-" Great stuff from VS Code but without arrow keys
-map <A-S-j> <Action>(EditorDuplicateLines)
-map <A-j> <Action>(MoveLineDown)
-map <A-k> <Action>(MoveLineUp)
-map <A-S-h> <Action>(EditorUnSelectWord)
-map <A-S-l> <Action>(EditorSelectWord)
+" Multiple cursors
 map <A-C-j> <Action>(EditorCloneCaretBelow)
 map <A-C-k> <Action>(EditorCloneCaretAbove)
-map <A-C-h> <Action>(UnselectPreviousOccurrence)
 map <A-C-l> <Action>(SelectNextOccurrence)
+map <A-C-h> <Action>(UnselectPreviousOccurrence)
+map <Leader>ao <Action>(SelectAllOccurrences)
 
-" Tab navigation
+" Tabs & windows
 nmap <C-h> <Action>(PreviousTab)
 nmap <C-l> <Action>(NextTab)
 imap <C-h> <Action>(PreviousTab)
 imap <C-l> <Action>(NextTab)
 map <Leader>tc <Action>(CloseContent)
 map <Leader>to <Action>(CloseAllEditorsButActive)
-map <Leader>tp <Action>(PinActiveEditorTab)
 map <Leader>tm <Action>(CloseAllUnmodifiedEditors)
+map <Leader>tp <Action>(PinActiveEditorTab)
+map <Leader>ot <Action>(ActivateTerminalToolWindow)
+map <Leader>oa <Action>(ActivateAgentDockToolWindow)
+map <Leader>hw <Action>(HideAllWindows)
+
+" Git
+map <Leader>lg :!wt lazygit<CR>
+map <Leader>oc <Action>(ActivateCommitToolWindow)
+
+" Build, run & debug
+map <Leader>ba <Action>(BuildWholeSolutionAction)
+map <Leader>ra <Action>(Run)
+map <Leader>da <Action>(Debug)
+map <Leader>sa <Action>(Stop)
+map <Leader>rc <Action>(RedesignedRunConfigurationSelector)
+map <Leader>ac <Action>(RiderDebuggerApplyEncChagnes)
+map <Leader>tb <Action>(ToggleLineBreakpoint)
+map <C-S-A-k> <Action>(Resume)
+map <C-S-A-j> <Action>(StepOver)
+map <C-S-A-l> <Action>(StepInto)
+map <C-S-A-h> <Action>(StepOut)
+map <Leader>ee <Action>(QuickEvaluateExpression)
+map <Leader>od <Action>(ActivateDebugToolWindow)
+
+" Tests
+map <Leader>rt <Action>(RiderUnitTestRunContextAction)
+map <Leader>dt <Action>(RiderUnitTestDebugContextAction)
+
+" Session
+map <C-s> <Action>(SaveAll)
+imap <C-s> <Action>(SaveAll)<Esc>
+map <Leader>cs <Action>(CloseProject)
+map <Leader>ss <Action>(ShowSettings)
+map <Leader>ta <Action>(VimFindActionIdAction)
+map <Leader>ei :e ~/.ideavimrc<CR>
+map <Leader>si :source ~/.ideavimrc<CR>
+map <Leader>ev :e ~/.vimrc<CR>
+map <Leader>sv :source ~/.vimrc<CR>
 
 " Handlers
 sethandler <A-C-J> a:vim
