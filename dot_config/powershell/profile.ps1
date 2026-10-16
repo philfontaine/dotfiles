@@ -8,6 +8,8 @@ if ($PWD.Path -ieq "$env:WINDIR\System32") {
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
+$env:DOTNET_WATCH_RESTART_ON_RUDE_EDIT = '1'
+
 Set-Alias -Name cl -Value claude
 Set-Alias -Name cm -Value chezmoi
 Set-Alias -Name ex -Value explorer
