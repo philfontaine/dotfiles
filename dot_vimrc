@@ -61,7 +61,3 @@ nnoremap <Leader>wh <C-W>h
 nnoremap <Leader>wl <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
-
-" Edit config 
-map <Leader>ev :e ~/.vimrc<CR>
-map <Leader>sv :source ~/.vimrc<CR>
