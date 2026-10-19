@@ -1,5 +1,11 @@
 return {
   "nvim-mini/mini.diff",
   version = false,
-  opts = {},
+  opts = {
+    mappings = {
+      apply = "",
+      reset = "",
+      textobject = "",
+    },
+  },
 }
