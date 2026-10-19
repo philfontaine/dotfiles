@@ -154,7 +154,10 @@ map("n", "<Leader>go", function()
 end)
 
 -- Build, run & debug
-map("n", "<Leader>ba", "<Cmd>Dotnet build solution<CR>")
+map("n", "<Leader>ba", "<Cmd>Dotnet build solution quickfix<CR>")
+map("n", "<Leader>bd", function()
+  require("solution-diagnostics").check()
+end)
 map("n", "<Leader>ra", "<Cmd>Dotnet run default<CR>")
 map("n", "<Leader>da", "<Cmd>Dotnet debug default<CR>")
 map("n", "<Leader>sa", function()

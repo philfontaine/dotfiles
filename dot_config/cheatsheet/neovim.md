@@ -147,7 +147,8 @@
 
 | Keys | Action |
 |---|---|
-| `Space b a` | Build the solution |
+| `Space b a` | Build the solution, errors in the quickfix list |
+| `Space b d` | Show the solution's errors without building |
 | `Space r a` | Run |
 | `Space d a` | Debug |
 | `Space s a` | Stop the app or the debug session |
