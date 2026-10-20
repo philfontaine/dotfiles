@@ -10,8 +10,11 @@
 
 - When listing things (options, findings, steps, questions), number them or letter them, never plain bullets,
   so I can reference items by label (e.g. "go with 2", "fix b and c")
-- Put anything I must act on or decide (open questions, failures, skipped steps, risks) at the very end of the
-  response, each item prefixed with ⚠️. Reserve the icon for those: if everything is flagged, nothing is.
+- End every response with a horizontal rule (`---`), then one block starting with 👉: the only part I'm guaranteed
+  to read. It holds the answer to my question, your questions to me, and anything I must decide, do, or know
+  failed or was skipped. It must stand alone: never refer to text above it, and repeat any detail it depends on.
+  Everything above the rule is optional supporting detail. Always include it, even if it's only "Done, nothing
+  for you."
 
 ## Comments
 
