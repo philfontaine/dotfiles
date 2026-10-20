@@ -1,24 +1,25 @@
 Windows Registry Editor Version 5.00
 
-;; Neovim-Qt
+;; Neovim
 
-[HKEY_CLASSES_ROOT\*\shell\nvim-qt]
+[HKEY_CURRENT_USER\Software\Classes\*\shell\nvim]
 @="Edit with Neovim"
-"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\""
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
 
-[HKEY_CLASSES_ROOT\*\shell\nvim-qt\command]
+[HKEY_CURRENT_USER\Software\Classes\*\shell\nvim\command]
 @="wt \"C:\\Program Files\\Neovim\\bin\\nvim.exe\" \"%1\""
 
-[HKEY_CLASSES_ROOT\Directory\shell\nvim-qt]
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\nvim]
 @="Open with Neovim"
-"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\""
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
 
-[HKEY_CLASSES_ROOT\Directory\shell\nvim-qt\command]
-@="wt \"C:\\Program Files\\Neovim\\bin\\nvim.exe\" \"%1\""
+;; "%V." rather than "%V": a drive root expands to C:\ and its trailing \" would escape the closing quote
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\nvim\command]
+@="wt -d \"%V.\" \"C:\\Program Files\\Neovim\\bin\\nvim.exe\" ."
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim-qt]
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim]
 @="Open with Neovim"
-"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\""
+"Icon"="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\""
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim-qt\command]
-@="wt \"C:\\Program Files\\Neovim\\bin\\nvim.exe\" \"%v\""
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim\command]
+@="wt -d \"%V.\" \"C:\\Program Files\\Neovim\\bin\\nvim.exe\" ."
