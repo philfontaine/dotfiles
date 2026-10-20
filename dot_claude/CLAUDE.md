@@ -10,6 +10,8 @@
 
 - When listing things (options, findings, steps, questions), number them or letter them, never plain bullets,
   so I can reference items by label (e.g. "go with 2", "fix b and c")
+- Put anything I must act on or decide (open questions, failures, skipped steps, risks) at the very end of the
+  response, each item prefixed with ⚠️. Reserve the icon for those: if everything is flagged, nothing is.
 
 ## Comments
 
