@@ -63,19 +63,6 @@
         ]
       }
     ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$USERPROFILE/.claude/bin/hook-comment-collector.exe\"",
-            "timeout": 10,
-            "statusMessage": "Noting added comments"
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "hooks": [
@@ -92,11 +79,6 @@
           {
             "type": "command",
             "command": "\"$USERPROFILE/.claude/bin/hook-toast.exe\""
-          },
-          {
-            "type": "command",
-            "command": "\"$USERPROFILE/.claude/bin/hook-comment-review.exe\"",
-            "timeout": 10
           }
         ]
       }
