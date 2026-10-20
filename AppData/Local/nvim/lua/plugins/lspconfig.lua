@@ -23,8 +23,16 @@ return {
       },
     })
 
+    vim.lsp.config("lemminx", {
+      settings = {
+        xml = {
+          validation = { noGrammar = "ignore" },
+        },
+      },
+    })
+
     require("mason-lspconfig").setup({
-      ensure_installed = { "vtsls", "vue_ls" },
+      ensure_installed = { "lemminx", "vtsls", "vue_ls" },
     })
   end,
 }
