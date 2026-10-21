@@ -16,9 +16,9 @@ The review runs in a separate worktree so the user can switch branches in main a
 2. **Spawn the review** as a subagent with `isolation: "worktree"` that:
    - Checks out the pinned SHA on a detached HEAD: `git checkout --detach <sha>`. Checking out the branch itself
      fails if it's already checked out in another worktree.
-   - Reviews it with the `code-review` skill, targeting the branch (or PR number). If it builds or tests, it follows
+   - Reviews it with the `review` skill, targeting the branch (or PR number). If it builds or tests, it follows
      `dotnet-shadow-build`. Expect a slow first build: the worktree has no `node_modules` or restored packages.
-   - Reports findings with `file:line` references.
+   - Reports findings with `file:line` references, in the Correctness and Design sections of the `review` skill.
 
    Tell the user they're free to switch branches while it runs.
 
