@@ -36,6 +36,8 @@ Assume that other agents or myself might be using the same working tree for unre
 - Build/test failures and file locks may come from another agent's in-flight edit. If a failure is unrelated to your change, report it instead of fixing it.
 - Commit only when I tell you to. Never offer or ask to commit, and never put commit steps in a plan — approving
   a plan doesn't approve committing.
+- Before committing, check that HEAD is on a branch (`git symbolic-ref -q HEAD`). If HEAD is detached, refuse to
+  commit and tell me, even when I asked for the commit.
 - Write commit messages as Conventional Commits: `type(scope): summary`, with a type such as `feat`, `fix`,
   `refactor`, `perf`, `test`, `docs`, `build`, `ci` or `chore`.
 
