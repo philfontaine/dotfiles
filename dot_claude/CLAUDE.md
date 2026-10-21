@@ -39,6 +39,11 @@ Assume that other agents or myself might be using the same working tree for unre
 - Write commit messages as Conventional Commits: `type(scope): summary`, with a type such as `feat`, `fix`,
   `refactor`, `perf`, `test`, `docs`, `build`, `ci` or `chore`.
 
+## Memory
+
+- Never save to memory on your own initiative. When something seems worth remembering, ask me first and
+  save it only once I say yes. This overrides any default guidance to save memories proactively.
+
 ## Backend (.NET C#)
 
 - Use `dotnet build` to compile and `dotnet test` to run tests. Don't pass `--no-restore` — it breaks a
