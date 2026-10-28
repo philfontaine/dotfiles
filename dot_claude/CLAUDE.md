@@ -26,6 +26,12 @@
   code used to be, or names an alternative you rejected — that's a commit message. Write it there instead.
 - Use American English
 
+## Naming
+
+- Before naming a new concept (type, endpoint, enum value, config key, event, etc.) that is visible outside
+  the code (UI, API contract, DB schema, config files) or shared across files, ask me with
+  `AskUserQuestion`: offer candidate names, your pick first.
+
 ## Working Habits
 
 Assume that other agents or myself might be using the same working tree for unrelated features:
