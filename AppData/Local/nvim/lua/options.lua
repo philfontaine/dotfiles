@@ -58,6 +58,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Roslyn source-generated documents are virtual, but when easy-dotnet fails to load one it is left
+-- as a regular modified buffer, which makes `:xa` try to write its URI to disk
+vim.api.nvim_create_autocmd("BufWriteCmd", {
+  group = vim.api.nvim_create_augroup("never-write-source-generated", { clear = true }),
+  pattern = "roslyn-source-generated://*",
+  callback = function(args)
+    vim.bo[args.buf].modified = false
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
