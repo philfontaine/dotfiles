@@ -45,6 +45,18 @@ local function preview_in_editor(picker, item)
   end
 end
 
+-- vim.fs.normalize with `_fast` turns \\server\share into /server/share, which snacks pickers then fail to open
+local function keep_unc_paths_in_fast_normalize()
+  local normalize = vim.fs.normalize
+  ---@diagnostic disable-next-line: duplicate-set-field
+  vim.fs.normalize = function(path, opts)
+    if opts and opts._fast and path:find("^[/\\][/\\]") then
+      opts = vim.tbl_extend("force", opts, { _fast = false })
+    end
+    return normalize(path, opts)
+  end
+end
+
 local function opened_folder()
   if vim.fn.argc() == 0 then
     return "."
@@ -132,6 +144,7 @@ return {
     },
   },
   config = function(_, opts)
+    keep_unc_paths_in_fast_normalize()
     require("snacks").setup(opts)
 
     vim.api.nvim_create_autocmd("VimEnter", {
