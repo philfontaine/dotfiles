@@ -70,7 +70,6 @@ $builders = [ordered]@{
     'status-line' = { PublishDotnetAot 'status-line' 'status-line/status-line.cs' }
     'hook-shadow-build' = { PublishDotnetAot 'hook-shadow-build' 'hook-shadow-build/hook-shadow-build.cs' }
     'hook-block-onedrive-find' = { PublishDotnetAot 'hook-block-onedrive-find' 'hook-block-onedrive-find/hook-block-onedrive-find.cs' }
-    'hook-toast' = { PublishDotnetAot 'hook-toast' 'hook-toast/hook-toast.cs' }
 }
 
 # Step 1: pick the tools to build

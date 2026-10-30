@@ -63,26 +63,6 @@
           }
         ]
       }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$USERPROFILE/.claude/bin/hook-toast.exe\""
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$USERPROFILE/.claude/bin/hook-toast.exe\""
-          }
-        ]
-      }
     ]
   },
   "worktree": {
