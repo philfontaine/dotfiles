@@ -12,11 +12,6 @@
   so I can reference items by label (e.g. "go with 2", "fix b and c"). When a response has more than one list,
   never reuse the same labels: prefix each list's numbers with its own letter (F1, F2 for findings, Q1, Q2 for
   questions) so every label is unique
-- End every response with a horizontal rule (`---`), then one block starting with 👉: the only part I'm guaranteed
-  to read. It holds the answer to my question, your questions to me, and anything I must decide, do, or know
-  failed or was skipped. It must stand alone: never refer to text above it, and repeat any detail it depends on.
-  Everything above the rule is optional supporting detail. Always include it, even if it's only "Done, nothing
-  for you."
 
 ## Comments
 
