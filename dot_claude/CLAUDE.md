@@ -23,9 +23,14 @@
 
 ## Naming
 
-- Before naming a new concept (type, endpoint, enum value, config key, event, etc.) that is visible outside
-  the code (UI, API contract, DB schema, config files) or shared across files, ask me with
-  `AskUserQuestion`: offer candidate names, your pick first.
+- Ask me with `AskUserQuestion` before naming either of these, offering candidate names, your pick first:
+  - A new concept: an idea the project didn't have before and that people will then talk about, such as a
+    new status, kind of entity, mode or feature. Its name spreads through the code, UI, API and docs.
+  - Anything visible outside the code: names shown in the UI, API contract (endpoints, fields, enum
+    values, events), DB schema, config keys.
+- Don't ask about internal names of code that implements a concept that already has a name: files,
+  classes, functions, variables. Derive them from the concept's name and move on. When new code introduces
+  a new concept, ask about the concept's name, not the code's.
 
 ## Working Habits
 
