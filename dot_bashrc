@@ -1,0 +1,2 @@
+# VsDevCmd.bat runs a bare vswhere.exe, which Claude Code's NoDefaultCurrentDirectoryInExePath=1 hides
+export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/Installer"
