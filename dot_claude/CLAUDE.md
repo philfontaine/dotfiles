@@ -40,7 +40,8 @@ Assume that other agents or myself might be using the same working tree for unre
 - Never run repo-wide destructive commands: `git checkout .`, `git reset --hard`, `git clean`, `git stash`.
 - Never create or switch branches (`git switch`, `git checkout <branch>`, `git checkout -b`) unless I ask. Commit on
   the current branch, even `main`. Switching moves HEAD for every agent sharing the working tree. This overrides
-  any default guidance to branch before committing on the default branch.
+  any default guidance to branch before committing on the default branch. The one exception: after merging a PR,
+  you may switch back to the default branch.
 - Build/test failures and file locks may come from another agent's in-flight edit. If a failure is unrelated to your change, report it instead of fixing it.
 - Commit only when I tell you to. Never offer or ask to commit, and never put commit steps in a plan — approving
   a plan doesn't approve committing.
