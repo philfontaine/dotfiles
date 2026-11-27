@@ -5,6 +5,9 @@
 - Primary stack: .NET C# (backend), Vue.js + Quasar (frontend)
 - OS: Windows 11
 - Available runtimes: .NET and Node.js — Python is NOT installed, do not generate Python scripts
+- My dev config (`~/.claude`, shell profiles and other dotfiles) is managed by chezmoi. To change one of
+  these files, edit its source in my dotfiles repo (`chezmoi source-path <file>` finds it), and follow
+  that repo's CLAUDE.md, which says how to apply it.
 
 ## Responses
 
